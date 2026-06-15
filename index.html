@@ -252,6 +252,31 @@
   /* loop indicator */
   .loop-bar { margin-top: 14px; padding: 11px 16px; border: 1px dashed var(--orange); border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange-2); text-align: center; background: rgba(233,120,37,0.04); }
 
+  /* === layered system map (overview) === */
+  .sysmap { margin-top: 6px; }
+  .sys-band { border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; background: var(--bg); }
+  .sys-band .sb-lab { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--muted); display: block; margin-bottom: 13px; }
+  .sys-band .sb-lab b { color: var(--orange); }
+  .sys-band.band--tools { background: var(--bg-3); }
+  .sys-band.band--measure { background: var(--navy); border-color: var(--navy); }
+  .sys-band.band--measure .sb-lab { color: var(--orange-soft); }
+  .sys-grid { display: grid; gap: 10px; }
+  .sys-grid.g3 { grid-template-columns: repeat(3,1fr); }
+  .sys-grid.g4 { grid-template-columns: repeat(4,1fr); }
+  .sys-node { border-radius: 9px; padding: 12px 13px; font-size: 13px; font-weight: 600; text-align: center; line-height: 1.25; display: flex; flex-direction: column; gap: 3px; align-items: center; }
+  .sys-node small { font-weight: 400; font-size: 11px; opacity: 0.78; }
+  .sys-node.n-tool { background: #EFEBE3; border: 1px solid var(--line-2); color: var(--ink-2); }
+  .sys-node.n-build { background: var(--navy); color: #fff; }
+  .sys-node.n-build small { color: var(--orange-soft); opacity: 1; }
+  .sys-node.n-out { background: var(--green-pale); border: 1px solid var(--green); color: var(--green); }
+  .socle-strip { margin-top: 11px; padding: 10px 14px; border: 1px dashed var(--line-2); border-radius: 8px; text-align: center; font-size: 12px; color: var(--muted); font-weight: 500; background: var(--bg-2); }
+  .socle-strip b { color: var(--ink-2); }
+  .sys-down { display: flex; justify-content: center; align-items: center; gap: 10px; color: var(--orange); font-size: 19px; padding: 7px 0; }
+  .sys-down .sd-cap { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+  .measure-line { text-align: center; color: #fff; font-size: 13.5px; font-weight: 500; }
+  .measure-line b { color: var(--orange-soft); }
+  @media (max-width: 900px) { .sys-grid.g3, .sys-grid.g4 { grid-template-columns: 1fr 1fr; } }
+
   /* === TECH TAB === */
   .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 12px; }
   .statbox { border: 1px solid var(--line); border-radius: 12px; padding: 26px; background: var(--bg-2); text-align: center; }
@@ -523,28 +548,51 @@
             <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">On <b>mesure</b> ce qui marche, et on recommence en mieux</span></div>
           </div>
         </div>
-        <div class="flow">
-          <div class="flow-col">
-            <div class="col-head">Produit</div>
-            <div class="node node--build"><span class="node-lab">Pilier 1</span><span class="node-title">SEO / GEO</span><span class="node-desc">Contenu + preuves + RP orientée</span></div>
+        <div class="sysmap">
+
+          <div class="sys-band band--tools">
+            <span class="sb-lab">① Ce que vous avez déjà — on s'y branche, on ne remplace rien</span>
+            <div class="sys-grid g4">
+              <div class="sys-node n-tool">SharePoint<small>vos photos &amp; vidéos</small></div>
+              <div class="sys-node n-tool">HubSpot<small>votre site web</small></div>
+              <div class="sys-node n-tool">Monday<small>votre planning</small></div>
+              <div class="sys-node n-tool">GA4 · réseaux<small>vos chiffres</small></div>
+            </div>
           </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-col">
-            <div class="col-head">Met en images</div>
-            <div class="node node--build"><span class="node-lab">Pilier 3</span><span class="node-title">AI Studio</span><span class="node-desc">Décline & sublime les assets</span></div>
+
+          <div class="sys-down"><span class="sd-cap">les agents s'en nourrissent</span><span>↓</span></div>
+
+          <div class="sys-band band--agents">
+            <span class="sb-lab">② Les <b>agents Orchestra</b> font le travail</span>
+            <div class="sys-grid g3">
+              <div class="sys-node n-build">Agent SEO/GEO<small>crée le contenu &amp; les preuves</small></div>
+              <div class="sys-node n-build">AI Studio<small>met en images</small></div>
+              <div class="sys-node n-build">Calendrier<small>publie au bon moment</small></div>
+            </div>
+            <div class="socle-strip">Tous posés sur <b>le socle commun</b> — connexions, planification, validation humaine</div>
           </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-col">
-            <div class="col-head">Programme</div>
-            <div class="node node--build"><span class="node-lab">Pilier 2</span><span class="node-title">Calendrier</span><span class="node-desc">Thèmes, 50/50, anticipation</span></div>
+
+          <div class="sys-down"><span class="sd-cap">ce qui en sort</span><span>↓</span></div>
+
+          <div class="sys-band band--out">
+            <span class="sb-lab">③ Le résultat apparaît là où on vous cherche — et où on vous cite</span>
+            <div class="sys-grid g3">
+              <div class="sys-node n-out">Votre site<small>pages &amp; articles</small></div>
+              <div class="sys-node n-out">Réseaux sociaux<small>posts localisés</small></div>
+              <div class="sys-node n-out">Presse &amp; IA<small>citations, RP</small></div>
+            </div>
           </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-col">
-            <div class="col-head">Mesure</div>
-            <div class="node node--output"><span class="node-lab">Pilier 4</span><span class="node-title">Reporting</span><span class="node-desc">Social · SEA · SEO · GEO</span></div>
+
+          <div class="sys-down"><span class="sd-cap">tout est mesuré</span><span>↓</span></div>
+
+          <div class="sys-band band--measure">
+            <span class="sb-lab">④ Le reporting mesure tout</span>
+            <div class="measure-line">Social · SEA · SEO · GEO → <b>une note mensuelle claire</b></div>
           </div>
+
+          <div class="loop-bar">↺ Ce qu'on apprend chaque mois réajuste les agents — le dispositif s'améliore au trimestre</div>
+
         </div>
-        <div class="loop-bar">↺ Boucle d'apprentissage — les insights mots-clés nourrissent le pilier 1, la reco mix % nourrit le pilier 2 · révision trimestrielle</div>
       </div>
 
       <!-- PILIER 1 -->
