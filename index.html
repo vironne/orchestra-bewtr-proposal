@@ -277,6 +277,25 @@
   .measure-line b { color: var(--orange-soft); }
   @media (max-width: 900px) { .sys-grid.g3, .sys-grid.g4 { grid-template-columns: 1fr 1fr; } }
 
+  /* === Studio: two bricks + two engine lanes === */
+  .studio-bricks { display: flex; gap: 10px; margin: 4px 0 8px; flex-wrap: wrap; }
+  .brick-pill { flex: 1; min-width: 250px; border: 1px solid var(--line); border-radius: 10px; padding: 13px 15px; background: var(--bg-2); font-size: 12.5px; line-height: 1.45; color: var(--ink-soft); }
+  .brick-pill .bp-n { font-family: 'JetBrains Mono', monospace; color: var(--orange); font-weight: 700; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; display: block; margin-bottom: 5px; }
+  .brick-pill b { color: var(--ink); }
+  .mini-lab { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; color: var(--muted); margin: 22px 0 8px; display: block; }
+  .mini-lab b { color: var(--orange); }
+  .lanes { display: flex; flex-direction: column; gap: 14px; margin: 8px 0 4px; }
+  .lane { border: 1px solid var(--line-2); border-radius: 12px; padding: 14px 16px 8px; background: var(--bg-2); }
+  .lane.l1 { border-left: 4px solid var(--green); }
+  .lane.l2 { border-left: 4px solid var(--orange); }
+  .lane-head { font-size: 14px; margin-bottom: 6px; }
+  .lane-head .lh-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; padding: 3px 9px; border-radius: 20px; font-weight: 700; margin-right: 9px; }
+  .lane.l1 .lh-tag { background: var(--green-pale); color: var(--green); }
+  .lane.l2 .lh-tag { background: var(--orange-pale); color: var(--orange-2); }
+  .lane-head .lh-title { font-weight: 700; }
+  .lane-io { font-size: 12.5px; color: var(--muted); margin: 0 0 10px; line-height: 1.5; }
+  .lane-io b { color: var(--ink-2); }
+
   /* === TECH TAB === */
   .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 12px; }
   .statbox { border: 1px solid var(--line); border-radius: 12px; padding: 26px; background: var(--bg-2); text-align: center; }
@@ -686,8 +705,12 @@
 
       <!-- PILIER 3 -->
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
-        <div class="diagram-title"><span class="d-tag">Pilier 3</span><h3>AI Studio — pipeline de déclinaison</h3></div>
-        <p class="diagram-sub">La gouvernance est dans le code : un asset sans feu vert ne peut techniquement pas entrer dans le pipeline.</p>
+        <div class="diagram-title"><span class="d-tag">Pilier 3</span><h3>AI Studio</h3></div>
+        <p class="diagram-sub">Le Studio a deux briques. La gouvernance est dans le code : un asset sans feu vert n'entre pas dans le pipeline, et les gabarits POS empêchent de sortir de la charte.</p>
+        <div class="studio-bricks">
+          <div class="brick-pill"><span class="bp-n">Brique 1</span><b>Le pipeline de contenu</b> — transforme vos photos &amp; vidéos en contenus prêts à publier. Deux moteurs, selon le type de source.</div>
+          <div class="brick-pill"><span class="bp-n">Brique 2</span><b>L'app POS self-service</b> — les marchés créent eux-mêmes leurs supports point de vente (PLV, menus), sans déborder de la charte.</div>
+        </div>
         <div class="enclair">
           <span class="ec-tag">En clair</span>
           <div class="ec-steps">
@@ -700,74 +723,68 @@
             <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">Un humain <b>choisit</b> — c'est rangé, prêt à publier</span></div>
           </div>
         </div>
+        <span class="mini-lab">D'où ça part — <b>commun aux deux moteurs</b></span>
         <div class="flow">
           <div class="flow-col">
             <div class="col-head">Sources</div>
-            <div class="node node--tool"><span class="node-lab">SharePoint</span><span class="node-title">Assets pros</span><span class="node-desc">Existants + agence</span></div>
-            <div class="node node--warn"><span class="node-lab">Entrée sale</span><span class="node-title">Rushes locaux</span><span class="node-desc">Filmés au téléphone</span></div>
+            <div class="node node--tool"><span class="node-lab">SharePoint</span><span class="node-title">Assets pros</span><span class="node-desc">Banque + tournages agence — déjà propres</span></div>
+            <div class="node node--warn"><span class="node-lab">Entrée sale</span><span class="node-title">Rushes locaux</span><span class="node-desc">Filmés au téléphone, qualité variable</span></div>
           </div>
           <div class="flow-arrow">→</div>
           <div class="flow-col">
-            <div class="col-head">Porte d'entrée</div>
-            <div class="node node--build"><span class="node-lab">Construit</span><span class="node-title">Registre des droits</span><span class="node-desc">Vert / orange / rouge + classification social/POS</span></div>
+            <div class="col-head">Porte des droits · construit</div>
+            <div class="node node--build"><span class="node-lab">Le verrou</span><span class="node-title">Registre des droits</span><span class="node-desc">Vert / orange / rouge — un asset non autorisé ne passe pas</span></div>
           </div>
           <div class="flow-arrow">→</div>
           <div class="flow-col">
-            <div class="col-head">Moteurs</div>
-            <div class="node node--tool"><span class="node-lab">Déterministe</span><span class="node-title">Déclinaison</span><span class="node-desc">Formats, langues, canaux</span></div>
-            <div class="node node--tool"><span class="node-title">Sublimation rushes</span><span class="node-desc">Habillage + sous-titres</span></div>
-            <div class="node node--warn"><span class="node-lab">Exclu</span><span class="node-title">Jamais de personnes générées</span></div>
+            <div class="col-head">Aiguillage</div>
+            <div class="node node--human"><span class="node-title">Selon le type de source</span><span class="node-desc">Asset pro → Moteur 1 · Rush local → Moteur 2</span></div>
+          </div>
+        </div>
+
+        <span class="mini-lab">Puis l'un des <b>deux moteurs</b></span>
+        <div class="lanes">
+          <div class="lane l1">
+            <div class="lane-head"><span class="lh-tag">Moteur 1</span><span class="lh-title">Déclinaison</span></div>
+            <p class="lane-io"><b>Entrée :</b> un asset pro déjà propre. <b>Sortie :</b> le même, en plusieurs formats, langues et canaux. <b>Automatique et fiable</b> — résultat garanti, aucune surprise (technologie de gabarits, pas d'IA générative dans la boucle).</p>
+            <div class="flow">
+              <div class="flow-col"><div class="node node--tool"><span class="node-title">Recadrage par format</span><span class="node-desc">1:1 · 9:16 · 16:9</span></div></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-col"><div class="node node--tool"><span class="node-title">Texte par langue</span><span class="node-desc">FR · EN · AR · ZH</span></div></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-col"><div class="node node--output"><span class="node-title">Variantes prêtes</span></div></div>
+            </div>
+          </div>
+          <div class="lane l2">
+            <div class="lane-head"><span class="lh-tag">Moteur 2</span><span class="lh-title">Sublimation des rushes</span></div>
+            <p class="lane-io"><b>Entrée :</b> un rush brut filmé par un local. <b>Sortie :</b> une vidéo aux couleurs de la marque. <b>Plus délicat</b> — l'agent prépare, l'humain garde la main sur le récit. Bordure verte = fiable, orange = à vérifier, foncé = humain.</p>
+            <div class="flow">
+              <div class="flow-col"><div class="col-head">contrôle</div><div class="node node--human"><span class="node-title">Porte qualité</span><span class="node-desc">Rejet + feedback si trop mauvais</span></div></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-col"><div class="col-head">auto · fiable</div><div class="node node--output"><span class="node-title">Habillage</span><span class="node-desc">Logo, charte, musique</span></div><div class="node node--output"><span class="node-title">Sous-titres</span><span class="node-desc">Multilingue auto</span></div></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-col"><div class="col-head">auto · à vérifier</div><div class="node node--warn"><span class="node-title">Découpe temps morts</span><span class="node-desc">+ présélection des plans</span></div></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-col"><div class="col-head">enjeu fort</div><div class="node node--build"><span class="node-title">Montage fin humain</span><span class="node-desc">Freelance · UAE, France</span></div></div>
+            </div>
+          </div>
+        </div>
+
+        <span class="mini-lab">Fin commune — <b>rien ne sort sans un humain</b></span>
+        <div class="flow">
+          <div class="flow-col">
+            <div class="col-head">Validation</div>
+            <div class="node node--human"><span class="node-lab">Humain</span><span class="node-title">Curation assistée</span><span class="node-desc">Choisit la meilleure variante</span></div>
           </div>
           <div class="flow-arrow">→</div>
           <div class="flow-col">
-            <div class="col-head">Validation → Sortie</div>
-            <div class="node node--human"><span class="node-lab">Humain</span><span class="node-title">Curation assistée</span></div>
+            <div class="col-head">Sortie</div>
             <div class="node node--output"><span class="node-title">Assets tagués → SharePoint</span><span class="node-desc">Le passe-plat vers le Calendrier</span></div>
           </div>
         </div>
-        <div class="diagram-note"><b>App POS self-service (brique 2) :</b> un marché choisit un format, tape son texte, sélectionne un visuel validé → PDF prêt imprimeur. Gabarits verrouillés Vis Id — impossible de sortir de la charte par construction.</div>
-      </div>
 
-      <!-- MOTEUR 2 DÉTAIL -->
-      <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
-        <div class="diagram-title"><span class="d-tag">Pilier 3 · zoom</span><h3>Moteur 2 — sublimation des rushes</h3></div>
-        <p class="diagram-sub">Le moteur le moins déterministe : bordure verte = fiable (on s'engage), orange = probabiliste (vérif humaine), navy = humain.</p>
-        <div class="enclair">
-          <span class="ec-tag">En clair</span>
-          <div class="ec-steps">
-            <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">Un local <b>filme</b> avec son téléphone</span></div>
-            <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">On garde <b>si la qualité suffit</b></span></div>
-            <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">L'agent <b>habille</b> (logo, sous-titres, charte)</span></div>
-            <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">Pour les contenus importants, un monteur <b>peaufine</b> — vous choisissez</span></div>
-          </div>
-        </div>
-        <div class="flow">
-          <div class="flow-col">
-            <div class="col-head">Entrée</div>
-            <div class="node node--human"><span class="node-lab">Porte qualité</span><span class="node-title">Seuil minimal</span><span class="node-desc">Rejet + feedback si trop mauvais</span></div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-col">
-            <div class="col-head">Automatisé · fiable</div>
-            <div class="node node--output"><span class="node-lab">A · habillage</span><span class="node-title">Intro/outro, logo, charte, musique</span></div>
-            <div class="node node--output"><span class="node-lab">B1 · sous-titres</span><span class="node-title">Whisper multilingue</span></div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-col">
-            <div class="col-head">Automatisé · à vérifier</div>
-            <div class="node node--warn"><span class="node-lab">B2 · probabiliste</span><span class="node-title">Découpe temps morts + présélection plans</span></div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-col">
-            <div class="col-head">Enjeu fort</div>
-            <div class="node node--build"><span class="node-lab">C · humain</span><span class="node-title">Montage fin</span><span class="node-desc">Freelance · UAE, France</span></div>
-            <div class="node node--output"><span class="node-title">Variantes → choix humain</span></div>
-          </div>
-        </div>
-        <div class="diagram-note"><b>La règle :</b> l'agent fait le travail ingrat et répétitif (sous-titrer, recadrer, habiller, ranger), l'humain garde le travail éditorial (raconter). On ne promet pas que la machine a du goût — on promet qu'elle libère le temps de ceux qui en ont.</div>
+        <div class="diagram-note"><b>Ce qu'on automatise vs ce qui reste humain :</b> l'agent fait le travail ingrat et répétitif (recadrer, sous-titrer, habiller, ranger) ; l'humain garde le travail éditorial (raconter). On ne promet pas que la machine a du goût — on promet qu'elle libère le temps de ceux qui en ont. Et jamais de génération de personnes : on décline et on sublime du réel.</div>
+        <div class="diagram-note" style="margin-top:10px;"><b>Brique 2 · l'app POS :</b> un marché choisit un format (porte-menu, PLV, signalétique), tape son texte, prend un visuel déjà validé → PDF prêt imprimeur. Gabarits verrouillés à la charte — impossible d'en sortir par construction.</div>
       </div>
 
       <!-- PILIER 4 -->
