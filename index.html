@@ -205,7 +205,24 @@
   .diagram-title { display: flex; align-items: baseline; gap: 14px; margin-bottom: 8px; }
   .diagram-title .d-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); font-weight: 600; }
   .diagram-title h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.015em; }
-  .diagram-sub { font-size: 14px; color: var(--muted); margin-bottom: 26px; max-width: 760px; }
+  .diagram-sub { font-size: 14px; color: var(--muted); margin-bottom: 22px; max-width: 760px; }
+
+  /* === "EN CLAIR" didactic layer === */
+  .howto { font-size: 13px; color: var(--ink-soft); margin-bottom: 30px; padding: 12px 16px; background: var(--bg-3); border-radius: 8px; display: flex; gap: 18px; flex-wrap: wrap; }
+  .howto span { display: inline-flex; align-items: center; gap: 7px; }
+  .howto .hk { width: 13px; height: 13px; border-radius: 4px; display: inline-block; }
+  .enclair { background: var(--orange-pale); border: 1px solid var(--orange-soft); border-radius: 12px; padding: 18px 20px 20px; margin: 0 0 24px; }
+  .enclair .ec-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange-2); font-weight: 700; }
+  .ec-steps { display: flex; align-items: stretch; gap: 0; margin-top: 12px; flex-wrap: nowrap; }
+  .ec-step { flex: 1; display: flex; gap: 10px; align-items: flex-start; padding: 0 4px; }
+  .ec-n { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--orange); color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .ec-t { font-size: 13px; line-height: 1.4; color: var(--ink-2); }
+  .ec-t b { color: var(--orange-2); font-weight: 600; }
+  .ec-arrow { display: flex; align-items: center; color: var(--orange); font-size: 16px; padding: 0 4px; flex-shrink: 0; align-self: flex-start; margin-top: 3px; }
+  @media (max-width: 900px) {
+    .ec-steps { flex-direction: column; gap: 12px; }
+    .ec-arrow { transform: rotate(90deg); align-self: flex-start; margin-left: 6px; }
+  }
 
   .flow { display: flex; align-items: stretch; gap: 0; flex-wrap: nowrap; overflow-x: auto; padding: 6px 2px 16px; }
   .flow-col { display: flex; flex-direction: column; gap: 10px; justify-content: center; min-width: 0; flex: 1; }
@@ -481,7 +498,7 @@
   <section class="block" style="padding-top:56px;">
     <div class="wrap">
       <div class="sec-head"><span class="num">02</span><h2>Architectures <span class="accent">par pilier.</span></h2></div>
-      <p class="sec-intro">Comment chaque pilier fonctionne, des entrées aux sorties. Une seule grammaire visuelle, un code couleur unique.</p>
+      <p class="sec-intro">Chaque pilier est présenté en deux temps : d'abord <strong>« En clair »</strong> — le flux en une phrase, pour tout le monde ; puis le schéma détaillé pour ceux qui veulent le « comment ». Tout se lit de gauche à droite.</p>
 
       <div class="legend">
         <div class="legend-item"><span class="legend-swatch sw-build"></span>Construit par Orchestra</div>
@@ -494,6 +511,18 @@
       <div class="diagram">
         <div class="diagram-title"><span class="d-tag">Vue d'ensemble</span><h3>Le système complet</h3></div>
         <p class="diagram-sub">Quatre piliers, trois surfaces de citation (site · social · presse/RP), le reporting qui mesure tout — et deux boucles d'apprentissage.</p>
+        <div class="enclair">
+          <span class="ec-tag">En clair</span>
+          <div class="ec-steps">
+            <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">On <b>crée</b> le contenu et les preuves</span></div>
+            <div class="ec-arrow">→</div>
+            <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">On le <b>met en images</b></span></div>
+            <div class="ec-arrow">→</div>
+            <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">On le <b>publie</b> au bon moment</span></div>
+            <div class="ec-arrow">→</div>
+            <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">On <b>mesure</b> ce qui marche, et on recommence en mieux</span></div>
+          </div>
+        </div>
         <div class="flow">
           <div class="flow-col">
             <div class="col-head">Produit</div>
@@ -522,6 +551,18 @@
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
         <div class="diagram-title"><span class="d-tag">Pilier 1</span><h3>Agent SEO / GEO</h3></div>
         <p class="diagram-sub">L'agent ne mesure rien lui-même — les outils collectent, lui lit, compare, interprète et agit.</p>
+        <div class="enclair">
+          <span class="ec-tag">En clair</span>
+          <div class="ec-steps">
+            <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">Des outils repèrent <b>où BE WTR apparaît</b> (ou pas) sur Google et dans les IA</span></div>
+            <div class="ec-arrow">→</div>
+            <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">L'agent <b>rédige</b> les contenus qui manquent</span></div>
+            <div class="ec-arrow">→</div>
+            <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">Votre équipe <b>relit et publie</b></span></div>
+            <div class="ec-arrow">→</div>
+            <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">C'est en ligne — et on sait <b>quels médias contacter</b> en RP</span></div>
+          </div>
+        </div>
         <div class="flow">
           <div class="flow-col">
             <div class="col-head">Entrées (données)</div>
@@ -554,6 +595,18 @@
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
         <div class="diagram-title"><span class="d-tag">Pilier 2</span><h3>Calendrier de contenu</h3></div>
         <p class="diagram-sub">Orchestration pure — il assemble de l'existant et déclenche la production de ce qui manque. Il ne génère pas.</p>
+        <div class="enclair">
+          <span class="ec-tag">En clair</span>
+          <div class="ec-steps">
+            <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">On rassemble vos <b>événements</b> et vos <b>contenus existants</b></span></div>
+            <div class="ec-arrow">→</div>
+            <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">L'agent propose un <b>planning de posts</b> mois par mois</span></div>
+            <div class="ec-arrow">→</div>
+            <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">Vous <b>validez</b> au central</span></div>
+            <div class="ec-arrow">→</div>
+            <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">Les posts partent sur les réseaux — les marchés <b>adaptent</b>, ne produisent plus</span></div>
+          </div>
+        </div>
         <div class="flow">
           <div class="flow-col">
             <div class="col-head">Entrées</div>
@@ -587,6 +640,18 @@
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
         <div class="diagram-title"><span class="d-tag">Pilier 3</span><h3>AI Studio — pipeline de déclinaison</h3></div>
         <p class="diagram-sub">La gouvernance est dans le code : un asset sans feu vert ne peut techniquement pas entrer dans le pipeline.</p>
+        <div class="enclair">
+          <span class="ec-tag">En clair</span>
+          <div class="ec-steps">
+            <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">On part de vos <b>photos et vidéos</b> (banque + tournages locaux)</span></div>
+            <div class="ec-arrow">→</div>
+            <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">On <b>vérifie les droits</b> automatiquement</span></div>
+            <div class="ec-arrow">→</div>
+            <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">On les <b>décline</b> en formats, langues, canaux</span></div>
+            <div class="ec-arrow">→</div>
+            <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">Un humain <b>choisit</b> — c'est rangé, prêt à publier</span></div>
+          </div>
+        </div>
         <div class="flow">
           <div class="flow-col">
             <div class="col-head">Sources</div>
@@ -619,6 +684,18 @@
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
         <div class="diagram-title"><span class="d-tag">Pilier 3 · zoom</span><h3>Moteur 2 — sublimation des rushes</h3></div>
         <p class="diagram-sub">Le moteur le moins déterministe : bordure verte = fiable (on s'engage), orange = probabiliste (vérif humaine), navy = humain.</p>
+        <div class="enclair">
+          <span class="ec-tag">En clair</span>
+          <div class="ec-steps">
+            <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">Un local <b>filme</b> avec son téléphone</span></div>
+            <div class="ec-arrow">→</div>
+            <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">On garde <b>si la qualité suffit</b></span></div>
+            <div class="ec-arrow">→</div>
+            <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">L'agent <b>habille</b> (logo, sous-titres, charte)</span></div>
+            <div class="ec-arrow">→</div>
+            <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">Pour les contenus importants, un monteur <b>peaufine</b> — vous choisissez</span></div>
+          </div>
+        </div>
         <div class="flow">
           <div class="flow-col">
             <div class="col-head">Entrée</div>
@@ -649,6 +726,18 @@
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
         <div class="diagram-title"><span class="d-tag">Pilier 4</span><h3>Reporting — trois couches</h3></div>
         <p class="diagram-sub">Plomberie standard assumée en bas, intelligence réelle au-dessus.</p>
+        <div class="enclair">
+          <span class="ec-tag">En clair</span>
+          <div class="ec-steps">
+            <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">On <b>branche</b> toutes vos sources de chiffres</span></div>
+            <div class="ec-arrow">→</div>
+            <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">Un outil gratuit les <b>rassemble</b> sur un tableau de bord</span></div>
+            <div class="ec-arrow">→</div>
+            <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">L'agent <b>écrit</b> chaque mois ce qui s'est passé et pourquoi</span></div>
+            <div class="ec-arrow">→</div>
+            <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">Vous recevez une <b>note claire</b>, prête à transmettre</span></div>
+          </div>
+        </div>
         <div class="flow">
           <div class="flow-col">
             <div class="col-head">Sources</div>
