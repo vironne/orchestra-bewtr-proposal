@@ -93,6 +93,8 @@
   .pcard li { font-size: 13.5px; color: var(--ink-soft); padding: 6px 0 6px 18px; position: relative; line-height: 1.45; }
   .pcard li::before { content: ""; width: 6px; height: 1px; background: var(--orange); position: absolute; left: 0; top: 14px; }
   .pcard .posture { margin-top: 16px; font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.45; }
+  .pcard.light { padding: 22px 24px; }
+  .pcard.light .tagline { border-bottom: none; padding-bottom: 0; margin-bottom: 0; color: var(--ink-soft); font-size: 14px; }
 
   .pp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .pp { border-left: 3px solid var(--orange); padding: 6px 0 6px 20px; }
@@ -290,31 +292,10 @@
       <div class="sec-head"><span class="num">01</span><h2>Ce qu'on a <span class="accent">compris.</span></h2></div>
       <p class="sec-intro">Avant de proposer quoi que ce soit, voici ce qu'on a retenu de votre brief et de votre situation. Si une lecture est à côté, on la corrige ensemble.</p>
       <div class="understand-grid">
-        <div class="u-card">
-          <span class="u-lab">Votre priorité</span>
-          <h4>D'abord la notoriété B2B, puis le B2C</h4>
-          <p>Construire la crédibilité de la marque via l'HORECA (hôtels, restaurants) dans les villes clés — puis l'expansion grand public, Suisse et UAE en tête.</p>
-        </div>
-        <div class="u-card">
-          <span class="u-lab">Votre contexte</span>
-          <h4>Passer à l'échelle sur 9 marchés</h4>
-          <p>Accor, B Corp, Série C : la demande est là. Le défi devient la cadence et le volume — produire partout sans surcharger des équipes qui ne sont pas des spécialistes du contenu.</p>
-        </div>
-        <div class="u-card">
-          <span class="u-lab">Vos 4 demandes</span>
-          <h4>Le périmètre du brief</h4>
-          <ul>
-            <li>Visibilité SEO &amp; GEO, marché par marché</li>
-            <li>Un calendrier de contenu 50/50 global-local</li>
-            <li>Un studio de production (déclinaison + POS)</li>
-            <li>Un reporting mensuel agrégé</li>
-          </ul>
-        </div>
-        <div class="u-card">
-          <span class="u-lab">Votre contrainte</span>
-          <h4>Opérationnel dès septembre 2026</h4>
-          <p>Des agents intégrés aux opérations à la rentrée, et un budget construit pilier par pilier pour pouvoir séquencer librement.</p>
-        </div>
+        <div class="u-card"><span class="u-lab">Votre priorité</span><h4>Le B2B d'abord, puis le B2C</h4><p>La notoriété via les hôtels &amp; restaurants — puis le grand public (Suisse, UAE).</p></div>
+        <div class="u-card"><span class="u-lab">Votre enjeu</span><h4>Passer à l'échelle sur 9 marchés</h4><p>La demande est là. Le défi : produire partout, sans surcharger les équipes.</p></div>
+        <div class="u-card"><span class="u-lab">Vos 4 demandes</span><h4>Le périmètre du brief</h4><p>Visibilité SEO/GEO · calendrier de contenu · studio de production · reporting.</p></div>
+        <div class="u-card"><span class="u-lab">Votre contrainte</span><h4>Opérationnel en septembre 2026</h4><p>Activable pilier par pilier, pour séquencer à votre rythme.</p></div>
       </div>
     </div>
   </section>
@@ -324,7 +305,7 @@
       <div class="angle">
         <span class="eyebrow">NOTRE LECTURE</span>
         <h3>Les nouveaux moteurs récompensent la preuve, <span class="accent">pas le volume.</span></h3>
-        <p>Pendant quinze ans, le référencement a récompensé la masse — autorité de domaine, volume de contenu, budgets : Culligan et Castalie gagnent par la taille. Les moteurs de réponse changent la règle : ils citent ce qui est <strong style="color:#fff">vérifiable</strong> — certifications, chiffres, faits. Or BE WTR est la marque la plus prouvable de sa catégorie (B Corp, embouteillage en centre-ville, Bocuse d'Or, Accor) avec le dispositif le moins structuré. C'est une fenêtre où le challenger bat l'installé — non en produisant plus, mais en structurant mieux ses preuves. Et cette fenêtre se referme.</p>
+        <p>Les moteurs de réponse (ChatGPT, Google IA…) ne citent plus le plus gros, mais le plus <strong style="color:#fff">prouvable</strong>. Or BE WTR est la marque la plus prouvable de sa catégorie — B Corp, Bocuse d'Or, Accor. La fenêtre pour le faire valoir est ouverte aujourd'hui. Elle se refermera.</p>
       </div>
     </div>
   </section>
@@ -332,7 +313,7 @@
   <section class="block">
     <div class="wrap">
       <div class="sec-head"><span class="num">02</span><h2>Notre proposition : <span class="accent">un système.</span></h2></div>
-      <p class="sec-intro">Pas quatre outils séparés — quatre agents qui se passent le relais, branchés sur vos outils et validés par vos équipes. Voici la vue d'ensemble ; le détail de chaque système est dans l'onglet « L'Écosystème ».</p>
+      <p class="sec-intro">Pas quatre outils — quatre agents qui se passent le relais. Le détail de chaque système est dans l'onglet « L'Écosystème ».</p>
       <div class="relay">
         <div class="relay-step"><span class="rs-n">01</span><b>Trouve &amp; crée</b><small>l'agent SEO / GEO</small></div>
         <div class="relay-arrow">→</div>
@@ -349,61 +330,12 @@
   <section class="block">
     <div class="wrap">
       <div class="sec-head"><span class="num">03</span><h2>Les systèmes, <span class="accent">pilier par pilier.</span></h2></div>
-      <p class="sec-intro">Chaque pilier répond à l'une de vos quatre demandes. Vue rapide ici ; le « comment ça marche » détaillé est dans l'onglet « L'Écosystème ».</p>
+      <p class="sec-intro">Un pilier par demande. Le « comment ça marche » est dans l'onglet « L'Écosystème ».</p>
       <div class="pillars-grid">
-
-        <div class="pcard">
-          <div class="pcard-top"><span class="pcard-num">P / 01</span><span class="pcard-dot"></span></div>
-          <h4>SEO & GEO</h4>
-          <p class="tagline">Un agent unique qui surveille, rédige, optimise et alerte — en continu.</p>
-          <ul>
-            <li>Baseline chiffrée de votre présence avant toute action.</li>
-            <li>Fondations dans l'ordre : quick wins → pages B2B → cluster D2C.</li>
-            <li>Production de contenu en brouillon, validation humaine.</li>
-            <li>Surfaces de citation : site + social + RP orientée.</li>
-          </ul>
-          <p class="posture">B2B = crédibilité / validation. D2C = acquisition. Un seul domaine bewtr.com.</p>
-        </div>
-
-        <div class="pcard">
-          <div class="pcard-top"><span class="pcard-num">P / 02</span><span class="pcard-dot"></span></div>
-          <h4>Calendrier de contenu</h4>
-          <p class="tagline">Modèle 50/50 global-local. L'agent orchestre, il ne génère pas.</p>
-          <ul>
-            <li>Anticipe : thèmes calés sur le plan commercial + événements.</li>
-            <li>Pousse le owned d'abord (chaque post social = surface GEO).</li>
-            <li>Recommande le mix thématique en %, révisé au trimestre.</li>
-            <li>Les marchés adaptent — ils ne produisent plus.</li>
-          </ul>
-          <p class="posture">Cadence cible : quotidien Instagram + LinkedIn, puis TikTok.</p>
-        </div>
-
-        <div class="pcard">
-          <div class="pcard-top"><span class="pcard-num">P / 03</span><span class="pcard-dot"></span></div>
-          <h4>AI Studio</h4>
-          <p class="tagline">Deux plateformes : supports point de vente en self-service, et déclinaison de contenu par brief.</p>
-          <ul>
-            <li>POS self-service : chaque marché crée ses supports, à la charte.</li>
-            <li>Studio par brief : resizing, langues, sous-titres, voix off…</li>
-            <li>Se branche sur votre banque d'assets existante.</li>
-            <li>L'humain valide ; jamais de personnes générées.</li>
-          </ul>
-          <p class="posture">Gouvernance modèle Kiabi : on décline et on sublime du réel.</p>
-        </div>
-
-        <div class="pcard">
-          <div class="pcard-top"><span class="pcard-num">P / 04</span><span class="pcard-dot"></span></div>
-          <h4>Reporting mensuel</h4>
-          <p class="tagline">Un agent agrégateur qui centralise tout et recommande des actions.</p>
-          <ul>
-            <li>Agrège toutes vos sources — sans usine à gaz.</li>
-            <li>4 volets : Social, SEA, SEO, GEO (part de citation IA).</li>
-            <li>Note mensuelle auto-rédigée : quoi, pourquoi, quoi faire.</li>
-            <li>Recommande les sujets et les actions du mois suivant.</li>
-          </ul>
-          <p class="posture">Prouve la délivery de tous les autres piliers.</p>
-        </div>
-
+        <div class="pcard light"><div class="pcard-top"><span class="pcard-num">P / 01</span><span class="pcard-dot"></span></div><h4>SEO &amp; GEO</h4><p class="tagline">Rend BE WTR visible — sur Google comme dans les réponses des IA.</p></div>
+        <div class="pcard light"><div class="pcard-top"><span class="pcard-num">P / 02</span><span class="pcard-dot"></span></div><h4>Calendrier de contenu</h4><p class="tagline">Planifie et alimente vos réseaux, chaque mois, sur tous les marchés.</p></div>
+        <div class="pcard light"><div class="pcard-top"><span class="pcard-num">P / 03</span><span class="pcard-dot"></span></div><h4>AI Studio</h4><p class="tagline">Décline vos visuels et crée vos supports point de vente, à la charte.</p></div>
+        <div class="pcard light"><div class="pcard-top"><span class="pcard-num">P / 04</span><span class="pcard-dot"></span></div><h4>Reporting</h4><p class="tagline">Réunit tous vos chiffres et vous dit, chaque mois, quoi faire ensuite.</p></div>
       </div>
     </div>
   </section>
@@ -411,12 +343,12 @@
   <section class="block">
     <div class="wrap">
       <div class="sec-head"><span class="num">04</span><h2>Les quatre <span class="accent">partis pris.</span></h2></div>
-      <p class="sec-intro">Les décisions structurantes à acter — c'est l'alignement à obtenir avant tout chiffrage ferme.</p>
+      <p class="sec-intro">Les quelques décisions à acter ensemble avant de chiffrer.</p>
       <div class="pp-grid">
-        <div class="pp"><h5>Une entité, un domaine</h5><p>Tout (B2B, D2C, 9 marchés) vit sur bewtr.com en sous-dossiers. Un domaine séparé repartirait de zéro — 12 à 24 mois pour exister, pile pendant le lancement D2C.</p></div>
-        <div class="pp"><h5>B2B = validation, pas volume</h5><p>On ne se bat pas contre Culligan sur « fontaine à eau ». On verrouille les requêtes de vérification et les territoires incontestés (B Corp, eau locale).</p></div>
-        <div class="pp"><h5>Un agent, pas un outil de plus</h5><p>Vous gardez vos outils (site, banque d'assets, planning). Nos agents s'y branchent et font le travail. Tout ce dont nous avons besoin : les accès.</p></div>
-        <div class="pp"><h5>L'IA en coulisses (modèle Kiabi)</h5><p>Pour une B Corp premium : déclinaison d'assets réels OK, jamais de génération de personnes, contenus full-IA identifiés. « On ne génère pas de faux, on sublime du vrai. »</p></div>
+        <div class="pp"><h5>Une entité, un domaine</h5><p>Tout sur bewtr.com — pas de site séparé qui repartirait de zéro.</p></div>
+        <div class="pp"><h5>B2B = crédibilité, pas volume</h5><p>On verrouille les requêtes de vérification et les territoires incontestés (B Corp, eau locale).</p></div>
+        <div class="pp"><h5>Un agent, pas un outil de plus</h5><p>Vous gardez vos outils. Nos agents s'y branchent. Il nous faut juste les accès.</p></div>
+        <div class="pp"><h5>L'IA en coulisses</h5><p>On décline et on sublime du réel — jamais de faux généré. Cohérent B Corp.</p></div>
       </div>
     </div>
   </section>
@@ -447,26 +379,24 @@
   <section class="block">
     <div class="wrap">
       <div class="sec-head"><span class="num">06</span><h2>Ce qu'on promet — <span class="accent">et ce qu'on ne promet pas.</span></h2></div>
-      <p class="sec-intro">88 % des projets d'agents IA n'atteignent jamais la production. Notre discipline de périmètre est le garde-fou — et notre honnêteté sur les indicateurs.</p>
+      <p class="sec-intro">Notre garde-fou : un périmètre étroit, et de l'honnêteté sur les indicateurs.</p>
       <div class="promise-grid">
         <div class="promise-col no">
           <h5>✕ Ce qu'on ne promet pas</h5>
           <ul>
-            <li>« Top 2 GEO » chiffré au sens strict</li>
-            <li>Montage vidéo premium 100 % automatique</li>
-            <li>Du contenu généré par IA « comme un humain »</li>
+            <li>Un classement « top 2 » garanti</li>
+            <li>De la vidéo premium 100 % automatique</li>
+            <li>Du faux contenu généré par IA</li>
             <li>Les 4 piliers livrés d'un bloc</li>
-            <li>« L'agent tourne tout seul »</li>
           </ul>
         </div>
         <div class="promise-col yes">
           <h5>✓ Ce qu'on promet</h5>
           <ul>
-            <li>Une progression de part de citation mesurée en tendance</li>
-            <li>Templatisé pour le volume + montage fin humain à enjeu</li>
-            <li>De l'IA en coulisses qui sublime du réel</li>
-            <li>Des agents séquencés, validés un à un</li>
-            <li>Un agent supervisé, humain dans la boucle partout</li>
+            <li>Une visibilité qui progresse, mesurée</li>
+            <li>L'automatique pour le volume, l'humain pour l'important</li>
+            <li>De l'IA qui sublime du réel</li>
+            <li>Des piliers activés un à un, validés</li>
           </ul>
         </div>
       </div>
