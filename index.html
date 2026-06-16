@@ -144,6 +144,10 @@
   .relay-arrow { display: flex; align-items: center; color: var(--orange); font-size: 20px; padding: 0 8px; }
   .relay-base { background: var(--slate-pale); border: 1px solid var(--slate-line); border-radius: 10px; padding: 13px 18px; font-size: 13.5px; color: var(--slate); text-align: center; font-weight: 500; }
   .relay-base b { color: var(--ink-2); }
+  .loopback { display: flex; align-items: center; gap: 14px; margin: 4px 0 12px; padding: 14px 18px; border: 1.5px dashed var(--orange); border-radius: 12px; background: rgba(233,120,37,0.05); }
+  .loopback .lb-ico { font-size: 24px; color: var(--orange); flex-shrink: 0; line-height: 1; }
+  .loopback .lb-text { font-size: 13.5px; color: var(--orange-2); line-height: 1.45; }
+  .loopback .lb-text b { color: var(--orange-2); font-weight: 700; }
   @media (max-width: 900px) { .understand-grid { grid-template-columns: 1fr; } .relay { flex-direction: column; } .relay-arrow { transform: rotate(90deg); padding: 6px 0; } }
 
   /* === DIAGRAMS (3-color system) === */
@@ -302,18 +306,8 @@
 
   <section class="block">
     <div class="wrap">
-      <div class="angle">
-        <span class="eyebrow">NOTRE LECTURE</span>
-        <h3>Les nouveaux moteurs récompensent la preuve, <span class="accent">pas le volume.</span></h3>
-        <p>Les moteurs de réponse (ChatGPT, Google IA…) ne citent plus le plus gros, mais le plus <strong style="color:#fff">prouvable</strong>. Or BE WTR est la marque la plus prouvable de sa catégorie — B Corp, Bocuse d'Or, Accor. La fenêtre pour le faire valoir est ouverte aujourd'hui. Elle se refermera.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="wrap">
-      <div class="sec-head"><span class="num">02</span><h2>Notre proposition : <span class="accent">un système.</span></h2></div>
-      <p class="sec-intro">Pas quatre outils — quatre agents qui se passent le relais. Le détail de chaque système est dans l'onglet « L'Écosystème ».</p>
+      <div class="sec-head"><span class="num">02</span><h2>Comment ils <span class="accent">travaillent ensemble.</span></h2></div>
+      <p class="sec-intro">Quatre agents, une chaîne : chacun passe le relais au suivant. Le dernier mesure les résultats et renvoie ses recommandations — à vos équipes comme aux agents. Le dispositif s'améliore à chaque cycle.</p>
       <div class="relay">
         <div class="relay-step"><span class="rs-n">01</span><b>Trouve &amp; crée</b><small>l'agent SEO / GEO</small></div>
         <div class="relay-arrow">→</div>
@@ -322,6 +316,10 @@
         <div class="relay-step"><span class="rs-n">03</span><b>Publie au bon moment</b><small>le calendrier</small></div>
         <div class="relay-arrow">→</div>
         <div class="relay-step"><span class="rs-n">04</span><b>Mesure &amp; recommande</b><small>le reporting</small></div>
+      </div>
+      <div class="loopback">
+        <span class="lb-ico">↺</span>
+        <span class="lb-text">La mesure et les recommandations <b>reviennent nourrir vos équipes et les agents</b> — et le cycle recommence, en mieux à chaque fois.</span>
       </div>
       <div class="relay-base">Le tout branché sur <b>vos outils</b> — et validé par <b>vos équipes</b> avant chaque publication.</div>
     </div>
