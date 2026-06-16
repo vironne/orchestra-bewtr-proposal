@@ -153,6 +153,16 @@
   .cycle-wrap svg { width: 100%; max-width: 470px; height: auto; }
   .cycle-cap { font-size: 13px; color: var(--muted); text-align: center; margin-top: 12px; max-width: 540px; line-height: 1.5; }
   .cycle-cap b { color: var(--ink-2); }
+  /* animated galaxy cycle */
+  .orbit2 { display: flex; flex-direction: column; align-items: center; padding: 6px 0 0; }
+  .orbit2 svg { width: 100%; max-width: 580px; height: auto; }
+  @keyframes o-march { to { stroke-dashoffset: -26; } }
+  @keyframes o-spin { to { transform: rotate(360deg); } }
+  @keyframes o-pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+  .o-feedback { stroke-dasharray: 8 7; animation: o-march 1.2s linear infinite; }
+  .o-galaxy { animation: o-spin 60s linear infinite; transform-box: fill-box; transform-origin: center; }
+  .o-hub { animation: o-pulse 3.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  @media (prefers-reduced-motion: reduce) { .o-feedback, .o-galaxy, .o-hub { animation: none; } .o-dot { display: none; } }
   @media (max-width: 900px) { .understand-grid { grid-template-columns: 1fr; } .relay { flex-direction: column; } .relay-arrow { transform: rotate(90deg); padding: 6px 0; } }
 
   /* === DIAGRAMS (3-color system) === */
@@ -313,50 +323,63 @@
     <div class="wrap">
       <div class="sec-head"><span class="num">02</span><h2>Comment ils <span class="accent">travaillent ensemble.</span></h2></div>
       <p class="sec-intro">Un cycle, pas une ligne : vos canaux nourrissent les agents, qui produisent ; on mesure les résultats — et ces enseignements relancent le tour suivant, en mieux.</p>
-      <div class="cycle-wrap">
-        <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Le cycle Orchestra : canaux, agents, résultat, mesure, et reboucle">
+      <div class="orbit2">
+        <svg viewBox="0 0 640 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Le cycle Orchestra animé : canaux, agents, résultat, mesure, et reboucle">
           <defs>
-            <marker id="ah" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L7,3 L0,6 Z" fill="#C95E12"/></marker>
-            <marker id="ahl" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L7,3 L0,6 Z" fill="#E97825"/></marker>
+            <marker id="oah" markerWidth="12" markerHeight="12" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L8,4 L0,8 Z" fill="#C95E12"/></marker>
+            <marker id="oahl" markerWidth="12" markerHeight="12" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L8,4 L0,8 Z" fill="#E97825"/></marker>
           </defs>
-          <circle cx="300" cy="300" r="200" fill="none" stroke="#EDF1F3" stroke-width="2"/>
-          <!-- flow arcs (clockwise) -->
-          <path d="M362,110 A200,200 0 0 1 490,238" fill="none" stroke="#C95E12" stroke-width="2.5" marker-end="url(#ah)"/>
-          <path d="M490,362 A200,200 0 0 1 362,490" fill="none" stroke="#C95E12" stroke-width="2.5" marker-end="url(#ah)"/>
-          <path d="M238,490 A200,200 0 0 1 110,362" fill="none" stroke="#C95E12" stroke-width="2.5" marker-end="url(#ah)"/>
-          <!-- closing loop arc (dashed = feedback) -->
-          <path d="M110,238 A200,200 0 0 1 238,110" fill="none" stroke="#E97825" stroke-width="2.5" stroke-dasharray="6 5" marker-end="url(#ahl)"/>
-          <!-- center hub -->
-          <circle cx="300" cy="300" r="64" fill="#FFFFFF" stroke="#CAD4DA" stroke-width="1.5"/>
-          <text x="300" y="296" text-anchor="middle" font-size="32" fill="#E97825" font-family="Inter Tight, sans-serif">↻</text>
-          <text x="300" y="320" text-anchor="middle" font-size="11.5" fill="#777777" font-family="Inter Tight, sans-serif">chaque mois,</text>
-          <text x="300" y="335" text-anchor="middle" font-size="11.5" fill="#777777" font-family="Inter Tight, sans-serif">en mieux</text>
-          <!-- node: top — vos canaux (slate) -->
-          <g>
-            <rect x="218" y="70" width="164" height="62" rx="13" fill="#44535F"/>
-            <text x="300" y="96" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" font-family="Inter Tight, sans-serif">VOS CANAUX</text>
-            <text x="300" y="115" text-anchor="middle" font-size="10.5" fill="#fff" opacity="0.86" font-family="Inter Tight, sans-serif">site · réseaux · points de vente</text>
+          <!-- faint rotating galaxy ring -->
+          <circle class="o-galaxy" cx="320" cy="300" r="234" fill="none" stroke="#EDE6DB" stroke-width="1" stroke-dasharray="2 12"/>
+          <!-- main orbit ring -->
+          <circle cx="320" cy="300" r="210" fill="none" stroke="#EFEBE3" stroke-width="2"/>
+          <!-- flow arcs (clockwise) with arrowheads -->
+          <path d="M370.8,96.2 A210,210 0 0 1 523.8,249.2" fill="none" stroke="#C95E12" stroke-width="3" marker-end="url(#oah)"/>
+          <path d="M523.8,350.8 A210,210 0 0 1 370.8,503.8" fill="none" stroke="#C95E12" stroke-width="3" marker-end="url(#oah)"/>
+          <path d="M269.2,503.8 A210,210 0 0 1 116.2,350.8" fill="none" stroke="#C95E12" stroke-width="3" marker-end="url(#oah)"/>
+          <!-- feedback arc (dashed, marching = the loop) -->
+          <path class="o-feedback" d="M116.2,249.2 A210,210 0 0 1 269.2,96.2" fill="none" stroke="#E97825" stroke-width="3" marker-end="url(#oahl)"/>
+          <!-- travelling flow dots -->
+          <circle class="o-dot" r="5" fill="#E97825"><animateMotion dur="11s" repeatCount="indefinite" path="M320,90 A210,210 0 1 1 320,510 A210,210 0 1 1 320,90"/></circle>
+          <circle class="o-dot" r="4" fill="#E97825" opacity="0.7"><animateMotion dur="11s" begin="-3.6s" repeatCount="indefinite" path="M320,90 A210,210 0 1 1 320,510 A210,210 0 1 1 320,90"/></circle>
+          <circle class="o-dot" r="4" fill="#E97825" opacity="0.7"><animateMotion dur="11s" begin="-7.3s" repeatCount="indefinite" path="M320,90 A210,210 0 1 1 320,510 A210,210 0 1 1 320,90"/></circle>
+          <!-- center hub (pulses) -->
+          <g class="o-hub">
+            <circle cx="320" cy="300" r="70" fill="#FFFFFF" stroke="#CAD4DA" stroke-width="1.5"/>
+            <text x="320" y="294" text-anchor="middle" font-size="34" fill="#E97825" font-family="Inter Tight, sans-serif">↻</text>
+            <text x="320" y="318" text-anchor="middle" font-size="12" fill="#777777" font-family="Inter Tight, sans-serif">chaque mois,</text>
+            <text x="320" y="334" text-anchor="middle" font-size="12" fill="#777777" font-family="Inter Tight, sans-serif">en mieux</text>
           </g>
-          <!-- node: right — les agents (orange) -->
+          <!-- station: top — votre écosystème (slate) -->
           <g>
-            <rect x="418" y="269" width="164" height="62" rx="13" fill="#E97825"/>
-            <text x="500" y="295" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" font-family="Inter Tight, sans-serif">LES AGENTS</text>
-            <text x="500" y="314" text-anchor="middle" font-size="10.5" fill="#fff" opacity="0.9" font-family="Inter Tight, sans-serif">créent &amp; publient</text>
+            <rect x="222" y="48" width="196" height="86" rx="14" fill="#44535F"/>
+            <text x="320" y="76" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Inter Tight, sans-serif">VOTRE ÉCOSYSTÈME</text>
+            <text x="320" y="97" text-anchor="middle" font-size="11" fill="#fff" opacity="0.85" font-family="Inter Tight, sans-serif">Site web · Instagram · LinkedIn</text>
+            <text x="320" y="113" text-anchor="middle" font-size="11" fill="#fff" opacity="0.85" font-family="Inter Tight, sans-serif">TikTok · Points de vente</text>
           </g>
-          <!-- node: bottom — le résultat (green) -->
+          <!-- station: right — les agents (orange) -->
           <g>
-            <rect x="218" y="468" width="164" height="62" rx="13" fill="#2E7D5B"/>
-            <text x="300" y="494" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" font-family="Inter Tight, sans-serif">LE RÉSULTAT</text>
-            <text x="300" y="513" text-anchor="middle" font-size="10.5" fill="#fff" opacity="0.9" font-family="Inter Tight, sans-serif">visibilité · contenu</text>
+            <rect x="432" y="257" width="196" height="86" rx="14" fill="#E97825"/>
+            <text x="530" y="285" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Inter Tight, sans-serif">LES AGENTS</text>
+            <text x="530" y="306" text-anchor="middle" font-size="11" fill="#fff" opacity="0.92" font-family="Inter Tight, sans-serif">SEO/GEO · AI Studio</text>
+            <text x="530" y="322" text-anchor="middle" font-size="11" fill="#fff" opacity="0.92" font-family="Inter Tight, sans-serif">Calendrier · créent &amp; publient</text>
           </g>
-          <!-- node: left — mesure & reco (orange) -->
+          <!-- station: bottom — le résultat (green) -->
           <g>
-            <rect x="18" y="269" width="164" height="62" rx="13" fill="#E97825"/>
-            <text x="100" y="295" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" font-family="Inter Tight, sans-serif">MESURE &amp; RECO</text>
-            <text x="100" y="314" text-anchor="middle" font-size="10.5" fill="#fff" opacity="0.9" font-family="Inter Tight, sans-serif">recommande la suite</text>
+            <rect x="222" y="466" width="196" height="86" rx="14" fill="#2E7D5B"/>
+            <text x="320" y="494" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Inter Tight, sans-serif">LE RÉSULTAT</text>
+            <text x="320" y="515" text-anchor="middle" font-size="11" fill="#fff" opacity="0.92" font-family="Inter Tight, sans-serif">Visibilité · contenu régulier</text>
+            <text x="320" y="531" text-anchor="middle" font-size="11" fill="#fff" opacity="0.92" font-family="Inter Tight, sans-serif">supports · citations IA</text>
+          </g>
+          <!-- station: left — mesure & reco (orange) -->
+          <g>
+            <rect x="12" y="257" width="196" height="86" rx="14" fill="#E97825"/>
+            <text x="110" y="285" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Inter Tight, sans-serif">MESURE &amp; RECO</text>
+            <text x="110" y="306" text-anchor="middle" font-size="11" fill="#fff" opacity="0.92" font-family="Inter Tight, sans-serif">Reporting agrégateur</text>
+            <text x="110" y="322" text-anchor="middle" font-size="11" fill="#fff" opacity="0.92" font-family="Inter Tight, sans-serif">recommande la suite</text>
           </g>
         </svg>
-        <p class="cycle-cap">La flèche en pointillé, c'est la boucle : les recommandations <b>reviennent nourrir vos équipes et les agents</b>. À chaque étape, vos équipes valident — et vous gardez vos outils.</p>
+        <p class="cycle-cap">Les points orange, c'est le flux qui circule en continu. La flèche en pointillé qui « défile », c'est la boucle : les recommandations <b>reviennent nourrir vos équipes et les agents</b>. À chaque étape, vos équipes valident — et vous gardez vos outils.</p>
       </div>
     </div>
   </section>
