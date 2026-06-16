@@ -23,132 +23,66 @@
     --orange-2: #C95E12;
     --orange-soft: #F4C9A6;
     --orange-pale: #FBEFE2;
-    --navy: #14263A;
+    --slate: #44535F;
+    --slate-2: #5E6E7A;
+    --slate-pale: #EDF1F3;
+    --slate-line: #CAD4DA;
     --green: #2E7D5B;
     --green-pale: #E7F2EC;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    background: var(--bg);
-    color: var(--ink);
+    background: var(--bg); color: var(--ink);
     font-family: 'Inter Tight', -apple-system, system-ui, sans-serif;
-    font-weight: 400;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+    font-weight: 400; line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden;
   }
   .wrap { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
 
-  .eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
-    font-weight: 600; color: var(--orange);
-  }
+  .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; color: var(--orange); }
   .eyebrow.muted { color: var(--muted); }
-  .lab {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase;
-    font-weight: 500; color: var(--muted);
-  }
+  .lab { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; color: var(--muted); }
   .accent { color: var(--orange); }
 
-  /* === NAV === */
-  .nav {
-    position: sticky; top: 0; z-index: 90;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(14px) saturate(120%);
-    -webkit-backdrop-filter: blur(14px) saturate(120%);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-inner {
-    max-width: 1240px; margin: 0 auto; padding: 0 40px;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 64px;
-  }
-  .brand {
-    display: flex; align-items: baseline; gap: 9px;
-    font-weight: 700; font-size: 14px; letter-spacing: 0.04em;
-    white-space: nowrap;
-  }
+  /* NAV */
+  .nav { position: sticky; top: 0; z-index: 90; background: rgba(255,255,255,0.92); backdrop-filter: blur(14px) saturate(120%); -webkit-backdrop-filter: blur(14px) saturate(120%); border-bottom: 1px solid var(--line); }
+  .nav-inner { max-width: 1240px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { display: flex; align-items: baseline; gap: 9px; font-weight: 700; font-size: 14px; letter-spacing: 0.04em; white-space: nowrap; }
   .brand .x { color: var(--orange); font-weight: 500; }
-  .brand .bw { color: var(--ink); }
   .tabs { display: flex; gap: 4px; }
-  .tab-btn {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
-    font-weight: 500; color: var(--muted);
-    background: none; border: none; cursor: pointer;
-    padding: 9px 16px; border-radius: 7px;
-    transition: all 0.2s; display: flex; align-items: center; gap: 8px;
-  }
+  .tab-btn { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; color: var(--muted); background: none; border: none; cursor: pointer; padding: 9px 16px; border-radius: 7px; transition: all 0.2s; display: flex; align-items: center; gap: 8px; }
   .tab-btn .n { color: var(--orange); font-weight: 600; }
   .tab-btn:hover { color: var(--ink); background: var(--bg-3); }
-  .tab-btn.active { color: var(--ink); background: var(--ink); }
-  .tab-btn.active, .tab-btn.active .n { color: #fff; }
+  .tab-btn.active { color: #fff; background: var(--ink); }
   .tab-btn.active .n { color: var(--orange-soft); }
 
-  /* === TAB PANELS === */
   .panel { display: none; animation: fade 0.4s ease; }
   .panel.active { display: block; }
   @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
-  /* === HERO === */
+  /* HERO */
   .hero { padding: 80px 0 60px; border-bottom: 1px solid var(--line); }
   .hero .eyebrow { display: inline-block; margin-bottom: 22px; }
-  .hero h1 {
-    font-size: clamp(2.2rem, 4.6vw, 3.6rem);
-    font-weight: 700; line-height: 1.08; letter-spacing: -0.025em;
-    max-width: 900px; margin-bottom: 22px;
-  }
-  .hero h1 .accent { color: var(--orange); }
-  .hero .sub {
-    font-size: 1.15rem; color: var(--ink-soft); max-width: 720px; line-height: 1.5;
-  }
-  .hero-meta {
-    display: flex; gap: 48px; margin-top: 44px; flex-wrap: wrap;
-  }
+  .hero h1 { font-size: clamp(2.2rem, 4.6vw, 3.6rem); font-weight: 700; line-height: 1.08; letter-spacing: -0.025em; max-width: 900px; margin-bottom: 22px; }
+  .hero .sub { font-size: 1.15rem; color: var(--ink-soft); max-width: 720px; line-height: 1.5; }
+  .hero-meta { display: flex; gap: 48px; margin-top: 44px; flex-wrap: wrap; }
   .hero-meta .cell .lab { display: block; margin-bottom: 6px; }
   .hero-meta .cell .val { font-size: 14px; font-weight: 600; }
 
-  /* === SECTION === */
   section.block { padding: 64px 0; border-bottom: 1px solid var(--line); }
   .sec-head { display: flex; align-items: baseline; gap: 20px; margin-bottom: 40px; }
-  .sec-head .num {
-    font-family: 'JetBrains Mono', monospace; font-weight: 600;
-    font-size: 13px; color: var(--orange); letter-spacing: 0.1em;
-  }
-  .sec-head h2 {
-    font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 700;
-    letter-spacing: -0.02em; line-height: 1.1;
-  }
-  .sec-head h2 .accent { color: var(--orange); }
+  .sec-head .num { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 13px; color: var(--orange); letter-spacing: 0.1em; }
+  .sec-head h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
   .sec-intro { font-size: 1.05rem; color: var(--ink-soft); max-width: 820px; margin-bottom: 36px; }
 
-  /* === ANGLE BLOCK === */
-  .angle {
-    background: var(--ink); color: var(--bg);
-    border-radius: 16px; padding: 48px 44px; margin: 8px 0 0;
-    position: relative; overflow: hidden;
-  }
-  .angle::after {
-    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, transparent, var(--orange) 30%, var(--orange) 70%, transparent);
-  }
+  .angle { background: var(--ink); color: var(--bg); border-radius: 16px; padding: 48px 44px; position: relative; overflow: hidden; }
+  .angle::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--orange) 30%, var(--orange) 70%, transparent); }
   .angle .eyebrow { color: var(--orange-soft); }
-  .angle h3 {
-    font-size: clamp(1.4rem, 2.8vw, 2rem); font-weight: 700;
-    letter-spacing: -0.02em; line-height: 1.18; margin: 18px 0 16px; max-width: 800px;
-  }
-  .angle h3 .accent { color: var(--orange); }
+  .angle h3 { font-size: clamp(1.4rem, 2.8vw, 2rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.18; margin: 18px 0 16px; max-width: 800px; }
   .angle p { color: rgba(255,255,255,0.8); max-width: 760px; line-height: 1.6; }
 
-  /* === PILLAR CARDS === */
   .pillars-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .pcard {
-    border: 1px solid var(--line); border-radius: 14px; padding: 28px 26px;
-    background: var(--bg-2); transition: all 0.25s; position: relative;
-  }
+  .pcard { border: 1px solid var(--line); border-radius: 14px; padding: 28px 26px; background: var(--bg-2); transition: all 0.25s; }
   .pcard:hover { border-color: var(--orange-soft); box-shadow: 0 10px 30px -16px rgba(201,94,18,0.3); }
   .pcard-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
   .pcard-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--orange); font-weight: 600; }
@@ -160,13 +94,11 @@
   .pcard li::before { content: ""; width: 6px; height: 1px; background: var(--orange); position: absolute; left: 0; top: 14px; }
   .pcard .posture { margin-top: 16px; font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.45; }
 
-  /* === PARTIS PRIS === */
   .pp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .pp { border-left: 3px solid var(--orange); padding: 6px 0 6px 20px; }
   .pp h5 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.01em; }
   .pp p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.5; }
 
-  /* === BUDGET === */
   .budget-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; }
   .budget-table th { text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; padding: 12px 14px; border-bottom: 2px solid var(--ink); }
   .budget-table td { padding: 14px 14px; border-bottom: 1px solid var(--line); }
@@ -181,178 +113,126 @@
   .tranche .t-amt { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.02em; margin: 8px 0 4px; }
   .tranche .t-desc { font-size: 12.5px; color: var(--ink-soft); line-height: 1.45; }
 
-  /* === PROMIS / PAS PROMIS === */
   .promise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
   .promise-col { padding: 26px 24px; }
   .promise-col.no { background: var(--bg-2); border-right: 1px solid var(--line); }
   .promise-col.yes { background: var(--green-pale); }
-  .promise-col h5 { font-size: 0.95rem; font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .promise-col h5 { font-size: 0.95rem; font-weight: 700; margin-bottom: 14px; }
   .promise-col.no h5 { color: var(--muted); }
   .promise-col.yes h5 { color: var(--green); }
   .promise-col li { list-style: none; font-size: 13px; line-height: 1.5; padding: 7px 0; border-bottom: 1px dashed var(--line-2); }
   .promise-col li:last-child { border-bottom: none; }
 
-  /* === DIAGRAMS === */
-  .legend { display: flex; flex-wrap: wrap; gap: 18px; margin: 0 0 32px; padding: 16px 20px; background: var(--bg-2); border-radius: 10px; border: 1px solid var(--line); }
-  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; color: var(--ink-soft); }
+  /* === DIAGRAMS (3-color system) === */
+  .align-banner { background: var(--slate); color: #fff; border-radius: 14px; padding: 20px 24px; margin-bottom: 30px; }
+  .align-banner .ab-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange-soft); font-weight: 700; display: block; margin-bottom: 8px; }
+  .align-banner p { font-size: 15px; line-height: 1.5; max-width: 880px; }
+  .align-banner b { color: #fff; font-weight: 700; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 22px; margin: 0 0 32px; padding: 16px 20px; background: var(--bg-2); border-radius: 10px; border: 1px solid var(--line); }
+  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 500; color: var(--ink-soft); }
   .legend-swatch { width: 14px; height: 14px; border-radius: 4px; flex-shrink: 0; }
-  .sw-build { background: var(--navy); }
-  .sw-tool { background: #C8C2B6; }
-  .sw-human { background: var(--orange); }
-  .sw-output { background: var(--green); }
+  .sw-agent { background: var(--orange); }
+  .sw-your { background: var(--slate); }
+  .sw-result { background: var(--green); }
 
   .diagram { margin: 36px 0 16px; }
   .diagram-title { display: flex; align-items: baseline; gap: 14px; margin-bottom: 8px; }
   .diagram-title .d-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); font-weight: 600; }
-  .diagram-title h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.015em; }
+  .diagram-title h3 { font-size: 1.45rem; font-weight: 700; letter-spacing: -0.015em; }
   .diagram-sub { font-size: 14px; color: var(--muted); margin-bottom: 22px; max-width: 760px; }
 
-  /* === "EN CLAIR" didactic layer === */
-  .howto { font-size: 13px; color: var(--ink-soft); margin-bottom: 30px; padding: 12px 16px; background: var(--bg-3); border-radius: 8px; display: flex; gap: 18px; flex-wrap: wrap; }
-  .howto span { display: inline-flex; align-items: center; gap: 7px; }
-  .howto .hk { width: 13px; height: 13px; border-radius: 4px; display: inline-block; }
   .enclair { background: var(--orange-pale); border: 1px solid var(--orange-soft); border-radius: 12px; padding: 18px 20px 20px; margin: 0 0 24px; }
   .enclair .ec-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange-2); font-weight: 700; }
-  .ec-steps { display: flex; align-items: stretch; gap: 0; margin-top: 12px; flex-wrap: nowrap; }
+  .ec-steps { display: flex; align-items: stretch; gap: 0; margin-top: 12px; }
   .ec-step { flex: 1; display: flex; gap: 10px; align-items: flex-start; padding: 0 4px; }
   .ec-n { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--orange); color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
   .ec-t { font-size: 13px; line-height: 1.4; color: var(--ink-2); }
   .ec-t b { color: var(--orange-2); font-weight: 600; }
   .ec-arrow { display: flex; align-items: center; color: var(--orange); font-size: 16px; padding: 0 4px; flex-shrink: 0; align-self: flex-start; margin-top: 3px; }
-  @media (max-width: 900px) {
-    .ec-steps { flex-direction: column; gap: 12px; }
-    .ec-arrow { transform: rotate(90deg); align-self: flex-start; margin-left: 6px; }
-  }
 
   .flow { display: flex; align-items: stretch; gap: 0; flex-wrap: nowrap; overflow-x: auto; padding: 6px 2px 16px; }
   .flow-col { display: flex; flex-direction: column; gap: 10px; justify-content: center; min-width: 0; flex: 1; }
   .flow-arrow { display: flex; align-items: center; justify-content: center; color: var(--orange); font-size: 22px; font-weight: 300; padding: 0 12px; flex-shrink: 0; }
-  .node {
-    border-radius: 10px; padding: 14px 16px; font-size: 13px; line-height: 1.35;
-    border: 1px solid var(--line); background: var(--bg);
-  }
-  .node .node-lab { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; opacity: 0.7; display: block; margin-bottom: 5px; }
+  .node { border-radius: 10px; padding: 14px 16px; font-size: 13px; line-height: 1.35; border: 1px solid var(--line); background: var(--bg); }
+  .node .node-lab { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; opacity: 0.75; display: block; margin-bottom: 5px; }
   .node .node-title { font-weight: 600; }
-  .node .node-desc { font-size: 11.5px; opacity: 0.8; margin-top: 3px; }
-  .node--build { background: var(--navy); color: #fff; border-color: var(--navy); }
-  .node--build .node-lab { color: var(--orange-soft); opacity: 1; }
-  .node--tool { background: #EFEBE3; border-color: var(--line-2); color: var(--ink-2); }
-  .node--tool .node-lab { color: var(--muted); }
-  .node--human { background: var(--orange-pale); border: 1.5px solid var(--orange); color: var(--orange-2); }
-  .node--human .node-lab { color: var(--orange-2); }
-  .node--output { background: var(--green-pale); border-color: var(--green); color: var(--green); }
-  .node--output .node-lab { color: var(--green); }
-  .node--warn { background: #FFF4F0; border: 1.5px dashed #D9663F; color: #B5451F; }
-  .node--warn .node-lab { color: #B5451F; }
+  .node .node-desc { font-size: 11.5px; opacity: 0.82; margin-top: 3px; }
+  /* 3 colors: agent / your / result */
+  .node--agent { background: var(--orange); color: #fff; border-color: var(--orange); }
+  .node--agent .node-lab { color: #fff; opacity: 0.85; }
+  .node--your { background: var(--slate-pale); border-color: var(--slate-line); color: var(--slate); }
+  .node--your .node-lab { color: var(--slate-2); }
+  .node--you { background: #fff; border: 1.5px dashed var(--slate-2); color: var(--slate); }
+  .node--you .node-lab { color: var(--slate-2); }
+  .node--result { background: var(--green-pale); border-color: var(--green); color: var(--green); }
+  .node--result .node-lab { color: var(--green); }
+  .node--agent-big { background: var(--orange); color: #fff; border: none; border-radius: 12px; padding: 20px 22px; }
+  .node--agent-big .node-lab { color: rgba(255,255,255,0.85); }
+  .node--agent-big .node-title { font-size: 1.05rem; font-weight: 700; }
+  .node--agent-big ul { list-style: none; margin-top: 10px; }
+  .node--agent-big li { font-size: 12.5px; padding: 3px 0 3px 16px; position: relative; color: rgba(255,255,255,0.92); }
+  .node--agent-big li::before { content: ""; width: 6px; height: 1px; background: rgba(255,255,255,0.6); position: absolute; left: 0; top: 11px; }
 
   .col-head { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; text-align: center; margin-bottom: 4px; }
   .diagram-note { margin-top: 20px; padding: 14px 18px; background: var(--orange-pale); border-radius: 10px; font-size: 13px; color: var(--orange-2); line-height: 1.5; border: 1px solid var(--orange-soft); }
   .diagram-note b { color: var(--orange-2); }
+  .scope-note { margin-top: 16px; padding: 14px 18px; background: var(--slate-pale); border: 1px dashed var(--slate-2); border-radius: 10px; font-size: 13px; color: var(--slate); line-height: 1.5; }
+  .scope-note .sn-tag { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate-2); display: block; margin-bottom: 6px; }
+  .scope-note b { color: var(--slate); }
 
-  /* loop indicator */
   .loop-bar { margin-top: 14px; padding: 11px 16px; border: 1px dashed var(--orange); border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange-2); text-align: center; background: rgba(233,120,37,0.04); }
 
-  /* === layered system map (overview) === */
+  /* layered system map */
   .sysmap { margin-top: 6px; }
   .sys-band { border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; background: var(--bg); }
   .sys-band .sb-lab { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--muted); display: block; margin-bottom: 13px; }
   .sys-band .sb-lab b { color: var(--orange); }
-  .sys-band.band--tools { background: var(--bg-3); }
-  .sys-band.band--measure { background: var(--navy); border-color: var(--navy); }
-  .sys-band.band--measure .sb-lab { color: var(--orange-soft); }
+  .sys-band.band--your { background: var(--slate-pale); border-color: var(--slate-line); }
+  .sys-band.band--agent { background: var(--orange); border-color: var(--orange); }
+  .sys-band.band--agent .sb-lab { color: #fff; }
+  .sys-band.band--agent .sb-lab b { color: #fff; }
   .sys-grid { display: grid; gap: 10px; }
   .sys-grid.g3 { grid-template-columns: repeat(3,1fr); }
   .sys-grid.g4 { grid-template-columns: repeat(4,1fr); }
   .sys-node { border-radius: 9px; padding: 12px 13px; font-size: 13px; font-weight: 600; text-align: center; line-height: 1.25; display: flex; flex-direction: column; gap: 3px; align-items: center; }
-  .sys-node small { font-weight: 400; font-size: 11px; opacity: 0.78; }
-  .sys-node.n-tool { background: #EFEBE3; border: 1px solid var(--line-2); color: var(--ink-2); }
-  .sys-node.n-build { background: var(--navy); color: #fff; }
-  .sys-node.n-build small { color: var(--orange-soft); opacity: 1; }
-  .sys-node.n-out { background: var(--green-pale); border: 1px solid var(--green); color: var(--green); }
-  .socle-strip { margin-top: 11px; padding: 10px 14px; border: 1px dashed var(--line-2); border-radius: 8px; text-align: center; font-size: 12px; color: var(--muted); font-weight: 500; background: var(--bg-2); }
-  .socle-strip b { color: var(--ink-2); }
+  .sys-node small { font-weight: 400; font-size: 11px; opacity: 0.8; }
+  .sys-node.n-your { background: #fff; border: 1px solid var(--slate-line); color: var(--slate); }
+  .sys-node.n-agent { background: #fff; border: 1px solid rgba(255,255,255,0.5); color: var(--orange-2); }
+  .sys-band.band--agent .sys-node.n-agent { background: #fff; color: var(--orange-2); }
+  .sys-node.n-result { background: var(--green-pale); border: 1px solid var(--green); color: var(--green); }
+  .socle-strip { margin-top: 11px; padding: 10px 14px; border: 1px dashed rgba(255,255,255,0.5); border-radius: 8px; text-align: center; font-size: 12px; color: #fff; font-weight: 500; }
+  .socle-strip b { color: #fff; }
   .sys-down { display: flex; justify-content: center; align-items: center; gap: 10px; color: var(--orange); font-size: 19px; padding: 7px 0; }
   .sys-down .sd-cap { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
-  .measure-line { text-align: center; color: #fff; font-size: 13.5px; font-weight: 500; }
-  .measure-line b { color: var(--orange-soft); }
-  @media (max-width: 900px) { .sys-grid.g3, .sys-grid.g4 { grid-template-columns: 1fr 1fr; } }
 
-  /* === Studio: two bricks + two engine lanes === */
-  .studio-bricks { display: flex; gap: 10px; margin: 4px 0 8px; flex-wrap: wrap; }
-  .brick-pill { flex: 1; min-width: 250px; border: 1px solid var(--line); border-radius: 10px; padding: 13px 15px; background: var(--bg-2); font-size: 12.5px; line-height: 1.45; color: var(--ink-soft); }
-  .brick-pill .bp-n { font-family: 'JetBrains Mono', monospace; color: var(--orange); font-weight: 700; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; display: block; margin-bottom: 5px; }
-  .brick-pill b { color: var(--ink); }
-  .mini-lab { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; color: var(--muted); margin: 22px 0 8px; display: block; }
-  .mini-lab b { color: var(--orange); }
-  .lanes { display: flex; flex-direction: column; gap: 14px; margin: 8px 0 4px; }
-  .lane { border: 1px solid var(--line-2); border-radius: 12px; padding: 14px 16px 8px; background: var(--bg-2); }
-  .lane.l1 { border-left: 4px solid var(--green); }
-  .lane.l2 { border-left: 4px solid var(--orange); }
-  .lane-head { font-size: 14px; margin-bottom: 6px; }
-  .lane-head .lh-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; padding: 3px 9px; border-radius: 20px; font-weight: 700; margin-right: 9px; }
-  .lane.l1 .lh-tag { background: var(--green-pale); color: var(--green); }
-  .lane.l2 .lh-tag { background: var(--orange-pale); color: var(--orange-2); }
-  .lane-head .lh-title { font-weight: 700; }
-  .lane-io { font-size: 12.5px; color: var(--muted); margin: 0 0 10px; line-height: 1.5; }
-  .lane-io b { color: var(--ink-2); }
+  /* studio platforms */
+  .platform-card { border: 1px solid var(--line); border-radius: 14px; padding: 26px; margin-bottom: 22px; }
+  .platform-card.a { border-top: 4px solid var(--orange); }
+  .platform-card.b { border-top: 4px solid var(--slate); }
+  .platform-card .pc-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--orange); }
+  .platform-card h4 { font-size: 1.25rem; font-weight: 700; margin: 6px 0 4px; letter-spacing: -0.01em; }
+  .platform-card .pc-sub { font-size: 13.5px; color: var(--muted); margin-bottom: 18px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
+  .chip { font-size: 12px; padding: 6px 13px; border-radius: 20px; background: var(--slate-pale); color: var(--slate); border: 1px solid var(--slate-line); font-weight: 500; }
+  .chip.hot { background: var(--orange-pale); color: var(--orange-2); border-color: var(--orange-soft); }
+  .chips-lab { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin: 18px 0 2px; }
 
-  /* === TECH TAB === */
-  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 12px; }
-  .statbox { border: 1px solid var(--line); border-radius: 12px; padding: 26px; background: var(--bg-2); text-align: center; }
-  .statbox .big { font-size: 2.6rem; font-weight: 700; letter-spacing: -0.03em; color: var(--navy); }
-  .statbox .big .accent { color: var(--orange); }
-  .statbox .slab { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 6px; font-weight: 600; }
-
-  .tech-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 8px; }
-  .tech-table th { text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; padding: 12px 12px; border-bottom: 2px solid var(--ink); }
-  .tech-table td { padding: 13px 12px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.4; }
-  .tech-table .agent-name { font-weight: 600; white-space: nowrap; }
-  .tech-table .badge { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.06em; padding: 3px 8px; border-radius: 20px; font-weight: 600; }
-  .badge--no { background: var(--bg-3); color: var(--muted); }
-  .badge--yes { background: var(--orange-pale); color: var(--orange-2); }
-
-  .socle-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 8px; }
-  .socle-card { border: 1px solid var(--navy); border-radius: 11px; padding: 18px; background: var(--navy); color: #fff; }
-  .socle-card .sc-lab { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange-soft); font-weight: 600; margin-bottom: 8px; }
-  .socle-card .sc-title { font-weight: 600; font-size: 14px; margin-bottom: 5px; }
-  .socle-card .sc-desc { font-size: 11.5px; color: rgba(255,255,255,0.72); line-height: 1.4; }
-
-  .iface-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; }
-  .iface { border: 1px solid var(--line); border-radius: 12px; padding: 22px; background: var(--bg-2); }
-  .iface.real { border-color: var(--orange); background: var(--orange-pale); }
-  .iface .if-tag { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange-2); font-weight: 600; }
-  .iface h5 { font-size: 1.05rem; font-weight: 700; margin: 6px 0; letter-spacing: -0.01em; }
-  .iface p { font-size: 12.5px; color: var(--ink-soft); line-height: 1.45; }
-
-  .buildbuy { display: grid; grid-template-columns: 1fr 1.4fr; gap: 20px; margin-top: 8px; }
-  .bb-col { border: 1px solid var(--line); border-radius: 12px; padding: 24px; }
-  .bb-col.build { background: var(--navy); color: #fff; border-color: var(--navy); }
-  .bb-col h5 { font-size: 1rem; font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-  .bb-col.build h5 { color: #fff; }
-  .bb-col.build .bb-item { color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.12); }
-  .bb-item { font-size: 13px; padding: 8px 0; border-bottom: 1px dashed var(--line-2); line-height: 1.4; }
-  .bb-item:last-child { border-bottom: none; }
-  .bb-item .bb-cost { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); float: right; }
-
-  .clientline { margin-top: 40px; background: var(--ink); color: #fff; border-radius: 14px; padding: 38px 40px; position: relative; overflow: hidden; }
-  .clientline::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--orange) 30%, var(--orange) 70%, transparent); }
-  .clientline .eyebrow { color: var(--orange-soft); display: block; margin-bottom: 16px; }
-  .clientline p { font-size: clamp(1.2rem, 2.4vw, 1.65rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.3; max-width: 880px; }
-  .clientline p .accent { color: var(--orange); }
-
-  /* footer */
   .foot { padding: 40px 0 60px; }
   .foot-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
   .foot-meta .lab { font-size: 10px; }
+  .foot-meta a { color: var(--muted); text-decoration: none; border-bottom: 1px dotted var(--muted-2); }
 
   @media (max-width: 900px) {
-    .pillars-grid, .pp-grid, .promise-grid, .tranche-row, .socle-grid, .iface-grid, .buildbuy, .stat-row { grid-template-columns: 1fr; }
+    .pillars-grid, .pp-grid, .promise-grid, .tranche-row, .sys-grid.g3, .sys-grid.g4 { grid-template-columns: 1fr; }
     .nav-inner { flex-direction: column; height: auto; padding: 12px 20px; gap: 10px; }
     .tabs { width: 100%; justify-content: center; flex-wrap: wrap; }
     .wrap { padding: 0 22px; }
-    .socle-grid { grid-template-columns: 1fr 1fr; }
     .flow { flex-direction: column; }
     .flow-arrow { transform: rotate(90deg); padding: 8px 0; }
+    .ec-steps { flex-direction: column; gap: 12px; }
+    .ec-arrow { transform: rotate(90deg); margin-left: 6px; }
+    .sys-grid.g4 { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
@@ -360,11 +240,10 @@
 
 <nav class="nav">
   <div class="nav-inner">
-    <div class="brand"><span>ORCHESTRA</span><span class="x">×</span><span class="bw">BE WTR</span></div>
+    <div class="brand"><span>ORCHESTRA</span><span class="x">×</span><span>BE WTR</span></div>
     <div class="tabs">
       <button class="tab-btn active" data-tab="proposition"><span class="n">01</span> La Proposition</button>
-      <button class="tab-btn" data-tab="archi"><span class="n">02</span> Architectures</button>
-      <button class="tab-btn" data-tab="technique"><span class="n">03</span> Architecture technique</button>
+      <button class="tab-btn" data-tab="archi"><span class="n">02</span> L'Écosystème</button>
     </div>
   </div>
 </nav>
@@ -376,7 +255,7 @@
     <div class="wrap">
       <span class="eyebrow">PILOTES IA · FY26 · RÉPONSE AU BRIEF</span>
       <h1>Quatre pilotes IA pour BE WTR — <span class="accent">opérés, mesurés, séquençables.</span></h1>
-      <p class="sub">Un système, pas une plateforme de plus. Les meilleurs outils du marché pour la donnée et les moteurs, Orchestra pour l'orchestration, la gouvernance et la délivery. Chaque pilier est chiffré isolément et activable dans l'ordre que vous choisissez.</p>
+      <p class="sub">Des agents qui font le travail, branchés sur vos propres outils. Vous ne gérez aucune plateforme de plus : vous nous donnez les accès, les agents s'occupent du reste. Chaque pilier est chiffré isolément et activable dans l'ordre que vous choisissez.</p>
       <div class="hero-meta">
         <div class="cell"><span class="lab">Préparé par</span><span class="val">Orchestra Intelligence</span></div>
         <div class="cell"><span class="lab">Pour</span><span class="val">Direction Marketing BE WTR</span></div>
@@ -404,9 +283,9 @@
         <div class="pcard">
           <div class="pcard-top"><span class="pcard-num">P / 01</span><span class="pcard-dot"></span></div>
           <h4>SEO & GEO</h4>
-          <p class="tagline">Outils établis pour la donnée — la valeur Orchestra est dans le suivi et la délivery.</p>
+          <p class="tagline">Un agent unique qui surveille, rédige, optimise et alerte — en continu.</p>
           <ul>
-            <li>Baseline chiffrée avant toute action (SE Ranking + Peec).</li>
+            <li>Baseline chiffrée de votre présence avant toute action.</li>
             <li>Fondations dans l'ordre : quick wins → pages B2B → cluster D2C.</li>
             <li>Production de contenu en brouillon, validation humaine.</li>
             <li>Surfaces de citation : site + social + RP orientée.</li>
@@ -430,25 +309,25 @@
         <div class="pcard">
           <div class="pcard-top"><span class="pcard-num">P / 03</span><span class="pcard-dot"></span></div>
           <h4>AI Studio</h4>
-          <p class="tagline">L'équipe créative amplifiée — décliner & sublimer, jamais générer.</p>
+          <p class="tagline">Deux plateformes : supports point de vente en self-service, et déclinaison de contenu par brief.</p>
           <ul>
-            <li>Déclinaison : formats, langues, canaux depuis la banque.</li>
-            <li>Sublimation des rushes locaux (montage + habillage charte).</li>
-            <li>App POS self-service : PLV conforme, prête imprimeur.</li>
-            <li>Banque d'assets sur SharePoint — on s'y branche par API.</li>
+            <li>POS self-service : chaque marché crée ses supports, à la charte.</li>
+            <li>Studio par brief : resizing, langues, sous-titres, voix off…</li>
+            <li>Se branche sur votre banque d'assets existante.</li>
+            <li>L'humain valide ; jamais de personnes générées.</li>
           </ul>
-          <p class="posture">Gouvernance modèle Kiabi : registre des droits, jamais de personnes générées.</p>
+          <p class="posture">Gouvernance modèle Kiabi : on décline et on sublime du réel.</p>
         </div>
 
         <div class="pcard">
           <div class="pcard-top"><span class="pcard-num">P / 04</span><span class="pcard-dot"></span></div>
           <h4>Reporting mensuel</h4>
-          <p class="tagline">Plomberie standard, intelligence au-dessus.</p>
+          <p class="tagline">Un agent agrégateur qui centralise tout et recommande des actions.</p>
           <ul>
-            <li>Agrégation Looker Studio — pas d'usine à gaz.</li>
+            <li>Agrège toutes vos sources — sans usine à gaz.</li>
             <li>4 volets : Social, SEA, SEO, GEO (part de citation IA).</li>
             <li>Note mensuelle auto-rédigée : quoi, pourquoi, quoi faire.</li>
-            <li>Le code calcule, le modèle rédige, tout est traçable.</li>
+            <li>Recommande les sujets et les actions du mois suivant.</li>
           </ul>
           <p class="posture">Prouve la délivery de tous les autres piliers.</p>
         </div>
@@ -464,7 +343,7 @@
       <div class="pp-grid">
         <div class="pp"><h5>Une entité, un domaine</h5><p>Tout (B2B, D2C, 9 marchés) vit sur bewtr.com en sous-dossiers. Un domaine séparé repartirait de zéro — 12 à 24 mois pour exister, pile pendant le lancement D2C.</p></div>
         <div class="pp"><h5>B2B = validation, pas volume</h5><p>On ne se bat pas contre Culligan sur « fontaine à eau ». On verrouille les requêtes de vérification et les territoires incontestés (B Corp, eau locale).</p></div>
-        <div class="pp"><h5>Acheter la mesure, construire l'action</h5><p>SE Ranking + Peec pour la donnée ; l'agent Orchestra pour produire, décliner, publier. Marge et différenciation restent chez nous.</p></div>
+        <div class="pp"><h5>Un agent, pas un outil de plus</h5><p>Vous gardez vos outils (site, banque d'assets, planning). Nos agents s'y branchent et font le travail. Tout ce dont nous avons besoin : les accès.</p></div>
         <div class="pp"><h5>L'IA en coulisses (modèle Kiabi)</h5><p>Pour une B Corp premium : déclinaison d'assets réels OK, jamais de génération de personnes, contenus full-IA identifiés. « On ne génère pas de faux, on sublime du vrai. »</p></div>
       </div>
     </div>
@@ -473,12 +352,12 @@
   <section class="block">
     <div class="wrap">
       <div class="sec-head"><span class="num">03</span><h2>Chiffrage <span class="accent">par pilier.</span></h2></div>
-      <p class="sec-intro">Setup et run isolés, par pilier — pour permettre le séquencement. TJM senior, outils refacturés à prix coûtant.</p>
+      <p class="sec-intro">Setup et run isolés, par pilier — pour permettre le séquencement.</p>
       <table class="budget-table">
         <thead><tr><th>Pilier</th><th>Setup</th><th>Run France / mois</th></tr></thead>
         <tbody>
           <tr><td class="pillar-name">1 · SEO/GEO</td><td class="amt">45 000 €</td><td class="amt">4 500 €</td></tr>
-          <tr><td class="pillar-name">2 · Calendrier de contenu</td><td class="amt">14 000 €</td><td class="amt">2 900 → 5 200 € <span style="color:var(--muted);font-family:'Inter Tight'">(cadence)</span></td></tr>
+          <tr><td class="pillar-name">2 · Calendrier de contenu</td><td class="amt">14 000 €</td><td class="amt">2 900 → 5 200 €</td></tr>
           <tr><td class="pillar-name">3 · AI Studio (déclinaison)</td><td class="amt">15 000 €</td><td class="amt">2 100 → 3 400 €</td></tr>
           <tr><td class="pillar-name">3bis · App POS self-service</td><td class="amt">12 000 €</td><td class="amt">inclus</td></tr>
           <tr><td class="pillar-name">4 · Reporting</td><td class="amt">8 500 €</td><td class="amt">850 €</td></tr>
@@ -486,21 +365,9 @@
         </tbody>
       </table>
       <div class="tranche-row">
-        <div class="tranche ferme">
-          <span class="t-tag">Tranche A · ferme</span>
-          <div class="t-amt">9 500 €</div>
-          <p class="t-desc">Baseline chiffrée + décision d'architecture, 3 semaines. Petit ticket, livrables tangibles.</p>
-        </div>
-        <div class="tranche">
-          <span class="t-tag">Tranche B+C · sur résultats</span>
-          <div class="t-amt">36 000 €</div>
-          <p class="t-desc">Fondations + agent. Déclenchée sur validation du bloc A. Go-live septembre.</p>
-        </div>
-        <div class="tranche">
-          <span class="t-tag">Run · résiliable</span>
-          <div class="t-amt">4 500 €<span style="font-size:1rem;color:var(--muted)">/mois</span></div>
-          <p class="t-desc">Démarrage au go-live, résiliable au trimestre. Réversibilité affichée.</p>
-        </div>
+        <div class="tranche ferme"><span class="t-tag">Tranche A · ferme</span><div class="t-amt">9 500 €</div><p class="t-desc">Baseline + décision d'architecture, 3 semaines. Petit ticket, livrables tangibles.</p></div>
+        <div class="tranche"><span class="t-tag">Tranche B+C · sur résultats</span><div class="t-amt">36 000 €</div><p class="t-desc">Fondations + agent. Déclenchée sur validation du bloc A. Go-live septembre.</p></div>
+        <div class="tranche"><span class="t-tag">Run · résiliable</span><div class="t-amt">4 500 €<span style="font-size:1rem;color:var(--muted)">/mois</span></div><p class="t-desc">Démarrage au go-live, résiliable au trimestre. Réversibilité affichée.</p></div>
       </div>
     </div>
   </section>
@@ -508,7 +375,7 @@
   <section class="block">
     <div class="wrap">
       <div class="sec-head"><span class="num">04</span><h2>Ce qu'on promet — <span class="accent">et ce qu'on ne promet pas.</span></h2></div>
-      <p class="sec-intro">88 % des projets d'agents IA n'atteignent jamais la production. Les deux causes : trop large, données sales. Notre discipline de périmètre est le garde-fou — et notre honnêteté sur les indicateurs.</p>
+      <p class="sec-intro">88 % des projets d'agents IA n'atteignent jamais la production. Notre discipline de périmètre est le garde-fou — et notre honnêteté sur les indicateurs.</p>
       <div class="promise-grid">
         <div class="promise-col no">
           <h5>✕ Ce qu'on ne promet pas</h5>
@@ -526,7 +393,7 @@
             <li>Une progression de part de citation mesurée en tendance</li>
             <li>Templatisé pour le volume + montage fin humain à enjeu</li>
             <li>De l'IA en coulisses qui sublime du réel</li>
-            <li>Des agents mono-tâches séquencés, validés un à un</li>
+            <li>Des agents séquencés, validés un à un</li>
             <li>Un agent supervisé, humain dans la boucle partout</li>
           </ul>
         </div>
@@ -536,77 +403,74 @@
 
 </div>
 
-<!-- ============ TAB 2 — ARCHITECTURES ============ -->
+<!-- ============ TAB 2 — L'ÉCOSYSTÈME ============ -->
 <div class="panel" id="archi">
 
   <section class="block" style="padding-top:56px;">
     <div class="wrap">
-      <div class="sec-head"><span class="num">02</span><h2>Architectures <span class="accent">par pilier.</span></h2></div>
-      <p class="sec-intro">Chaque pilier est présenté en deux temps : d'abord <strong>« En clair »</strong> — le flux en une phrase, pour tout le monde ; puis le schéma détaillé pour ceux qui veulent le « comment ». Tout se lit de gauche à droite.</p>
+      <div class="sec-head"><span class="num">02</span><h2>Comment <span class="accent">ça marche.</span></h2></div>
+
+      <div class="align-banner">
+        <span class="ab-tag">Le principe</span>
+        <p>Vous gardez <b>vos outils</b> (votre site, votre banque d'assets, votre planning). <b>Nos agents s'y branchent</b> et font le travail. Vous ne gérez aucune nouvelle plateforme à apprendre — la seule chose dont nous avons besoin, ce sont <b>les accès</b>.</p>
+      </div>
+
+      <p class="sec-intro">Chaque pilier est présenté en deux temps : d'abord <strong>« En clair »</strong> — le flux en une phrase, pour tout le monde ; puis le schéma. Tout se lit de gauche à droite.</p>
 
       <div class="legend">
-        <div class="legend-item"><span class="legend-swatch sw-build"></span>Construit par Orchestra</div>
-        <div class="legend-item"><span class="legend-swatch sw-tool"></span>Outil loué / existant</div>
-        <div class="legend-item"><span class="legend-swatch sw-human"></span>Contrôle humain</div>
-        <div class="legend-item"><span class="legend-swatch sw-output"></span>Sortie</div>
+        <div class="legend-item"><span class="legend-swatch sw-agent"></span>L'agent Orchestra (fait le travail)</div>
+        <div class="legend-item"><span class="legend-swatch sw-your"></span>Vos outils &amp; vos validations</div>
+        <div class="legend-item"><span class="legend-swatch sw-result"></span>Le résultat</div>
       </div>
 
       <!-- SYSTÈME GLOBAL -->
       <div class="diagram">
         <div class="diagram-title"><span class="d-tag">Vue d'ensemble</span><h3>Le système complet</h3></div>
-        <p class="diagram-sub">Quatre piliers, trois surfaces de citation (site · social · presse/RP), le reporting qui mesure tout — et deux boucles d'apprentissage.</p>
-        <div class="enclair">
-          <span class="ec-tag">En clair</span>
-          <div class="ec-steps">
-            <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">On <b>crée</b> le contenu et les preuves</span></div>
-            <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">On le <b>met en images</b></span></div>
-            <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">On le <b>publie</b> au bon moment</span></div>
-            <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">On <b>mesure</b> ce qui marche, et on recommence en mieux</span></div>
-          </div>
-        </div>
+        <p class="diagram-sub">Vos outils alimentent les agents ; les agents produisent ; le résultat apparaît là où on vous cherche ; un dernier agent mesure tout et recommande la suite.</p>
         <div class="sysmap">
 
-          <div class="sys-band band--tools">
+          <div class="sys-band band--your">
             <span class="sb-lab">① Ce que vous avez déjà — on s'y branche, on ne remplace rien</span>
             <div class="sys-grid g4">
-              <div class="sys-node n-tool">SharePoint<small>vos photos &amp; vidéos</small></div>
-              <div class="sys-node n-tool">HubSpot<small>votre site web</small></div>
-              <div class="sys-node n-tool">Monday<small>votre planning</small></div>
-              <div class="sys-node n-tool">GA4 · réseaux<small>vos chiffres</small></div>
+              <div class="sys-node n-your">Votre banque d'assets<small>photos &amp; vidéos</small></div>
+              <div class="sys-node n-your">Votre site web</div>
+              <div class="sys-node n-your">Votre planning<small>événements, marchés</small></div>
+              <div class="sys-node n-your">Vos chiffres<small>web &amp; réseaux</small></div>
             </div>
           </div>
 
           <div class="sys-down"><span class="sd-cap">les agents s'en nourrissent</span><span>↓</span></div>
 
-          <div class="sys-band band--agents">
+          <div class="sys-band band--agent">
             <span class="sb-lab">② Les <b>agents Orchestra</b> font le travail</span>
             <div class="sys-grid g3">
-              <div class="sys-node n-build">Agent SEO/GEO<small>crée le contenu &amp; les preuves</small></div>
-              <div class="sys-node n-build">AI Studio<small>met en images</small></div>
-              <div class="sys-node n-build">Calendrier<small>publie au bon moment</small></div>
+              <div class="sys-node n-agent">Agent SEO/GEO<small>crée le contenu &amp; les preuves</small></div>
+              <div class="sys-node n-agent">AI Studio<small>met en images</small></div>
+              <div class="sys-node n-agent">Calendrier<small>publie au bon moment</small></div>
             </div>
-            <div class="socle-strip">Tous posés sur <b>le socle commun</b> — connexions, planification, validation humaine</div>
+            <div class="socle-strip">Tous posés sur <b>un socle commun</b> — et toujours une validation humaine avant publication</div>
           </div>
 
           <div class="sys-down"><span class="sd-cap">ce qui en sort</span><span>↓</span></div>
 
-          <div class="sys-band band--out">
+          <div class="sys-band">
             <span class="sb-lab">③ Le résultat apparaît là où on vous cherche — et où on vous cite</span>
             <div class="sys-grid g3">
-              <div class="sys-node n-out">Votre site<small>pages &amp; articles</small></div>
-              <div class="sys-node n-out">Réseaux sociaux<small>posts localisés</small></div>
-              <div class="sys-node n-out">Presse &amp; IA<small>citations, RP</small></div>
+              <div class="sys-node n-result">Votre site<small>pages &amp; articles</small></div>
+              <div class="sys-node n-result">Réseaux sociaux<small>posts localisés</small></div>
+              <div class="sys-node n-result">Presse &amp; IA<small>citations, RP</small></div>
             </div>
           </div>
 
           <div class="sys-down"><span class="sd-cap">tout est mesuré</span><span>↓</span></div>
 
-          <div class="sys-band band--measure">
-            <span class="sb-lab">④ Le reporting mesure tout</span>
-            <div class="measure-line">Social · SEA · SEO · GEO → <b>une note mensuelle claire</b></div>
+          <div class="sys-band band--agent">
+            <span class="sb-lab">④ Un <b>agent agrégateur</b> mesure tout — et recommande la suite</span>
+            <div class="sys-grid g3">
+              <div class="sys-node n-agent">Il centralise<small>SEO/GEO · social · studio</small></div>
+              <div class="sys-node n-agent">Il écrit la note<small>quoi · pourquoi</small></div>
+              <div class="sys-node n-agent">Il recommande<small>sujets &amp; actions du mois</small></div>
+            </div>
           </div>
 
           <div class="loop-bar">↺ Ce qu'on apprend chaque mois réajuste les agents — le dispositif s'améliore au trimestre</div>
@@ -616,14 +480,14 @@
 
       <!-- PILIER 1 -->
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
-        <div class="diagram-title"><span class="d-tag">Pilier 1</span><h3>Agent SEO / GEO</h3></div>
-        <p class="diagram-sub">L'agent ne mesure rien lui-même — les outils collectent, lui lit, compare, interprète et agit.</p>
+        <div class="diagram-title"><span class="d-tag">Pilier 1</span><h3>L'agent SEO / GEO</h3></div>
+        <p class="diagram-sub">Un seul agent qui fait tout le travail de visibilité — en continu, branché sur votre site.</p>
         <div class="enclair">
           <span class="ec-tag">En clair</span>
           <div class="ec-steps">
-            <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">Des outils repèrent <b>où BE WTR apparaît</b> (ou pas) sur Google et dans les IA</span></div>
+            <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">L'agent <b>surveille</b> où BE WTR apparaît (ou pas) sur Google et dans les IA</span></div>
             <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">L'agent <b>rédige</b> les contenus qui manquent</span></div>
+            <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">Il <b>rédige</b> les contenus qui manquent</span></div>
             <div class="ec-arrow">→</div>
             <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">Votre équipe <b>relit et publie</b></span></div>
             <div class="ec-arrow">→</div>
@@ -632,36 +496,43 @@
         </div>
         <div class="flow">
           <div class="flow-col">
-            <div class="col-head">Entrées (données)</div>
-            <div class="node node--tool"><span class="node-lab">Loué</span><span class="node-title">SE Ranking</span><span class="node-desc">Positions Google, 32 mots-clés</span></div>
-            <div class="node node--tool"><span class="node-lab">Loué</span><span class="node-title">Peec AI</span><span class="node-desc">Citations IA · 20 prompts × 4 moteurs</span></div>
+            <div class="col-head">Votre présence</div>
+            <div class="node node--your"><span class="node-title">Votre site &amp; vos pages</span><span class="node-desc">Là où l'agent agit</span></div>
           </div>
           <div class="flow-arrow">→</div>
           <div class="flow-col">
-            <div class="col-head">Agent (le travail)</div>
-            <div class="node node--build"><span class="node-lab">Module</span><span class="node-title">Monitoring</span><span class="node-desc">Relevé hebdo + mensuel, alertes</span></div>
-            <div class="node node--build"><span class="node-lab">Module</span><span class="node-title">Production</span><span class="node-desc">Rédige articles & pages en brouillon</span></div>
-            <div class="node node--build"><span class="node-lab">Module</span><span class="node-title">Déclinaison marché</span><span class="node-desc">Réplique vers les 8 autres marchés</span></div>
+            <div class="col-head">L'agent fait tout</div>
+            <div class="node node--agent-big">
+              <span class="node-lab">Agent SEO / GEO</span>
+              <span class="node-title">Un seul agent</span>
+              <ul>
+                <li>Surveille vos positions Google &amp; vos citations dans les IA</li>
+                <li>Rédige articles &amp; pages optimisés (en brouillon)</li>
+                <li>Décline vers vos autres marchés</li>
+                <li>Repère les médias à cibler en RP</li>
+                <li>Alerte dès qu'une position bouge</li>
+              </ul>
+            </div>
           </div>
           <div class="flow-arrow">→</div>
           <div class="flow-col">
-            <div class="col-head">Validation</div>
-            <div class="node node--human"><span class="node-lab">Humain</span><span class="node-title">Équipe BE WTR</span><span class="node-desc">Relit & publie depuis HubSpot</span></div>
+            <div class="col-head">Vous</div>
+            <div class="node node--you"><span class="node-lab">Validation</span><span class="node-title">Relire &amp; publier</span></div>
           </div>
           <div class="flow-arrow">→</div>
           <div class="flow-col">
-            <div class="col-head">Sorties</div>
-            <div class="node node--output"><span class="node-lab">Sortie</span><span class="node-title">Contenu publié</span></div>
-            <div class="node node--output"><span class="node-lab">Sortie</span><span class="node-title">Liste RP priorisée</span><span class="node-desc">Médias que les IA citent vraiment</span></div>
+            <div class="col-head">Résultat</div>
+            <div class="node node--result"><span class="node-title">Contenu publié</span></div>
+            <div class="node node--result"><span class="node-title">Liste RP priorisée</span><span class="node-desc">Les médias que les IA citent vraiment</span></div>
           </div>
         </div>
-        <div class="diagram-note"><b>La brique RP :</b> on ne fait pas les RP, on les arme et on les oriente. Le monitoring GEO révèle quels médias les IA citent → la liste de ciblage RP devient une donnée, pas une intuition.</div>
+        <div class="diagram-note"><b>La brique RP :</b> on ne fait pas les RP, on les arme et on les oriente. L'agent voit quels médias les IA citent → la liste de ciblage RP devient une donnée, pas une intuition.</div>
       </div>
 
       <!-- PILIER 2 -->
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
-        <div class="diagram-title"><span class="d-tag">Pilier 2</span><h3>Calendrier de contenu</h3></div>
-        <p class="diagram-sub">Orchestration pure — il assemble de l'existant et déclenche la production de ce qui manque. Il ne génère pas.</p>
+        <div class="diagram-title"><span class="d-tag">Pilier 2</span><h3>Le calendrier de contenu</h3></div>
+        <p class="diagram-sub">L'agent assemble ce qui existe et anticipe les temps forts. Il programme — il ne génère pas.</p>
         <div class="enclair">
           <span class="ec-tag">En clair</span>
           <div class="ec-steps">
@@ -671,293 +542,179 @@
             <div class="ec-arrow">→</div>
             <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">Vous <b>validez</b> au central</span></div>
             <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">Les posts partent sur les réseaux — les marchés <b>adaptent</b>, ne produisent plus</span></div>
+            <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">Les posts partent — les marchés <b>adaptent</b>, ne produisent plus</span></div>
           </div>
         </div>
         <div class="flow">
           <div class="flow-col">
-            <div class="col-head">Entrées</div>
-            <div class="node node--tool"><span class="node-lab">Monday</span><span class="node-title">Événements marchés</span><span class="node-desc">Salons, saisons, plan commercial</span></div>
-            <div class="node node--build"><span class="node-lab">Réglage</span><span class="node-title">Piliers + mix %</span></div>
-            <div class="node node--tool"><span class="node-lab">SharePoint</span><span class="node-title">Owned + packages Studio</span></div>
+            <div class="col-head">Vos entrées</div>
+            <div class="node node--your"><span class="node-title">Vos événements</span><span class="node-desc">Salons, saisons, plan commercial</span></div>
+            <div class="node node--your"><span class="node-title">Vos contenus existants</span><span class="node-desc">+ ce que le Studio produit</span></div>
           </div>
           <div class="flow-arrow">→</div>
           <div class="flow-col">
-            <div class="col-head">Agent calendrier</div>
-            <div class="node node--build"><span class="node-lab">Le travail</span><span class="node-title">Thèmes & anticipation</span><span class="node-desc">Trame 50/50 global-local</span></div>
-            <div class="node node--build"><span class="node-title">Brouillons de posts</span><span class="node-desc">+ commande au Studio si asset manquant</span></div>
+            <div class="col-head">L'agent calendrier</div>
+            <div class="node node--agent-big">
+              <span class="node-lab">Agent calendrier</span>
+              <span class="node-title">Il orchestre</span>
+              <ul>
+                <li>Cale les thèmes sur vos temps forts (anticipation)</li>
+                <li>Recycle d'abord ce que vous avez déjà</li>
+                <li>Recommande le mix % (gastronomie, impact, lifestyle…)</li>
+                <li>Trame 50/50 global-local, brouillons prêts</li>
+              </ul>
+            </div>
           </div>
           <div class="flow-arrow">→</div>
           <div class="flow-col">
-            <div class="col-head">Validation</div>
-            <div class="node node--human"><span class="node-lab">Humain</span><span class="node-title">Validation centrale</span><span class="node-desc">Les marchés adaptent, ne produisent plus</span></div>
+            <div class="col-head">Vous</div>
+            <div class="node node--you"><span class="node-lab">Validation centrale</span><span class="node-title">Les marchés adaptent</span></div>
           </div>
           <div class="flow-arrow">→</div>
           <div class="flow-col">
-            <div class="col-head">Sorties</div>
-            <div class="node node--output"><span class="node-title">Calendrier mensuel</span></div>
-            <div class="node node--output"><span class="node-title">Reco mix %</span></div>
-            <div class="node node--tool"><span class="node-lab">Rail</span><span class="node-title">Publication</span><span class="node-desc">Monday / outil testé</span></div>
+            <div class="col-head">Résultat</div>
+            <div class="node node--result"><span class="node-title">Calendrier publié</span><span class="node-desc">Posts programmés, localisés</span></div>
           </div>
         </div>
-        <div class="loop-bar">↺ Les tags de posts remontent au reporting → qui recalcule le mix % → révision trimestrielle</div>
+        <div class="loop-bar">↺ Les résultats des posts remontent au reporting → qui recalcule le mix % → révision trimestrielle</div>
       </div>
 
       <!-- PILIER 3 -->
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
-        <div class="diagram-title"><span class="d-tag">Pilier 3</span><h3>AI Studio</h3></div>
-        <p class="diagram-sub">Le Studio a deux briques. La gouvernance est dans le code : un asset sans feu vert n'entre pas dans le pipeline, et les gabarits POS empêchent de sortir de la charte.</p>
-        <div class="studio-bricks">
-          <div class="brick-pill"><span class="bp-n">Brique 1</span><b>Le pipeline de contenu</b> — transforme vos photos &amp; vidéos en contenus prêts à publier. Deux moteurs, selon le type de source.</div>
-          <div class="brick-pill"><span class="bp-n">Brique 2</span><b>L'app POS self-service</b> — les marchés créent eux-mêmes leurs supports point de vente (PLV, menus), sans déborder de la charte.</div>
-        </div>
-        <div class="enclair">
-          <span class="ec-tag">En clair</span>
-          <div class="ec-steps">
-            <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">On part de vos <b>photos et vidéos</b> (banque + tournages locaux)</span></div>
-            <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">On <b>vérifie les droits</b> automatiquement</span></div>
-            <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">On les <b>décline</b> en formats, langues, canaux</span></div>
-            <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">Un humain <b>choisit</b> — c'est rangé, prêt à publier</span></div>
-          </div>
-        </div>
-        <span class="mini-lab">D'où ça part — <b>commun aux deux moteurs</b></span>
-        <div class="flow">
-          <div class="flow-col">
-            <div class="col-head">Sources</div>
-            <div class="node node--tool"><span class="node-lab">SharePoint</span><span class="node-title">Assets pros</span><span class="node-desc">Banque + tournages agence — déjà propres</span></div>
-            <div class="node node--warn"><span class="node-lab">Entrée sale</span><span class="node-title">Rushes locaux</span><span class="node-desc">Filmés au téléphone, qualité variable</span></div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-col">
-            <div class="col-head">Porte des droits · construit</div>
-            <div class="node node--build"><span class="node-lab">Le verrou</span><span class="node-title">Registre des droits</span><span class="node-desc">Vert / orange / rouge — un asset non autorisé ne passe pas</span></div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-col">
-            <div class="col-head">Aiguillage</div>
-            <div class="node node--human"><span class="node-title">Selon le type de source</span><span class="node-desc">Asset pro → Moteur 1 · Rush local → Moteur 2</span></div>
-          </div>
-        </div>
+        <div class="diagram-title"><span class="d-tag">Pilier 3</span><h3>AI Studio — deux plateformes</h3></div>
+        <p class="diagram-sub">Deux besoins très différents, donc deux plateformes distinctes. Toutes deux se branchent sur votre banque d'assets et gardent l'humain dans la boucle.</p>
 
-        <span class="mini-lab">Puis l'un des <b>deux moteurs</b></span>
-        <div class="lanes">
-          <div class="lane l1">
-            <div class="lane-head"><span class="lh-tag">Moteur 1</span><span class="lh-title">Déclinaison</span></div>
-            <p class="lane-io"><b>Entrée :</b> un asset pro déjà propre. <b>Sortie :</b> le même, en plusieurs formats, langues et canaux. <b>Automatique et fiable</b> — résultat garanti, aucune surprise (technologie de gabarits, pas d'IA générative dans la boucle).</p>
-            <div class="flow">
-              <div class="flow-col"><div class="node node--tool"><span class="node-title">Recadrage par format</span><span class="node-desc">1:1 · 9:16 · 16:9</span></div></div>
-              <div class="flow-arrow">→</div>
-              <div class="flow-col"><div class="node node--tool"><span class="node-title">Texte par langue</span><span class="node-desc">FR · EN · AR · ZH</span></div></div>
-              <div class="flow-arrow">→</div>
-              <div class="flow-col"><div class="node node--output"><span class="node-title">Variantes prêtes</span></div></div>
+        <!-- PLATFORM A — POS -->
+        <div class="platform-card a">
+          <span class="pc-tag">Plateforme A · self-service</span>
+          <h4>Supports point de vente (POS)</h4>
+          <p class="pc-sub">Chaque marché crée ses propres supports — sans déborder de la charte. Un parcours guidé, pas un outil de design.</p>
+          <div class="enclair">
+            <span class="ec-tag">En clair</span>
+            <div class="ec-steps">
+              <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">Le marché <b>choisit</b> le type de lieu et de support</span></div>
+              <div class="ec-arrow">→</div>
+              <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">Il <b>remplit</b> le texte, la date, le lieu</span></div>
+              <div class="ec-arrow">→</div>
+              <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">La plateforme <b>génère</b> le support à la charte</span></div>
+              <div class="ec-arrow">→</div>
+              <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">Il récupère un <b>PDF prêt imprimeur</b></span></div>
             </div>
           </div>
-          <div class="lane l2">
-            <div class="lane-head"><span class="lh-tag">Moteur 2</span><span class="lh-title">Sublimation des rushes</span></div>
-            <p class="lane-io"><b>Entrée :</b> un rush brut filmé par un local. <b>Sortie :</b> une vidéo aux couleurs de la marque. <b>Plus délicat</b> — l'agent prépare, l'humain garde la main sur le récit. Bordure verte = fiable, orange = à vérifier, foncé = humain.</p>
-            <div class="flow">
-              <div class="flow-col"><div class="col-head">contrôle</div><div class="node node--human"><span class="node-title">Porte qualité</span><span class="node-desc">Rejet + feedback si trop mauvais</span></div></div>
-              <div class="flow-arrow">→</div>
-              <div class="flow-col"><div class="col-head">auto · fiable</div><div class="node node--output"><span class="node-title">Habillage</span><span class="node-desc">Logo, charte, musique</span></div><div class="node node--output"><span class="node-title">Sous-titres</span><span class="node-desc">Multilingue auto</span></div></div>
-              <div class="flow-arrow">→</div>
-              <div class="flow-col"><div class="col-head">auto · à vérifier</div><div class="node node--warn"><span class="node-title">Découpe temps morts</span><span class="node-desc">+ présélection des plans</span></div></div>
-              <div class="flow-arrow">→</div>
-              <div class="flow-col"><div class="col-head">enjeu fort</div><div class="node node--build"><span class="node-title">Montage fin humain</span><span class="node-desc">Freelance · UAE, France</span></div></div>
+          <div class="flow">
+            <div class="flow-col"><div class="col-head">1 · Type de lieu</div><div class="node node--you"><span class="node-title">Hôtel · Restaurant</span></div></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-col"><div class="col-head">2 · Type de support</div><div class="node node--you"><span class="node-title">Carte menu · Signalétique · Kit événement · PLV table</span></div></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-col"><div class="col-head">3 · Vous remplissez</div><div class="node node--you"><span class="node-title">Texte · Date · Lieu · Langue</span></div></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-col"><div class="col-head">4 · Génération auto</div><div class="node node--result"><span class="node-title">PDF prêt imprimeur</span><span class="node-desc">Verrouillé à la charte</span></div></div>
+          </div>
+          <div class="diagram-note"><b>Évolutif :</b> chaque marché peut soumettre un ticket pour demander un nouveau type de support ou de format — la bibliothèque de gabarits s'enrichit au fil du temps.</div>
+          <div class="scope-note">
+            <span class="sn-tag">À cadrer avec vous</span>
+            Avant de figer la plateforme, on a besoin de voir <b>ce qui se fait aujourd'hui</b> : quels supports les marchés produisent réellement, dans quels formats, pour quels usages (hôtel vs restaurant, événement vs permanent). C'est ce qui définit l'arbre de filtres et la bibliothèque de gabarits de départ.
+          </div>
+        </div>
+
+        <!-- PLATFORM B — STUDIO BRIEFS -->
+        <div class="platform-card b">
+          <span class="pc-tag">Plateforme B · sur brief</span>
+          <h4>Studio de déclinaison de contenu</h4>
+          <p class="pc-sub">Pour tout le reste — resizing, langues, habillage, voix… Les demandes évoluent sans cesse, donc on passe par un brief, pas par un parcours figé.</p>
+          <div class="enclair">
+            <span class="ec-tag">En clair</span>
+            <div class="ec-steps">
+              <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">Vous déposez un <b>brief</b> (depuis vos assets)</span></div>
+              <div class="ec-arrow">→</div>
+              <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">L'agent répond avec une <b>cotation</b> et un <b>délai</b></span></div>
+              <div class="ec-arrow">→</div>
+              <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">+ une <b>maquette preview</b> de ce que ça va donner</span></div>
+              <div class="ec-arrow">→</div>
+              <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">Vous validez → <b>production</b></span></div>
             </div>
           </div>
-        </div>
-
-        <span class="mini-lab">Fin commune — <b>rien ne sort sans un humain</b></span>
-        <div class="flow">
-          <div class="flow-col">
-            <div class="col-head">Validation</div>
-            <div class="node node--human"><span class="node-lab">Humain</span><span class="node-title">Curation assistée</span><span class="node-desc">Choisit la meilleure variante</span></div>
+          <div class="flow">
+            <div class="flow-col"><div class="col-head">1 · Vous briefez</div><div class="node node--you"><span class="node-title">Brief Classique · Accéléré · Express</span><span class="node-desc">Selon l'urgence</span></div></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-col"><div class="col-head">2 · Depuis vos assets</div><div class="node node--your"><span class="node-title">Votre banque d'assets</span></div></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-col"><div class="col-head">3 · L'agent répond</div><div class="node node--agent"><span class="node-title">Cotation + délai + maquette preview</span></div></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-col"><div class="col-head">4 · Vous validez</div><div class="node node--result"><span class="node-title">Production lancée</span></div></div>
           </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-col">
-            <div class="col-head">Sortie</div>
-            <div class="node node--output"><span class="node-title">Assets tagués → SharePoint</span><span class="node-desc">Le passe-plat vers le Calendrier</span></div>
+          <div class="chips-lab">Ce que le Studio sait faire</div>
+          <div class="chips">
+            <span class="chip hot">Resizing multi-format</span>
+            <span class="chip hot">Traduction</span>
+            <span class="chip hot">Sous-titres auto</span>
+            <span class="chip">Habillage charte</span>
+            <span class="chip">Déclinaison langues</span>
+            <span class="chip">Voix off (IA)</span>
+            <span class="chip">Clonage vocal</span>
+            <span class="chip">Montage court</span>
+            <span class="chip">Versions par canal</span>
+          </div>
+          <div class="scope-note">
+            <span class="sn-tag">À cadrer avec vous</span>
+            Le périmètre des demandes évolue vite. On veut partir de <b>vos cas réels</b> pour calibrer les trois niveaux de brief (Classique / Accéléré / Express), les délais et la grille de cotation. La liste ci-dessus est un point de départ, pas une limite.
           </div>
         </div>
-
-        <div class="diagram-note"><b>Ce qu'on automatise vs ce qui reste humain :</b> l'agent fait le travail ingrat et répétitif (recadrer, sous-titrer, habiller, ranger) ; l'humain garde le travail éditorial (raconter). On ne promet pas que la machine a du goût — on promet qu'elle libère le temps de ceux qui en ont. Et jamais de génération de personnes : on décline et on sublime du réel.</div>
-        <div class="diagram-note" style="margin-top:10px;"><b>Brique 2 · l'app POS :</b> un marché choisit un format (porte-menu, PLV, signalétique), tape son texte, prend un visuel déjà validé → PDF prêt imprimeur. Gabarits verrouillés à la charte — impossible d'en sortir par construction.</div>
       </div>
 
       <!-- PILIER 4 -->
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
-        <div class="diagram-title"><span class="d-tag">Pilier 4</span><h3>Reporting — trois couches</h3></div>
-        <p class="diagram-sub">Plomberie standard assumée en bas, intelligence réelle au-dessus.</p>
+        <div class="diagram-title"><span class="d-tag">Pilier 4</span><h3>Le reporting</h3></div>
+        <p class="diagram-sub">Un agent qui rassemble tout ce que les autres produisent, écrit la lecture du mois, et recommande la suite.</p>
         <div class="enclair">
           <span class="ec-tag">En clair</span>
           <div class="ec-steps">
-            <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">On <b>branche</b> toutes vos sources de chiffres</span></div>
+            <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">L'agent <b>rassemble</b> tous vos chiffres au même endroit</span></div>
             <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">Un outil gratuit les <b>rassemble</b> sur un tableau de bord</span></div>
+            <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">Il <b>écrit</b> chaque mois ce qui s'est passé et pourquoi</span></div>
             <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">L'agent <b>écrit</b> chaque mois ce qui s'est passé et pourquoi</span></div>
+            <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">Il <b>recommande</b> les sujets et actions du mois suivant</span></div>
             <div class="ec-arrow">→</div>
             <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">Vous recevez une <b>note claire</b>, prête à transmettre</span></div>
           </div>
         </div>
         <div class="flow">
           <div class="flow-col">
-            <div class="col-head">Sources</div>
-            <div class="node node--tool"><span class="node-title">GA4 · Search Console</span></div>
-            <div class="node node--tool"><span class="node-title">Meta · LinkedIn · TikTok</span></div>
-            <div class="node node--tool"><span class="node-title">SE Ranking · Peec</span></div>
+            <div class="col-head">Ce qui rentre</div>
+            <div class="node node--your"><span class="node-title">Réseaux sociaux</span></div>
+            <div class="node node--your"><span class="node-title">Publicité (SEA)</span></div>
+            <div class="node node--your"><span class="node-title">SEO &amp; GEO</span></div>
           </div>
           <div class="flow-arrow">→</div>
           <div class="flow-col">
-            <div class="col-head">Plomberie standard</div>
-            <div class="node node--tool"><span class="node-lab">Loué</span><span class="node-title">Looker Studio</span><span class="node-desc">+ connecteurs · pas d'ETL custom</span></div>
+            <div class="col-head">L'agent agrégateur</div>
+            <div class="node node--agent-big">
+              <span class="node-lab">Agent reporting</span>
+              <span class="node-title">Il centralise &amp; recommande</span>
+              <ul>
+                <li>Rassemble les 4 volets au même endroit</li>
+                <li>Écrit la note : quoi, pourquoi, quoi faire</li>
+                <li>Recommande les sujets &amp; actions du mois</li>
+                <li>Le chiffre est calculé, jamais inventé</li>
+              </ul>
+            </div>
           </div>
           <div class="flow-arrow">→</div>
           <div class="flow-col">
-            <div class="col-head">Couche agent</div>
-            <div class="node node--build"><span class="node-lab">Construit</span><span class="node-title">Note mensuelle auto-rédigée</span><span class="node-desc">Quoi · pourquoi · quoi faire, par marché</span></div>
-            <div class="node node--build"><span class="node-title">Alertes proactives</span></div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-col">
-            <div class="col-head">Sortie</div>
-            <div class="node node--output"><span class="node-title">Lecture transférable</span><span class="node-desc">Format direction, par marché</span></div>
+            <div class="col-head">Résultat</div>
+            <div class="node node--result"><span class="node-title">Note mensuelle</span><span class="node-desc">Claire, par marché, prête à transmettre</span></div>
           </div>
         </div>
-        <div class="diagram-note"><b>Règle anti-approximation :</b> le code calcule, le modèle rédige ; chaque affirmation est traçable vers sa donnée ; quand l'agent ne sait pas expliquer une variation, il le dit au lieu d'inventer.</div>
+        <div class="diagram-note"><b>Ce qui n'existe nulle part ailleurs :</b> votre part de citation dans ChatGPT &amp; Perplexity face à Castalie et Culligan, mois par mois. Aucune CMO de votre catégorie ne voit ça aujourd'hui.</div>
       </div>
 
-    </div>
-  </section>
-</div>
-
-<!-- ============ TAB 3 — TECHNIQUE ============ -->
-<div class="panel" id="technique">
-
-  <section class="block" style="padding-top:56px;">
-    <div class="wrap">
-      <div class="sec-head"><span class="num">03</span><h2>Architecture <span class="accent">technique.</span></h2></div>
-      <p class="sec-intro">La règle : un <strong>agent</strong> fait le travail (moteur invisible) ; une <strong>plateforme</strong> est l'écran où des humains travaillent. On ne construit une plateforme que là où il y a de vrais utilisateurs récurrents — partout ailleurs, l'agent travaille dans les outils existants.</p>
-
-      <div class="stat-row">
-        <div class="statbox"><div class="big">1</div><div class="slab">Socle commun</div></div>
-        <div class="statbox"><div class="big"><span class="accent">4</span></div><div class="slab">Agents (le travail)</div></div>
-        <div class="statbox"><div class="big">2</div><div class="slab">Interfaces (dont 1 vraie plateforme)</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="wrap">
-      <div class="diagram-title"><span class="d-tag">Couche 0</span><h3>Le socle commun</h3></div>
-      <p class="diagram-sub">Construit une fois au pilier 1, réutilisé par tous les agents. C'est l'actif d'agence : au client suivant, il existe déjà.</p>
-      <div class="socle-grid">
-        <div class="socle-card"><div class="sc-lab">Connexions</div><div class="sc-title">API</div><div class="sc-desc">HubSpot, SharePoint, SE Ranking, Peec, moteurs de rendu, rail de publication</div></div>
-        <div class="socle-card"><div class="sc-lab">Orchestration</div><div class="sc-title">Planificateur</div><div class="sc-desc">Déclenche les tâches récurrentes : relevés, production, mesures</div></div>
-        <div class="socle-card"><div class="sc-lab">Garde-fou</div><div class="sc-title">Validation humaine</div><div class="sc-desc">File « à valider » transverse — rien ne sort sans accord</div></div>
-        <div class="socle-card"><div class="sc-lab">Conformité</div><div class="sc-title">Journal & traçabilité</div><div class="sc-desc">Toutes les actions des agents enregistrées (exigence DSI)</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="wrap">
-      <div class="diagram-title"><span class="d-tag">Couche 1</span><h3>Les 4 agents — rattachés à l'existant</h3></div>
-      <p class="diagram-sub">3 agents sur 4 n'ont aucune nouvelle interface : ils travaillent dans les outils que BE WTR a déjà. C'est voulu — chaque écran en plus, c'est de l'adoption, de la formation, de la maintenance.</p>
-      <table class="tech-table">
-        <thead><tr><th>Agent</th><th>Ce qu'il fait</th><th>Plateforme ?</th><th>Rattaché à (existant)</th></tr></thead>
-        <tbody>
-          <tr>
-            <td class="agent-name">1 · SEO/GEO</td>
-            <td>Relève positions & citations IA, rédige en brouillon, alerte, produit la liste RP</td>
-            <td><span class="badge badge--no">Non</span></td>
-            <td>HubSpot (brouillons) + email (alertes)</td>
-          </tr>
-          <tr>
-            <td class="agent-name">2 · Calendrier</td>
-            <td>Thèmes, trame 50/50, brouillons de posts, reco du mix %</td>
-            <td><span class="badge badge--no">Non</span></td>
-            <td>Monday.com + rail de publication</td>
-          </tr>
-          <tr>
-            <td class="agent-name">3 · Pipeline Studio</td>
-            <td>Décline & sublime les assets, applique droits + charte</td>
-            <td><span class="badge badge--yes">Oui</span></td>
-            <td>SharePoint (assets) → 2 interfaces</td>
-          </tr>
-          <tr>
-            <td class="agent-name">4 · Measurement</td>
-            <td>Note mensuelle auto-rédigée, alertes proactives</td>
-            <td><span class="badge badge--no">Non</span></td>
-            <td>Looker Studio (assemblé, pas construit)</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="wrap">
-      <div class="diagram-title"><span class="d-tag">Couche 2</span><h3>Les interfaces — les seuls écrans qu'on construit</h3></div>
-      <div class="iface-grid">
-        <div class="iface real">
-          <span class="if-tag">Vraie plateforme</span>
-          <h5>App POS self-service</h5>
-          <p>Équipe globale + pays. Création de PLV, menus, signalétique sur gabarits verrouillés Vis Id → PDF prêt imprimeur. La seule vraie plateforme utilisateur du projet.</p>
-        </div>
-        <div class="iface">
-          <span class="if-tag">Interface légère</span>
-          <h5>Validation Studio</h5>
-          <p>Équipe globale. Écran de choix parmi les variantes (avant/après, approuver/rejeter) — matérialise le contrôle humain.</p>
-        </div>
-        <div class="iface">
-          <span class="if-tag">Option · +3 000 €</span>
-          <h5>Dialogue données</h5>
-          <p>CMO / direction. Interroger les données en langage naturel (« pourquoi la Suisse a baissé en novembre ? »). Optionnel.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="wrap">
-      <div class="diagram-title"><span class="d-tag">Doctrine</span><h3>Acheter la mesure, construire l'action</h3></div>
-      <div class="buildbuy">
-        <div class="bb-col build">
-          <h5>● Construit par Orchestra</h5>
-          <div class="bb-item">Le socle (connexions, planificateur, validation, logs)</div>
-          <div class="bb-item">Les 4 agents et leur logique métier (voix BE WTR, mix 50/50, règles)</div>
-          <div class="bb-item">Les garde-fous : registre des droits, porte qualité, classification</div>
-          <div class="bb-item">Les interfaces : app POS, écran de validation</div>
-        </div>
-        <div class="bb-col">
-          <h5>○ Loué / utilisé — jamais reconstruit</h5>
-          <div class="bb-item">SE Ranking — positions SEO <span class="bb-cost">~110 €/mois</span></div>
-          <div class="bb-item">Peec AI — citations GEO <span class="bb-cost">~89 €/mois</span></div>
-          <div class="bb-item">SharePoint — stockage assets <span class="bb-cost">existant</span></div>
-          <div class="bb-item">Cloudinary / Creatomate — rendu image & vidéo <span class="bb-cost">à l'usage</span></div>
-          <div class="bb-item">Whisper / Deepgram — sous-titres <span class="bb-cost">à l'usage</span></div>
-          <div class="bb-item">Monday + rail testé — publication <span class="bb-cost">~100–150 €/mois</span></div>
-          <div class="bb-item">Looker Studio — dashboard <span class="bb-cost">gratuit</span></div>
-          <div class="bb-item">API modèles IA (Claude / GPT) <span class="bb-cost">à l'usage</span></div>
-        </div>
-      </div>
-      <div class="diagram-note" style="margin-top:24px;"><b>Critère contractuel sur tous les moteurs :</b> aucun entraînement sur les données de BE WTR. Total outils indicatif : 500–750 €/mois, refacturé à prix coûtant.</div>
-
-      <div class="clientline">
-        <span class="eyebrow">LA PHRASE POUR LE CLIENT</span>
-        <p>« Vous n'achetez pas quatre plateformes à gérer. Vous achetez des agents qui travaillent dans vos outils existants — et <span class="accent">une seule nouvelle interface, l'app POS</span>, parce que c'est le seul endroit où vos équipes ont vraiment besoin d'un écran. »</p>
-      </div>
     </div>
   </section>
 
   <footer class="block foot">
     <div class="wrap">
       <div class="foot-meta">
-        <span class="lab">Orchestra Intelligence · Xavier Vironneau & Ludovic Goutel</span>
+        <span class="lab">Orchestra Intelligence · Xavier Vironneau &amp; Ludovic Goutel</span>
         <span class="lab">Pilotes IA BE WTR · FY26</span>
         <span class="lab">ORC—BWTR—FY26</span>
       </div>
