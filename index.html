@@ -123,6 +123,27 @@
   .promise-col li { list-style: none; font-size: 13px; line-height: 1.5; padding: 7px 0; border-bottom: 1px dashed var(--line-2); }
   .promise-col li:last-child { border-bottom: none; }
 
+  /* === "ce qu'on a compris" cards === */
+  .understand-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+  .u-card { border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; background: var(--bg-2); }
+  .u-card .u-lab { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); font-weight: 700; }
+  .u-card h4 { font-size: 1.05rem; font-weight: 700; margin: 7px 0 8px; letter-spacing: -0.01em; }
+  .u-card p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.5; }
+  .u-card ul { list-style: none; margin-top: 2px; }
+  .u-card li { font-size: 13.5px; color: var(--ink-soft); padding: 4px 0 4px 16px; position: relative; line-height: 1.4; }
+  .u-card li::before { content: ""; width: 6px; height: 1px; background: var(--orange); position: absolute; left: 0; top: 12px; }
+
+  /* === simple system relay === */
+  .relay { display: flex; align-items: stretch; gap: 0; margin: 8px 0 14px; }
+  .relay-step { flex: 1; background: var(--orange); color: #fff; border-radius: 12px; padding: 18px 16px; display: flex; flex-direction: column; gap: 4px; }
+  .relay-step .rs-n { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.7); }
+  .relay-step b { font-size: 1.02rem; font-weight: 700; line-height: 1.2; }
+  .relay-step small { font-size: 12px; color: rgba(255,255,255,0.88); }
+  .relay-arrow { display: flex; align-items: center; color: var(--orange); font-size: 20px; padding: 0 8px; }
+  .relay-base { background: var(--slate-pale); border: 1px solid var(--slate-line); border-radius: 10px; padding: 13px 18px; font-size: 13.5px; color: var(--slate); text-align: center; font-weight: 500; }
+  .relay-base b { color: var(--ink-2); }
+  @media (max-width: 900px) { .understand-grid { grid-template-columns: 1fr; } .relay { flex-direction: column; } .relay-arrow { transform: rotate(90deg); padding: 6px 0; } }
+
   /* === DIAGRAMS (3-color system) === */
   .align-banner { background: var(--slate); color: #fff; border-radius: 14px; padding: 20px 24px; margin-bottom: 30px; }
   .align-banner .ab-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange-soft); font-weight: 700; display: block; margin-bottom: 8px; }
@@ -266,8 +287,42 @@
 
   <section class="block">
     <div class="wrap">
+      <div class="sec-head"><span class="num">01</span><h2>Ce qu'on a <span class="accent">compris.</span></h2></div>
+      <p class="sec-intro">Avant de proposer quoi que ce soit, voici ce qu'on a retenu de votre brief et de votre situation. Si une lecture est à côté, on la corrige ensemble.</p>
+      <div class="understand-grid">
+        <div class="u-card">
+          <span class="u-lab">Votre priorité</span>
+          <h4>D'abord la notoriété B2B, puis le B2C</h4>
+          <p>Construire la crédibilité de la marque via l'HORECA (hôtels, restaurants) dans les villes clés — puis l'expansion grand public, Suisse et UAE en tête.</p>
+        </div>
+        <div class="u-card">
+          <span class="u-lab">Votre contexte</span>
+          <h4>Passer à l'échelle sur 9 marchés</h4>
+          <p>Accor, B Corp, Série C : la demande est là. Le défi devient la cadence et le volume — produire partout sans surcharger des équipes qui ne sont pas des spécialistes du contenu.</p>
+        </div>
+        <div class="u-card">
+          <span class="u-lab">Vos 4 demandes</span>
+          <h4>Le périmètre du brief</h4>
+          <ul>
+            <li>Visibilité SEO &amp; GEO, marché par marché</li>
+            <li>Un calendrier de contenu 50/50 global-local</li>
+            <li>Un studio de production (déclinaison + POS)</li>
+            <li>Un reporting mensuel agrégé</li>
+          </ul>
+        </div>
+        <div class="u-card">
+          <span class="u-lab">Votre contrainte</span>
+          <h4>Opérationnel dès septembre 2026</h4>
+          <p>Des agents intégrés aux opérations à la rentrée, et un budget construit pilier par pilier pour pouvoir séquencer librement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
       <div class="angle">
-        <span class="eyebrow">L'ANGLE</span>
+        <span class="eyebrow">NOTRE LECTURE</span>
         <h3>Les nouveaux moteurs récompensent la preuve, <span class="accent">pas le volume.</span></h3>
         <p>Pendant quinze ans, le référencement a récompensé la masse — autorité de domaine, volume de contenu, budgets : Culligan et Castalie gagnent par la taille. Les moteurs de réponse changent la règle : ils citent ce qui est <strong style="color:#fff">vérifiable</strong> — certifications, chiffres, faits. Or BE WTR est la marque la plus prouvable de sa catégorie (B Corp, embouteillage en centre-ville, Bocuse d'Or, Accor) avec le dispositif le moins structuré. C'est une fenêtre où le challenger bat l'installé — non en produisant plus, mais en structurant mieux ses preuves. Et cette fenêtre se referme.</p>
       </div>
@@ -276,8 +331,25 @@
 
   <section class="block">
     <div class="wrap">
-      <div class="sec-head"><span class="num">01</span><h2>Les <span class="accent">quatre piliers.</span></h2></div>
-      <p class="sec-intro">Le pilier 1 produit la matière, le 3 la met en images, le 2 la programme et l'anticipe, le 4 mesure tout et renvoie les chiffres au mix. Le dispositif apprend chaque trimestre.</p>
+      <div class="sec-head"><span class="num">02</span><h2>Notre proposition : <span class="accent">un système.</span></h2></div>
+      <p class="sec-intro">Pas quatre outils séparés — quatre agents qui se passent le relais, branchés sur vos outils et validés par vos équipes. Voici la vue d'ensemble ; le détail de chaque système est dans l'onglet « L'Écosystème ».</p>
+      <div class="relay">
+        <div class="relay-step"><span class="rs-n">01</span><b>Trouve &amp; crée</b><small>l'agent SEO / GEO</small></div>
+        <div class="relay-arrow">→</div>
+        <div class="relay-step"><span class="rs-n">02</span><b>Met en images</b><small>l'AI Studio</small></div>
+        <div class="relay-arrow">→</div>
+        <div class="relay-step"><span class="rs-n">03</span><b>Publie au bon moment</b><small>le calendrier</small></div>
+        <div class="relay-arrow">→</div>
+        <div class="relay-step"><span class="rs-n">04</span><b>Mesure &amp; recommande</b><small>le reporting</small></div>
+      </div>
+      <div class="relay-base">Le tout branché sur <b>vos outils</b> — et validé par <b>vos équipes</b> avant chaque publication.</div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head"><span class="num">03</span><h2>Les systèmes, <span class="accent">pilier par pilier.</span></h2></div>
+      <p class="sec-intro">Chaque pilier répond à l'une de vos quatre demandes. Vue rapide ici ; le « comment ça marche » détaillé est dans l'onglet « L'Écosystème ».</p>
       <div class="pillars-grid">
 
         <div class="pcard">
@@ -338,7 +410,7 @@
 
   <section class="block">
     <div class="wrap">
-      <div class="sec-head"><span class="num">02</span><h2>Les quatre <span class="accent">partis pris.</span></h2></div>
+      <div class="sec-head"><span class="num">04</span><h2>Les quatre <span class="accent">partis pris.</span></h2></div>
       <p class="sec-intro">Les décisions structurantes à acter — c'est l'alignement à obtenir avant tout chiffrage ferme.</p>
       <div class="pp-grid">
         <div class="pp"><h5>Une entité, un domaine</h5><p>Tout (B2B, D2C, 9 marchés) vit sur bewtr.com en sous-dossiers. Un domaine séparé repartirait de zéro — 12 à 24 mois pour exister, pile pendant le lancement D2C.</p></div>
@@ -351,7 +423,7 @@
 
   <section class="block">
     <div class="wrap">
-      <div class="sec-head"><span class="num">03</span><h2>Chiffrage <span class="accent">par pilier.</span></h2></div>
+      <div class="sec-head"><span class="num">05</span><h2>Chiffrage <span class="accent">par pilier.</span></h2></div>
       <p class="sec-intro">Setup et run isolés, par pilier — pour permettre le séquencement.</p>
       <table class="budget-table">
         <thead><tr><th>Pilier</th><th>Setup</th><th>Run France / mois</th></tr></thead>
@@ -374,7 +446,7 @@
 
   <section class="block">
     <div class="wrap">
-      <div class="sec-head"><span class="num">04</span><h2>Ce qu'on promet — <span class="accent">et ce qu'on ne promet pas.</span></h2></div>
+      <div class="sec-head"><span class="num">06</span><h2>Ce qu'on promet — <span class="accent">et ce qu'on ne promet pas.</span></h2></div>
       <p class="sec-intro">88 % des projets d'agents IA n'atteignent jamais la production. Notre discipline de périmètre est le garde-fou — et notre honnêteté sur les indicateurs.</p>
       <div class="promise-grid">
         <div class="promise-col no">
