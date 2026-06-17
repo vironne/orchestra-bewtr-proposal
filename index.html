@@ -200,6 +200,20 @@
     .s6 .step { grid-column: 1 !important; grid-row: auto !important; }
     .step::after { display: none !important; }
   }
+
+  /* === sysflow : animated serpentine overview === */
+  .sysflow { display: flex; flex-direction: column; align-items: center; padding: 8px 0 0; }
+  .sysflow svg { width: 100%; max-width: 940px; height: auto; }
+  .sysflow-cap { font-size: 13px; color: var(--muted); text-align: center; margin-top: 16px; max-width: 600px; line-height: 1.5; }
+  .sysflow-cap b { color: var(--ink-2); }
+  @keyframes sf-flow { to { stroke-dashoffset: -520; } }
+  @keyframes sf-march { to { stroke-dashoffset: -320; } }
+  @keyframes sf-ping { 0% { transform: scale(1); opacity: 0.5; } 80%,100% { transform: scale(2.4); opacity: 0; } }
+  .sf-flowline { stroke-dasharray: 16 14; animation: sf-flow 14s linear infinite; }
+  .sf-feedback { stroke-dasharray: 7 9; animation: sf-march 5s linear infinite; }
+  .sf-ping { transform-box: fill-box; transform-origin: center; animation: sf-ping 3.2s ease-out infinite; }
+  .sf-ping.p2 { animation-delay: .5s; } .sf-ping.p3 { animation-delay: 1s; } .sf-ping.p4 { animation-delay: 1.5s; } .sf-ping.p5 { animation-delay: 2s; } .sf-ping.p6 { animation-delay: 2.5s; }
+  @media (prefers-reduced-motion: reduce) { .sf-flowline, .sf-feedback, .sf-ping { animation: none; } .sf-comet { display: none; } }
   @media (max-width: 900px) { .understand-grid { grid-template-columns: 1fr; } .relay { flex-direction: column; } .relay-arrow { transform: rotate(90deg); padding: 6px 0; } }
 
   /* === DIAGRAMS (3-color system) === */
@@ -523,55 +537,80 @@
       <!-- SYSTÈME GLOBAL -->
       <div class="diagram">
         <div class="diagram-title"><span class="d-tag">Vue d'ensemble</span><h3>Le système complet</h3></div>
-        <p class="diagram-sub">Vos outils alimentent les agents ; les agents produisent ; le résultat apparaît là où on vous cherche ; un dernier agent mesure tout et recommande la suite.</p>
-        <div class="sysmap">
+        <p class="diagram-sub">Un flux unique : vos outils nourrissent les agents, qui créent, mettent en images et publient ; le résultat est mesuré — et la boucle revient nourrir le tour suivant.</p>
+        <div class="sysflow">
+          <svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vue d'ensemble animée du système Orchestra">
+            <defs>
+              <linearGradient id="sfGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#F0A360"/><stop offset="0.5" stop-color="#E97825"/><stop offset="1" stop-color="#C95E12"/>
+              </linearGradient>
+              <filter id="sfShadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A1A" flood-opacity="0.16"/></filter>
+              <filter id="sfGlow" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <marker id="sfArrow" markerWidth="13" markerHeight="13" refX="7" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 Z" fill="#E97825"/></marker>
+            </defs>
 
-          <div class="sys-band band--your">
-            <span class="sb-lab">① Ce que vous avez déjà — on s'y branche, on ne remplace rien</span>
-            <div class="sys-grid g4">
-              <div class="sys-node n-your">Votre banque d'assets<small>photos &amp; vidéos</small></div>
-              <div class="sys-node n-your">Votre site web</div>
-              <div class="sys-node n-your">Votre planning<small>événements, marchés</small></div>
-              <div class="sys-node n-your">Vos chiffres<small>web &amp; réseaux</small></div>
-            </div>
-          </div>
+            <!-- base flow line -->
+            <path d="M170,170 H830 C928,170 928,420 830,420 H170" fill="none" stroke="#F0E7DA" stroke-width="6" stroke-linecap="round"/>
+            <!-- animated flowing line -->
+            <path class="sf-flowline" d="M170,170 H830 C928,170 928,420 830,420 H170" fill="none" stroke="url(#sfGrad)" stroke-width="3.5" stroke-linecap="round"/>
+            <!-- feedback loop (left, dashed, marching) -->
+            <path class="sf-feedback" d="M140,420 C50,420 50,170 140,170" fill="none" stroke="#E97825" stroke-width="3" marker-end="url(#sfArrow)"/>
+            <text x="38" y="300" text-anchor="middle" font-size="22" fill="#E97825" font-family="Inter Tight, sans-serif" transform="rotate(-90 38 300)">↺ la boucle</text>
 
-          <div class="sys-down"><span class="sd-cap">les agents s'en nourrissent</span><span>↓</span></div>
+            <!-- travelling comet -->
+            <g class="sf-comet">
+              <circle r="3.5" fill="#E97825" opacity="0.25"><animateMotion dur="13s" begin="-0.6s" repeatCount="indefinite" path="M170,170 H830 C928,170 928,420 830,420 H170 C72,420 72,170 170,170 Z"/></circle>
+              <circle r="4.5" fill="#E97825" opacity="0.4"><animateMotion dur="13s" begin="-0.4s" repeatCount="indefinite" path="M170,170 H830 C928,170 928,420 830,420 H170 C72,420 72,170 170,170 Z"/></circle>
+              <circle r="5.5" fill="#E97825" opacity="0.6"><animateMotion dur="13s" begin="-0.2s" repeatCount="indefinite" path="M170,170 H830 C928,170 928,420 830,420 H170 C72,420 72,170 170,170 Z"/></circle>
+              <circle r="7.5" fill="#E97825" filter="url(#sfGlow)"><animateMotion dur="13s" repeatCount="indefinite" path="M170,170 H830 C928,170 928,420 830,420 H170 C72,420 72,170 170,170 Z"/></circle>
+            </g>
 
-          <div class="sys-band band--agent">
-            <span class="sb-lab">② Les <b>agents Orchestra</b> font le travail</span>
-            <div class="sys-grid g3">
-              <div class="sys-node n-agent">Agent SEO/GEO<small>crée le contenu &amp; les preuves</small></div>
-              <div class="sys-node n-agent">AI Studio<small>met en images</small></div>
-              <div class="sys-node n-agent">Calendrier<small>publie au bon moment</small></div>
-            </div>
-            <div class="socle-strip">Tous posés sur <b>un socle commun</b> — et toujours une validation humaine avant publication</div>
-          </div>
+            <!-- labels (row 1 above) -->
+            <g font-family="Inter Tight, sans-serif" text-anchor="middle">
+              <text x="170" y="106" font-size="16" font-weight="700" fill="#1A1A1A">VOS OUTILS</text>
+              <text x="170" y="126" font-size="12.5" fill="#777" font-style="italic">site · réseaux · assets</text>
+              <text x="500" y="106" font-size="16" font-weight="700" fill="#1A1A1A">SEO / GEO</text>
+              <text x="500" y="126" font-size="12.5" fill="#777" font-style="italic">trouve &amp; crée</text>
+              <text x="830" y="106" font-size="16" font-weight="700" fill="#1A1A1A">AI STUDIO</text>
+              <text x="830" y="126" font-size="12.5" fill="#777" font-style="italic">met en images</text>
+            </g>
+            <!-- labels (row 2 below) -->
+            <g font-family="Inter Tight, sans-serif" text-anchor="middle">
+              <text x="830" y="488" font-size="16" font-weight="700" fill="#1A1A1A">CALENDRIER</text>
+              <text x="830" y="508" font-size="12.5" fill="#777" font-style="italic">publie au bon moment</text>
+              <text x="500" y="488" font-size="16" font-weight="700" fill="#1A1A1A">LE RÉSULTAT</text>
+              <text x="500" y="508" font-size="12.5" fill="#777" font-style="italic">visibilité · contenu</text>
+              <text x="170" y="488" font-size="16" font-weight="700" fill="#1A1A1A">MESURE &amp; RECO</text>
+              <text x="170" y="508" font-size="12.5" fill="#777" font-style="italic">recommande la suite</text>
+            </g>
 
-          <div class="sys-down"><span class="sd-cap">ce qui en sort</span><span>↓</span></div>
+            <!-- ping rings -->
+            <circle class="sf-ping p1" cx="170" cy="170" r="30" fill="none" stroke="#44535F" stroke-width="2"/>
+            <circle class="sf-ping p2" cx="500" cy="170" r="30" fill="none" stroke="#E97825" stroke-width="2"/>
+            <circle class="sf-ping p3" cx="830" cy="170" r="30" fill="none" stroke="#E97825" stroke-width="2"/>
+            <circle class="sf-ping p4" cx="830" cy="420" r="30" fill="none" stroke="#E97825" stroke-width="2"/>
+            <circle class="sf-ping p5" cx="500" cy="420" r="30" fill="none" stroke="#2E7D5B" stroke-width="2"/>
+            <circle class="sf-ping p6" cx="170" cy="420" r="30" fill="none" stroke="#E97825" stroke-width="2"/>
 
-          <div class="sys-band">
-            <span class="sb-lab">③ Le résultat apparaît là où on vous cherche — et où on vous cite</span>
-            <div class="sys-grid g3">
-              <div class="sys-node n-result">Votre site<small>pages &amp; articles</small></div>
-              <div class="sys-node n-result">Réseaux sociaux<small>posts localisés</small></div>
-              <div class="sys-node n-result">Presse &amp; IA<small>citations, RP</small></div>
-            </div>
-          </div>
-
-          <div class="sys-down"><span class="sd-cap">tout est mesuré</span><span>↓</span></div>
-
-          <div class="sys-band band--agent">
-            <span class="sb-lab">④ Un <b>agent agrégateur</b> mesure tout — et recommande la suite</span>
-            <div class="sys-grid g3">
-              <div class="sys-node n-agent">Il centralise<small>SEO/GEO · social · studio</small></div>
-              <div class="sys-node n-agent">Il écrit la note<small>quoi · pourquoi</small></div>
-              <div class="sys-node n-agent">Il recommande<small>sujets &amp; actions du mois</small></div>
-            </div>
-          </div>
-
-          <div class="loop-bar">↺ Ce qu'on apprend chaque mois réajuste les agents — le dispositif s'améliore au trimestre</div>
-
+            <!-- nodes -->
+            <g filter="url(#sfShadow)">
+              <circle cx="170" cy="170" r="30" fill="#44535F" stroke="#fff" stroke-width="3"/>
+              <circle cx="500" cy="170" r="30" fill="#E97825" stroke="#fff" stroke-width="3"/>
+              <circle cx="830" cy="170" r="30" fill="#E97825" stroke="#fff" stroke-width="3"/>
+              <circle cx="830" cy="420" r="30" fill="#E97825" stroke="#fff" stroke-width="3"/>
+              <circle cx="500" cy="420" r="30" fill="#2E7D5B" stroke="#fff" stroke-width="3"/>
+              <circle cx="170" cy="420" r="30" fill="#E97825" stroke="#fff" stroke-width="3"/>
+            </g>
+            <g font-family="JetBrains Mono, monospace" font-size="19" font-weight="700" fill="#fff" text-anchor="middle">
+              <text x="170" y="177">1</text>
+              <text x="500" y="177">2</text>
+              <text x="830" y="177">3</text>
+              <text x="830" y="427">4</text>
+              <text x="500" y="427">5</text>
+              <text x="170" y="427">6</text>
+            </g>
+          </svg>
+          <p class="sysflow-cap">Les points lumineux, c'est le flux qui circule en continu. La boucle de gauche, c'est le feedback : <b>la mesure revient nourrir vos équipes et les agents</b>. À chaque étape, vos équipes valident.</p>
         </div>
       </div>
 
