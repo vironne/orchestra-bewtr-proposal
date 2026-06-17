@@ -300,6 +300,25 @@
   .ex-screen-dots { display: flex; gap: 4px; margin-bottom: 10px; }
   .ex-screen-dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(201,94,18,0.35); }
   .ex-screen-dots i:first-child { background: var(--orange); }
+
+  /* === pillar exhibit (.pex) — harmonized per-pillar frame === */
+  .pex { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 1px 2px rgba(26,26,26,0.03), 0 18px 44px -32px rgba(26,26,26,0.13); }
+  .pex-head { padding: 22px 26px 20px; border-bottom: 1px solid var(--line); background: var(--bg-2); }
+  .pex-id { display: flex; align-items: center; gap: 11px; margin-bottom: 8px; flex-wrap: wrap; }
+  .pex-num { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); font-weight: 700; }
+  .pex-name { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em; }
+  .pex-thesis { font-size: 13.5px; color: var(--ink-soft); margin-top: 4px; max-width: 780px; line-height: 1.5; }
+  .pex-body { padding: 20px 26px 4px; }
+  .pex-note { margin: 6px 26px 22px; background: var(--orange-pale); border: 1px solid var(--orange-soft); border-radius: 10px; padding: 13px 16px; font-size: 12.5px; color: var(--orange-2); line-height: 1.5; }
+  .pex-note.slate { background: var(--slate-pale); border-color: var(--slate-line); color: var(--slate); }
+  .pex-note b { font-weight: 700; }
+  .pex-sub { padding: 0 26px; margin: 2px 0 0; }
+  .pex-platforms { padding: 4px 26px 6px; display: flex; flex-direction: column; gap: 16px; }
+  .pex-pf { border: 1px solid var(--line); border-radius: 13px; padding: 18px 20px; background: var(--bg-2); }
+  .pex-pf.b { background: #fff; }
+  .pex-pf-tag { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--orange-2); }
+  .pex-pf h4 { font-size: 1.1rem; font-weight: 700; margin: 6px 0 3px; letter-spacing: -0.01em; }
+  .pex-pf .pf-sub { font-size: 12.5px; color: var(--muted); margin-bottom: 14px; line-height: 1.45; }
   .exb-source { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.03em; color: var(--muted); margin-top: 16px; line-height: 1.7; }
   @media (max-width: 820px) {
     .exb-row { grid-template-columns: 1fr; }
@@ -696,232 +715,194 @@
 
       <!-- PILIER 1 -->
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
-        <div class="diagram-title"><span class="d-tag">Pilier 1</span><h3>L'agent SEO / GEO</h3></div>
-        <p class="diagram-sub">Un seul agent qui fait tout le travail de visibilité — en continu, branché sur votre site.</p>
-        <div class="enclair">
-          <span class="ec-tag">En clair</span>
-          <div class="ec-steps">
-            <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">L'agent <b>surveille</b> où BE WTR apparaît (ou pas) sur Google et dans les IA</span></div>
-            <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">Il <b>rédige</b> les contenus qui manquent</span></div>
-            <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">Votre équipe <b>relit et publie</b></span></div>
-            <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">C'est en ligne — et on sait <b>quels médias contacter</b> en RP</span></div>
+        <div class="pex">
+          <div class="pex-head">
+            <div class="pex-id"><span class="pex-num">Pilier 1</span><span class="pex-name">SEO / GEO</span><span class="ex-badge agent">Agent</span></div>
+            <p class="pex-thesis">Un seul agent rend BE WTR visible — sur Google comme dans les IA — et arme vos RP. En continu, validé par vos équipes.</p>
           </div>
-        </div>
-        <div class="flow">
-          <div class="flow-col">
-            <div class="col-head">Votre présence</div>
-            <div class="node node--your"><span class="node-title">Votre site &amp; vos pages</span><span class="node-desc">Là où l'agent agit</span></div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-col">
-            <div class="col-head">L'agent fait tout</div>
-            <div class="node node--agent-big">
-              <span class="node-lab">Agent SEO / GEO</span>
-              <span class="node-title">Un seul agent</span>
-              <ul>
-                <li>Surveille vos positions Google &amp; vos citations dans les IA</li>
-                <li>Rédige articles &amp; pages optimisés (en brouillon)</li>
-                <li>Décline vers vos autres marchés</li>
-                <li>Repère les médias à cibler en RP</li>
-                <li>Alerte dès qu'une position bouge</li>
-              </ul>
+          <div class="pex-body">
+            <div class="flow">
+              <div class="flow-col">
+                <div class="col-head">Entrée</div>
+                <div class="node node--your"><span class="node-title">Votre présence</span><span class="node-desc">site · RP · réseaux</span></div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-col">
+                <div class="col-head">L'agent fait le travail</div>
+                <div class="node node--agent-big">
+                  <span class="node-lab">Agent SEO / GEO</span>
+                  <span class="node-title">Surveille · rédige · décline</span>
+                  <ul>
+                    <li>Suit vos positions Google &amp; vos citations IA</li>
+                    <li>Rédige pages &amp; articles optimisés (brouillon)</li>
+                    <li>Décline vers vos autres marchés</li>
+                    <li>Repère les médias à cibler en RP</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-col">
+                <div class="col-head">Vous</div>
+                <div class="node node--you"><span class="node-lab">Validation</span><span class="node-title">Relire &amp; publier</span></div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-col">
+                <div class="col-head">Résultat</div>
+                <div class="node node--result"><span class="node-title">Contenu publié</span></div>
+                <div class="node node--result"><span class="node-title">Liste RP priorisée</span><span class="node-desc">les médias que les IA citent</span></div>
+              </div>
             </div>
           </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-col">
-            <div class="col-head">Vous</div>
-            <div class="node node--you"><span class="node-lab">Validation</span><span class="node-title">Relire &amp; publier</span></div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-col">
-            <div class="col-head">Résultat</div>
-            <div class="node node--result"><span class="node-title">Contenu publié</span></div>
-            <div class="node node--result"><span class="node-title">Liste RP priorisée</span><span class="node-desc">Les médias que les IA citent vraiment</span></div>
-          </div>
+          <div class="pex-note"><b>La brique RP :</b> on ne fait pas les RP, on les arme. L'agent voit quels médias les IA citent → la liste de ciblage devient une donnée, pas une intuition.</div>
         </div>
-        <div class="diagram-note"><b>La brique RP :</b> on ne fait pas les RP, on les arme et on les oriente. L'agent voit quels médias les IA citent → la liste de ciblage RP devient une donnée, pas une intuition.</div>
       </div>
 
       <!-- PILIER 2 -->
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
-        <div class="diagram-title"><span class="d-tag">Pilier 2</span><h3>Le calendrier de contenu</h3></div>
-        <p class="diagram-sub">L'agent assemble ce qui existe et anticipe les temps forts. Il programme — il ne génère pas.</p>
-        <div class="enclair">
-          <span class="ec-tag">En clair</span>
-          <div class="ec-steps">
-            <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">On rassemble vos <b>événements</b> et vos <b>contenus existants</b></span></div>
-            <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">L'agent propose un <b>planning de posts</b> mois par mois</span></div>
-            <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">Vous <b>validez</b> au central</span></div>
-            <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">Les posts partent — les marchés <b>adaptent</b>, ne produisent plus</span></div>
+        <div class="pex">
+          <div class="pex-head">
+            <div class="pex-id"><span class="pex-num">Pilier 2</span><span class="pex-name">Calendrier de contenu</span><span class="ex-badge agent">Agent</span></div>
+            <p class="pex-thesis">L'agent assemble ce qui existe, anticipe les temps forts et recommande le mix. Il programme — il ne génère pas. Branché sur Monday.com.</p>
           </div>
-        </div>
-        <div class="flow">
-          <div class="flow-col">
-            <div class="col-head">Vos entrées</div>
-            <div class="node node--your"><span class="node-title">Vos événements</span><span class="node-desc">Salons, saisons, plan commercial</span></div>
-            <div class="node node--your"><span class="node-title">Vos contenus existants</span><span class="node-desc">+ ce que le Studio produit</span></div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-col">
-            <div class="col-head">L'agent calendrier</div>
-            <div class="node node--agent-big">
-              <span class="node-lab">Agent calendrier</span>
-              <span class="node-title">Il orchestre</span>
-              <ul>
-                <li>Cale les thèmes sur vos temps forts (anticipation)</li>
-                <li>Recycle d'abord ce que vous avez déjà</li>
-                <li>Recommande le mix % (gastronomie, impact, lifestyle…)</li>
-                <li>Trame 50/50 global-local, brouillons prêts</li>
-              </ul>
+          <div class="pex-body">
+            <div class="flow">
+              <div class="flow-col">
+                <div class="col-head">Entrée</div>
+                <div class="node node--your"><span class="node-title">Vos événements</span><span class="node-desc">salons · saisons · plan co</span></div>
+                <div class="node node--your"><span class="node-title">Vos contenus existants</span></div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-col">
+                <div class="col-head">L'agent orchestre</div>
+                <div class="node node--agent-big">
+                  <span class="node-lab">Agent calendrier</span>
+                  <span class="node-title">Anticipe · recycle · recommande</span>
+                  <ul>
+                    <li>Cale les thèmes sur vos temps forts</li>
+                    <li>Recycle d'abord ce que vous avez déjà</li>
+                    <li>Recommande le mix % (gastro · lifestyle · produit)</li>
+                    <li>Trame 50/50 global-local, brouillons prêts</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-col">
+                <div class="col-head">Vous</div>
+                <div class="node node--you"><span class="node-lab">Validation centrale</span><span class="node-title">Les marchés adaptent</span></div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-col">
+                <div class="col-head">Résultat</div>
+                <div class="node node--result"><span class="node-title">Calendrier publié</span><span class="node-desc">posts programmés, localisés</span></div>
+              </div>
             </div>
           </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-col">
-            <div class="col-head">Vous</div>
-            <div class="node node--you"><span class="node-lab">Validation centrale</span><span class="node-title">Les marchés adaptent</span></div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-col">
-            <div class="col-head">Résultat</div>
-            <div class="node node--result"><span class="node-title">Calendrier publié</span><span class="node-desc">Posts programmés, localisés</span></div>
-          </div>
+          <div class="pex-note"><b>↺ La boucle :</b> les résultats des posts remontent au reporting, qui recalcule le mix % — révision au trimestre.</div>
         </div>
-        <div class="loop-bar">↺ Les résultats des posts remontent au reporting → qui recalcule le mix % → révision trimestrielle</div>
       </div>
 
       <!-- PILIER 3 -->
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
-        <div class="diagram-title"><span class="d-tag">Pilier 3</span><h3>AI Studio — deux plateformes</h3></div>
-        <p class="diagram-sub">Deux besoins très différents, donc deux plateformes distinctes. Toutes deux se branchent sur votre banque d'assets et gardent l'humain dans la boucle.</p>
+        <div class="pex">
+          <div class="pex-head">
+            <div class="pex-id"><span class="pex-num">Pilier 3</span><span class="pex-name">AI Studio</span><span class="ex-badge platform">Plateforme</span></div>
+            <p class="pex-thesis">Deux besoins très différents, donc deux plateformes dans une seule interface. Toutes deux branchées sur votre banque d'assets, l'humain toujours dans la boucle.</p>
+          </div>
+          <div class="pex-platforms">
 
-        <!-- PLATFORM A — POS -->
-        <div class="platform-card a">
-          <span class="pc-tag">Plateforme A · self-service</span>
-          <h4>Supports point de vente (POS)</h4>
-          <p class="pc-sub">Chaque marché crée ses propres supports — sans déborder de la charte. Un parcours guidé, pas un outil de design.</p>
-          <div class="enclair">
-            <span class="ec-tag">En clair</span>
-            <div class="ec-steps">
-              <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">Le marché <b>choisit</b> le type de lieu et de support</span></div>
-              <div class="ec-arrow">→</div>
-              <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">Il <b>remplit</b> le texte, la date, le lieu</span></div>
-              <div class="ec-arrow">→</div>
-              <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">La plateforme <b>génère</b> le support à la charte</span></div>
-              <div class="ec-arrow">→</div>
-              <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">Il récupère un <b>PDF prêt imprimeur</b></span></div>
+            <!-- PLATFORM A — POS -->
+            <div class="pex-pf">
+              <span class="pex-pf-tag">A · self-service</span>
+              <h4>Supports point de vente (POS)</h4>
+              <p class="pf-sub">Chaque marché crée ses propres supports, sans déborder de la charte. Un parcours guidé — pas un outil de design.</p>
+              <div class="flow">
+                <div class="flow-col"><div class="col-head">1 · Type de lieu</div><div class="node node--you"><span class="node-title">Hôtel · Restaurant</span></div></div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-col"><div class="col-head">2 · Type de support</div><div class="node node--you"><span class="node-title">Menu · Signalétique · Kit événement · PLV</span></div></div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-col"><div class="col-head">3 · Vous remplissez</div><div class="node node--you"><span class="node-title">Texte · Date · Lieu · Langue</span></div></div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-col"><div class="col-head">4 · Génération auto</div><div class="node node--result"><span class="node-title">PDF prêt imprimeur</span><span class="node-desc">verrouillé à la charte</span></div></div>
+              </div>
+              <div class="scope-note">
+                <span class="sn-tag">À cadrer avec vous</span>
+                On a besoin de voir <b>ce qui se fait aujourd'hui</b> (supports, formats, usages hôtel vs restaurant) pour définir l'arbre de filtres et les gabarits de départ. Évolutif : chaque marché peut soumettre un ticket pour un nouveau format.
+              </div>
             </div>
-          </div>
-          <div class="flow">
-            <div class="flow-col"><div class="col-head">1 · Type de lieu</div><div class="node node--you"><span class="node-title">Hôtel · Restaurant</span></div></div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-col"><div class="col-head">2 · Type de support</div><div class="node node--you"><span class="node-title">Carte menu · Signalétique · Kit événement · PLV table</span></div></div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-col"><div class="col-head">3 · Vous remplissez</div><div class="node node--you"><span class="node-title">Texte · Date · Lieu · Langue</span></div></div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-col"><div class="col-head">4 · Génération auto</div><div class="node node--result"><span class="node-title">PDF prêt imprimeur</span><span class="node-desc">Verrouillé à la charte</span></div></div>
-          </div>
-          <div class="diagram-note"><b>Évolutif :</b> chaque marché peut soumettre un ticket pour demander un nouveau type de support ou de format — la bibliothèque de gabarits s'enrichit au fil du temps.</div>
-          <div class="scope-note">
-            <span class="sn-tag">À cadrer avec vous</span>
-            Avant de figer la plateforme, on a besoin de voir <b>ce qui se fait aujourd'hui</b> : quels supports les marchés produisent réellement, dans quels formats, pour quels usages (hôtel vs restaurant, événement vs permanent). C'est ce qui définit l'arbre de filtres et la bibliothèque de gabarits de départ.
-          </div>
-        </div>
 
-        <!-- PLATFORM B — STUDIO BRIEFS -->
-        <div class="platform-card b">
-          <span class="pc-tag">Plateforme B · sur brief</span>
-          <h4>Studio de déclinaison de contenu</h4>
-          <p class="pc-sub">Pour tout le reste — resizing, langues, habillage, voix… Les demandes évoluent sans cesse, donc on passe par un brief, pas par un parcours figé.</p>
-          <div class="enclair">
-            <span class="ec-tag">En clair</span>
-            <div class="ec-steps">
-              <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">Vous déposez un <b>brief</b> (depuis vos assets)</span></div>
-              <div class="ec-arrow">→</div>
-              <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">L'agent répond avec une <b>cotation</b> et un <b>délai</b></span></div>
-              <div class="ec-arrow">→</div>
-              <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">+ une <b>maquette preview</b> de ce que ça va donner</span></div>
-              <div class="ec-arrow">→</div>
-              <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">Vous validez → <b>production</b></span></div>
+            <!-- PLATFORM B — STUDIO BRIEFS -->
+            <div class="pex-pf b">
+              <span class="pex-pf-tag">B · sur brief</span>
+              <h4>Studio de déclinaison de contenu</h4>
+              <p class="pf-sub">Pour tout le reste — resizing, langues, habillage, voix… Les demandes évoluent sans cesse, donc on passe par un brief, pas un parcours figé.</p>
+              <div class="flow">
+                <div class="flow-col"><div class="col-head">1 · Vous briefez</div><div class="node node--you"><span class="node-title">Classique · Accéléré · Express</span><span class="node-desc">selon l'urgence</span></div></div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-col"><div class="col-head">2 · Depuis vos assets</div><div class="node node--your"><span class="node-title">Votre banque d'assets</span></div></div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-col"><div class="col-head">3 · La plateforme répond</div><div class="node node--agent"><span class="node-title">Cotation + délai + maquette preview</span></div></div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-col"><div class="col-head">4 · Vous validez</div><div class="node node--result"><span class="node-title">Production lancée</span></div></div>
+              </div>
+              <div class="chips-lab">Ce que le Studio sait faire</div>
+              <div class="chips">
+                <span class="chip hot">Resizing multi-format</span>
+                <span class="chip hot">Traduction</span>
+                <span class="chip hot">Sous-titres auto</span>
+                <span class="chip">Habillage charte</span>
+                <span class="chip">Déclinaison langues</span>
+                <span class="chip">Voix off (IA)</span>
+                <span class="chip">Clonage vocal</span>
+                <span class="chip">Montage court</span>
+              </div>
+              <div class="scope-note">
+                <span class="sn-tag">À cadrer avec vous</span>
+                On part de <b>vos cas réels</b> pour calibrer les 3 niveaux de brief, les délais et la grille de cotation. La liste ci-dessus est un point de départ, pas une limite.
+              </div>
             </div>
-          </div>
-          <div class="flow">
-            <div class="flow-col"><div class="col-head">1 · Vous briefez</div><div class="node node--you"><span class="node-title">Brief Classique · Accéléré · Express</span><span class="node-desc">Selon l'urgence</span></div></div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-col"><div class="col-head">2 · Depuis vos assets</div><div class="node node--your"><span class="node-title">Votre banque d'assets</span></div></div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-col"><div class="col-head">3 · L'agent répond</div><div class="node node--agent"><span class="node-title">Cotation + délai + maquette preview</span></div></div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-col"><div class="col-head">4 · Vous validez</div><div class="node node--result"><span class="node-title">Production lancée</span></div></div>
-          </div>
-          <div class="chips-lab">Ce que le Studio sait faire</div>
-          <div class="chips">
-            <span class="chip hot">Resizing multi-format</span>
-            <span class="chip hot">Traduction</span>
-            <span class="chip hot">Sous-titres auto</span>
-            <span class="chip">Habillage charte</span>
-            <span class="chip">Déclinaison langues</span>
-            <span class="chip">Voix off (IA)</span>
-            <span class="chip">Clonage vocal</span>
-            <span class="chip">Montage court</span>
-            <span class="chip">Versions par canal</span>
-          </div>
-          <div class="scope-note">
-            <span class="sn-tag">À cadrer avec vous</span>
-            Le périmètre des demandes évolue vite. On veut partir de <b>vos cas réels</b> pour calibrer les trois niveaux de brief (Classique / Accéléré / Express), les délais et la grille de cotation. La liste ci-dessus est un point de départ, pas une limite.
+
           </div>
         </div>
       </div>
 
       <!-- PILIER 4 -->
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
-        <div class="diagram-title"><span class="d-tag">Pilier 4</span><h3>Le reporting</h3></div>
-        <p class="diagram-sub">Un agent qui rassemble tout ce que les autres produisent, écrit la lecture du mois, et recommande la suite.</p>
-        <div class="enclair">
-          <span class="ec-tag">En clair</span>
-          <div class="ec-steps">
-            <div class="ec-step"><span class="ec-n">1</span><span class="ec-t">L'agent <b>rassemble</b> tous vos chiffres au même endroit</span></div>
-            <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">2</span><span class="ec-t">Il <b>écrit</b> chaque mois ce qui s'est passé et pourquoi</span></div>
-            <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">3</span><span class="ec-t">Il <b>recommande</b> les sujets et actions du mois suivant</span></div>
-            <div class="ec-arrow">→</div>
-            <div class="ec-step"><span class="ec-n">4</span><span class="ec-t">Vous recevez une <b>note claire</b>, prête à transmettre</span></div>
+        <div class="pex">
+          <div class="pex-head">
+            <div class="pex-id"><span class="pex-num">Pilier 4</span><span class="pex-name">Reporting</span><span class="ex-badge agent">Agent</span></div>
+            <p class="pex-thesis">Un agent rassemble tout ce que les autres produisent, écrit la lecture du mois et recommande la suite. Le chiffre est calculé, jamais inventé.</p>
           </div>
-        </div>
-        <div class="flow">
-          <div class="flow-col">
-            <div class="col-head">Ce qui rentre</div>
-            <div class="node node--your"><span class="node-title">Réseaux sociaux</span></div>
-            <div class="node node--your"><span class="node-title">Publicité (SEA)</span></div>
-            <div class="node node--your"><span class="node-title">SEO &amp; GEO</span></div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-col">
-            <div class="col-head">L'agent agrégateur</div>
-            <div class="node node--agent-big">
-              <span class="node-lab">Agent reporting</span>
-              <span class="node-title">Il centralise &amp; recommande</span>
-              <ul>
-                <li>Rassemble les 4 volets au même endroit</li>
-                <li>Écrit la note : quoi, pourquoi, quoi faire</li>
-                <li>Recommande les sujets &amp; actions du mois</li>
-                <li>Le chiffre est calculé, jamais inventé</li>
-              </ul>
+          <div class="pex-body">
+            <div class="flow">
+              <div class="flow-col">
+                <div class="col-head">Entrée</div>
+                <div class="node node--your"><span class="node-title">Réseaux sociaux</span></div>
+                <div class="node node--your"><span class="node-title">Publicité (SEA)</span></div>
+                <div class="node node--your"><span class="node-title">SEO &amp; GEO</span></div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-col">
+                <div class="col-head">L'agent agrège</div>
+                <div class="node node--agent-big">
+                  <span class="node-lab">Agent reporting</span>
+                  <span class="node-title">Centralise &amp; recommande</span>
+                  <ul>
+                    <li>Rassemble les 4 volets au même endroit</li>
+                    <li>Écrit la note : quoi · pourquoi · quoi faire</li>
+                    <li>Recommande les sujets &amp; actions du mois</li>
+                    <li>Le chiffre est calculé, jamais inventé</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-col">
+                <div class="col-head">Résultat</div>
+                <div class="node node--result"><span class="node-title">Note mensuelle</span><span class="node-desc">claire, par marché, prête à transmettre</span></div>
+              </div>
             </div>
           </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-col">
-            <div class="col-head">Résultat</div>
-            <div class="node node--result"><span class="node-title">Note mensuelle</span><span class="node-desc">Claire, par marché, prête à transmettre</span></div>
-          </div>
+          <div class="pex-note"><b>Ce qui n'existe nulle part ailleurs :</b> votre part de citation dans ChatGPT &amp; Perplexity face à Castalie et Culligan, mois par mois. Aucune CMO de votre catégorie ne voit ça aujourd'hui.</div>
         </div>
-        <div class="diagram-note"><b>Ce qui n'existe nulle part ailleurs :</b> votre part de citation dans ChatGPT &amp; Perplexity face à Castalie et Culligan, mois par mois. Aucune CMO de votre catégorie ne voit ça aujourd'hui.</div>
       </div>
 
     </div>
