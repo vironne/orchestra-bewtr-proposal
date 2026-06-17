@@ -163,6 +163,43 @@
   .o-galaxy { animation: o-spin 60s linear infinite; transform-box: fill-box; transform-origin: center; }
   .o-hub { animation: o-pulse 3.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
   @media (prefers-reduced-motion: reduce) { .o-feedback, .o-galaxy, .o-hub { animation: none; } .o-dot { display: none; } }
+
+  /* === avant / après story (serpentine) === */
+  .ba-block { margin: 8px 0 14px; }
+  .ba-head { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; flex-wrap: wrap; }
+  .ba-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; padding: 6px 14px; border-radius: 20px; }
+  .ba-tag.before { background: var(--slate-pale); color: var(--slate); }
+  .ba-tag.after { background: var(--orange-pale); color: var(--orange-2); }
+  .ba-head .ba-desc { font-size: 13px; color: var(--muted); }
+  .pillar-mini { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); font-weight: 700; margin: 30px 0 14px; padding-top: 20px; border-top: 1px solid var(--line); }
+  .pillar-mini:first-child { border-top: none; padding-top: 0; margin-top: 6px; }
+
+  .story-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 50px 40px; }
+  .story-row { display: grid; gap: 40px; }
+  .story-row.r3 { grid-template-columns: repeat(3,1fr); }
+  .story-row.r4 { grid-template-columns: repeat(4,1fr); }
+  .step { position: relative; background: var(--bg-2); border: 1px solid var(--line); border-radius: 12px; padding: 15px 17px; }
+  .step-n { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+  .step h5 { font-size: 13.5px; font-weight: 700; margin-bottom: 5px; letter-spacing: -0.01em; line-height: 1.2; }
+  .step p { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.4; }
+  .story.before .step-n { background: var(--slate-2); }
+  .story.before .step { border-color: var(--slate-line); }
+  .story.after .step-n { background: var(--orange); }
+  /* connectors */
+  .step::after { position: absolute; color: var(--orange); font-size: 18px; font-weight: 300; line-height: 1; }
+  .story.before .step::after { color: var(--slate-2); }
+  .story-row .step:not(:last-child)::after { content: "→"; right: -28px; top: 50%; transform: translateY(-50%); }
+  .s6 .step:nth-child(4){ grid-column: 3; grid-row: 2; }
+  .s6 .step:nth-child(5){ grid-column: 2; grid-row: 2; }
+  .s6 .step:nth-child(6){ grid-column: 1; grid-row: 2; }
+  .s6 .step:nth-child(1)::after, .s6 .step:nth-child(2)::after { content: "→"; right: -28px; top: 50%; transform: translateY(-50%); }
+  .s6 .step:nth-child(3)::after { content: "↓"; bottom: -38px; left: 50%; transform: translateX(-50%); }
+  .s6 .step:nth-child(4)::after, .s6 .step:nth-child(5)::after { content: "←"; left: -28px; top: 50%; transform: translateY(-50%); }
+  @media (max-width: 760px) {
+    .story-grid, .story-row.r3, .story-row.r4 { grid-template-columns: 1fr; gap: 14px; }
+    .s6 .step { grid-column: 1 !important; grid-row: auto !important; }
+    .step::after { display: none !important; }
+  }
   @media (max-width: 900px) { .understand-grid { grid-template-columns: 1fr; } .relay { flex-direction: column; } .relay-arrow { transform: rotate(90deg); padding: 6px 0; } }
 
   /* === DIAGRAMS (3-color system) === */
@@ -286,6 +323,7 @@
     <div class="tabs">
       <button class="tab-btn active" data-tab="proposition"><span class="n">01</span> La Proposition</button>
       <button class="tab-btn" data-tab="archi"><span class="n">02</span> L'Écosystème</button>
+      <button class="tab-btn" data-tab="ba"><span class="n">03</span> Avant / Après</button>
     </div>
   </div>
 </nav>
@@ -780,6 +818,114 @@
     </div>
   </footer>
 
+</div>
+
+<!-- ============ TAB 3 — AVANT / APRÈS ============ -->
+<div class="panel" id="ba">
+  <section class="block" style="padding-top:56px;">
+    <div class="wrap">
+      <div class="sec-head"><span class="num">03</span><h2>Avant <span class="accent">/ après.</span></h2></div>
+      <p class="sec-intro">Le même travail, raconté en deux parcours : comment ça se passe aujourd'hui, et comment ça se passe au quotidien avec les agents. D'abord la vue d'ensemble, puis pilier par pilier.</p>
+
+      <!-- GLOBAL -->
+      <div class="diagram">
+        <div class="diagram-title"><span class="d-tag">Vue d'ensemble</span><h3>Le quotidien, avant et après</h3></div>
+
+        <div class="ba-block">
+          <div class="ba-head"><span class="ba-tag before">Avant — aujourd'hui</span><span class="ba-desc">Manuel, local, dispersé</span></div>
+          <div class="story before story-grid s6">
+            <div class="step"><div class="step-n">1</div><h5>Brief local</h5><p>chaque marché part de ses propres idées</p></div>
+            <div class="step"><div class="step-n">2</div><h5>Production à la main</h5><p>montage, captions, déclinaisons</p></div>
+            <div class="step"><div class="step-n">3</div><h5>Une personne goulot</h5><p>elle fait tout + forme les locaux</p></div>
+            <div class="step"><div class="step-n">4</div><h5>Publication dispersée</h5><p>réseau par réseau, sans coordination</p></div>
+            <div class="step"><div class="step-n">5</div><h5>Zéro visibilité IA</h5><p>on ignore si BE WTR est cité</p></div>
+            <div class="step"><div class="step-n">6</div><h5>Reporting éclaté</h5><p>chiffres séparés, lus trop tard</p></div>
+          </div>
+        </div>
+
+        <div class="ba-block">
+          <div class="ba-head"><span class="ba-tag after">Après — le run avec Orchestra</span><span class="ba-desc">Les agents tournent, vos équipes valident</span></div>
+          <div class="story after story-grid s6">
+            <div class="step"><div class="step-n">1</div><h5>Les agents surveillent</h5><p>canaux, positions, citations IA — en continu</p></div>
+            <div class="step"><div class="step-n">2</div><h5>Ils produisent</h5><p>contenu &amp; déclinaisons en brouillon, à la charte</p></div>
+            <div class="step"><div class="step-n">3</div><h5>Vous validez</h5><p>vos équipes gardent la main</p></div>
+            <div class="step"><div class="step-n">4</div><h5>Publication coordonnée</h5><p>bon canal, bon marché, bon moment</p></div>
+            <div class="step"><div class="step-n">5</div><h5>Tout est mesuré</h5><p>Social · SEA · SEO · GEO au même endroit</p></div>
+            <div class="step"><div class="step-n">6</div><h5>L'agent recommande</h5><p>la suite — et nourrit le tour suivant</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAR PILIER -->
+      <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
+        <div class="diagram-title"><span class="d-tag">Pilier par pilier</span><h3>Le détail, agent par agent</h3></div>
+
+        <!-- P1 -->
+        <div class="pillar-mini">P / 01 · SEO &amp; GEO</div>
+        <div class="ba-head"><span class="ba-tag before">Avant</span></div>
+        <div class="story before story-row r3">
+          <div class="step"><div class="step-n">1</div><h5>Angle mort</h5><p>on ne sait pas où on apparaît</p></div>
+          <div class="step"><div class="step-n">2</div><h5>Concurrents cités</h5><p>Castalie, Culligan — pas nous</p></div>
+          <div class="step"><div class="step-n">3</div><h5>Contenu rare</h5><p>peu optimisé, pas à jour</p></div>
+        </div>
+        <div class="ba-head" style="margin-top:18px;"><span class="ba-tag after">Après</span></div>
+        <div class="story after story-row r4">
+          <div class="step"><div class="step-n">1</div><h5>L'agent surveille</h5><p>positions &amp; citations IA</p></div>
+          <div class="step"><div class="step-n">2</div><h5>Il rédige</h5><p>ce qui manque, en brouillon</p></div>
+          <div class="step"><div class="step-n">3</div><h5>Vous publiez</h5><p>après relecture</p></div>
+          <div class="step"><div class="step-n">4</div><h5>Liste RP</h5><p>les médias que les IA citent</p></div>
+        </div>
+
+        <!-- P2 -->
+        <div class="pillar-mini">P / 02 · Calendrier de contenu</div>
+        <div class="ba-head"><span class="ba-tag before">Avant</span></div>
+        <div class="story before story-row r3">
+          <div class="step"><div class="step-n">1</div><h5>100 % manuel</h5><p>refait chaque mois</p></div>
+          <div class="step"><div class="step-n">2</div><h5>Local surchargé</h5><p>ni le temps, ni les compétences</p></div>
+          <div class="step"><div class="step-n">3</div><h5>Feed incohérent</h5><p>marché par marché</p></div>
+        </div>
+        <div class="ba-head" style="margin-top:18px;"><span class="ba-tag after">Après</span></div>
+        <div class="story after story-row r4">
+          <div class="step"><div class="step-n">1</div><h5>L'agent anticipe</h5><p>vos temps forts</p></div>
+          <div class="step"><div class="step-n">2</div><h5>Propose le planning</h5><p>+ le mix thématique %</p></div>
+          <div class="step"><div class="step-n">3</div><h5>Vous validez</h5><p>au central</p></div>
+          <div class="step"><div class="step-n">4</div><h5>Les marchés adaptent</h5><p>ils ne produisent plus</p></div>
+        </div>
+
+        <!-- P3 -->
+        <div class="pillar-mini">P / 03 · AI Studio</div>
+        <div class="ba-head"><span class="ba-tag before">Avant</span></div>
+        <div class="story before story-row r3">
+          <div class="step"><div class="step-n">1</div><h5>Tout refait main</h5><p>chaque support, à zéro</p></div>
+          <div class="step"><div class="step-n">2</div><h5>Pas de déclinaison</h5><p>formats &amp; langues manuels</p></div>
+          <div class="step"><div class="step-n">3</div><h5>POS hors charte</h5><p>incohérences sur le terrain</p></div>
+        </div>
+        <div class="ba-head" style="margin-top:18px;"><span class="ba-tag after">Après</span></div>
+        <div class="story after story-row r4">
+          <div class="step"><div class="step-n">1</div><h5>Brief ou self-service</h5><p>POS en autonomie</p></div>
+          <div class="step"><div class="step-n">2</div><h5>L'agent décline</h5><p>formats, langues, habillage</p></div>
+          <div class="step"><div class="step-n">3</div><h5>Vous choisissez</h5><p>la meilleure variante</p></div>
+          <div class="step"><div class="step-n">4</div><h5>Prêt à diffuser</h5><p>publication / impression</p></div>
+        </div>
+
+        <!-- P4 -->
+        <div class="pillar-mini">P / 04 · Reporting</div>
+        <div class="ba-head"><span class="ba-tag before">Avant</span></div>
+        <div class="story before story-row r3">
+          <div class="step"><div class="step-n">1</div><h5>Chiffres éparpillés</h5><p>fichiers séparés</p></div>
+          <div class="step"><div class="step-n">2</div><h5>Lecture a posteriori</h5><p>trop tard pour réagir</p></div>
+          <div class="step"><div class="step-n">3</div><h5>Pas de reco</h5><p>des chiffres, pas d'actions</p></div>
+        </div>
+        <div class="ba-head" style="margin-top:18px;"><span class="ba-tag after">Après</span></div>
+        <div class="story after story-row r3">
+          <div class="step"><div class="step-n">1</div><h5>L'agent agrège</h5><p>tout au même endroit</p></div>
+          <div class="step"><div class="step-n">2</div><h5>Écrit la note</h5><p>quoi · pourquoi, chaque mois</p></div>
+          <div class="step"><div class="step-n">3</div><h5>Recommande</h5><p>les actions du mois suivant</p></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 </div>
 
 <script>
