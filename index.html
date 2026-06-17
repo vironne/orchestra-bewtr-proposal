@@ -174,6 +174,34 @@
   .pillar-mini { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); font-weight: 700; margin: 30px 0 14px; padding-top: 20px; border-top: 1px solid var(--line); }
   .pillar-mini:first-child { border-top: none; padding-top: 0; margin-top: 6px; }
 
+  /* === before/after comparison exhibit (.ba2) === */
+  .ba2 { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: 0 1px 2px rgba(26,26,26,0.03), 0 14px 36px -30px rgba(26,26,26,0.12); }
+  .ba2 + .pillar-mini { margin-top: 30px; }
+  .ba2-head { display: grid; grid-template-columns: 1fr 46px 1fr; }
+  .ba2-ch { padding: 13px 20px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .ba2-ch.before { background: var(--slate-pale); color: var(--slate); }
+  .ba2-ch.after { background: var(--orange-pale); color: var(--orange-2); }
+  .ba2-ch .dotb { width: 8px; height: 8px; border-radius: 50%; }
+  .ba2-ch.before .dotb { background: var(--slate-2); }
+  .ba2-ch.after .dotb { background: var(--orange); }
+  .ba2-spacer { background: var(--bg-2); }
+  .ba2-row { display: grid; grid-template-columns: 1fr 46px 1fr; border-top: 1px solid var(--line); }
+  .ba2-cell { padding: 15px 20px; }
+  .ba2-cell.before { background: #fff; }
+  .ba2-cell.after { background: rgba(233,120,37,0.035); }
+  .ba2-cell h5 { font-size: 13.5px; font-weight: 700; margin-bottom: 3px; letter-spacing: -0.01em; }
+  .ba2-cell.before h5 { color: var(--slate); }
+  .ba2-cell.after h5 { color: var(--ink); }
+  .ba2-cell p { font-size: 11.5px; color: var(--muted); line-height: 1.4; }
+  .ba2-mid { display: flex; align-items: center; justify-content: center; color: var(--orange); font-size: 15px; border-top: 1px solid var(--line); background: var(--bg-2); }
+  @media (max-width: 760px) {
+    .ba2-head { grid-template-columns: 1fr 1fr; } .ba2-spacer { display: none; }
+    .ba2-row { grid-template-columns: 1fr; }
+    .ba2-mid { border-top: none; padding: 3px 0; }
+    .ba2-mid span { display: inline-block; transform: rotate(90deg); }
+    .ba2-cell.before { border-top: 1px solid var(--line); }
+  }
+
   .story-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 50px 40px; }
   .story-row { display: grid; gap: 40px; }
   .story-row.r3 { grid-template-columns: repeat(3,1fr); }
@@ -925,33 +953,46 @@
   <section class="block" style="padding-top:56px;">
     <div class="wrap">
       <div class="sec-head"><span class="num">03</span><h2>Avant <span class="accent">/ après.</span></h2></div>
-      <p class="sec-intro">Le même travail, raconté en deux parcours : comment ça se passe aujourd'hui, et comment ça se passe au quotidien avec les agents. D'abord la vue d'ensemble, puis pilier par pilier.</p>
+      <p class="sec-intro">Le même travail, deux mondes : à gauche aujourd'hui, à droite avec les agents. D'abord la vue d'ensemble, puis pilier par pilier.</p>
 
       <!-- GLOBAL -->
       <div class="diagram">
-        <div class="diagram-title"><span class="d-tag">Vue d'ensemble</span><h3>Le quotidien, avant et après</h3></div>
-
-        <div class="ba-block">
-          <div class="ba-head"><span class="ba-tag before">Avant — aujourd'hui</span><span class="ba-desc">Manuel, local, dispersé</span></div>
-          <div class="story before story-grid s6">
-            <div class="step"><div class="step-n">1</div><h5>Brief local</h5><p>chaque marché part de ses propres idées</p></div>
-            <div class="step"><div class="step-n">2</div><h5>Production à la main</h5><p>montage, captions, déclinaisons</p></div>
-            <div class="step"><div class="step-n">3</div><h5>Une personne goulot</h5><p>elle fait tout + forme les locaux</p></div>
-            <div class="step"><div class="step-n">4</div><h5>Publication dispersée</h5><p>réseau par réseau, sans coordination</p></div>
-            <div class="step"><div class="step-n">5</div><h5>Zéro visibilité IA</h5><p>on ignore si BE WTR est cité</p></div>
-            <div class="step"><div class="step-n">6</div><h5>Reporting éclaté</h5><p>chiffres séparés, lus trop tard</p></div>
+        <div class="diagram-title"><span class="d-tag">Vue d'ensemble</span><h3>Le quotidien transformé</h3></div>
+        <div class="ba2">
+          <div class="ba2-head">
+            <div class="ba2-ch before"><span class="dotb"></span>Aujourd'hui</div>
+            <div class="ba2-spacer"></div>
+            <div class="ba2-ch after"><span class="dotb"></span>Avec Orchestra</div>
           </div>
-        </div>
-
-        <div class="ba-block">
-          <div class="ba-head"><span class="ba-tag after">Après — le run avec Orchestra</span><span class="ba-desc">Les agents tournent, vos équipes valident</span></div>
-          <div class="story after story-grid s6">
-            <div class="step"><div class="step-n">1</div><h5>Les agents surveillent</h5><p>canaux, positions, citations IA — en continu</p></div>
-            <div class="step"><div class="step-n">2</div><h5>Ils produisent</h5><p>contenu &amp; déclinaisons en brouillon, à la charte</p></div>
-            <div class="step"><div class="step-n">3</div><h5>Vous validez</h5><p>vos équipes gardent la main</p></div>
-            <div class="step"><div class="step-n">4</div><h5>Publication coordonnée</h5><p>bon canal, bon marché, bon moment</p></div>
-            <div class="step"><div class="step-n">5</div><h5>Tout est mesuré</h5><p>Social · SEA · SEO · GEO au même endroit</p></div>
-            <div class="step"><div class="step-n">6</div><h5>L'agent recommande</h5><p>la suite — et nourrit le tour suivant</p></div>
+          <div class="ba2-row">
+            <div class="ba2-cell before"><h5>Brief local</h5><p>chacun part de ses propres idées</p></div>
+            <div class="ba2-mid"><span>→</span></div>
+            <div class="ba2-cell after"><h5>Surveillance continue</h5><p>canaux, positions, citations IA</p></div>
+          </div>
+          <div class="ba2-row">
+            <div class="ba2-cell before"><h5>Production à la main</h5><p>montage, captions, déclinaisons</p></div>
+            <div class="ba2-mid"><span>→</span></div>
+            <div class="ba2-cell after"><h5>Production assistée</h5><p>brouillons à la charte, prêts à valider</p></div>
+          </div>
+          <div class="ba2-row">
+            <div class="ba2-cell before"><h5>Une personne goulot</h5><p>elle fait tout + forme les locaux</p></div>
+            <div class="ba2-mid"><span>→</span></div>
+            <div class="ba2-cell after"><h5>Vous validez</h5><p>vos équipes gardent la main</p></div>
+          </div>
+          <div class="ba2-row">
+            <div class="ba2-cell before"><h5>Publication dispersée</h5><p>réseau par réseau, sans coordination</p></div>
+            <div class="ba2-mid"><span>→</span></div>
+            <div class="ba2-cell after"><h5>Publication coordonnée</h5><p>bon canal, bon marché, bon moment</p></div>
+          </div>
+          <div class="ba2-row">
+            <div class="ba2-cell before"><h5>Zéro visibilité IA</h5><p>on ignore si BE WTR est cité</p></div>
+            <div class="ba2-mid"><span>→</span></div>
+            <div class="ba2-cell after"><h5>Tout est mesuré</h5><p>Social · SEA · SEO · GEO au même endroit</p></div>
+          </div>
+          <div class="ba2-row">
+            <div class="ba2-cell before"><h5>Reporting éclaté</h5><p>chiffres séparés, lus trop tard</p></div>
+            <div class="ba2-mid"><span>→</span></div>
+            <div class="ba2-cell after"><h5>Recommandations</h5><p>l'agent dit quoi faire ensuite</p></div>
           </div>
         </div>
       </div>
@@ -960,67 +1001,36 @@
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
         <div class="diagram-title"><span class="d-tag">Pilier par pilier</span><h3>Le détail, agent par agent</h3></div>
 
-        <!-- P1 -->
         <div class="pillar-mini">P / 01 · SEO &amp; GEO</div>
-        <div class="ba-head"><span class="ba-tag before">Avant</span></div>
-        <div class="story before story-row r3">
-          <div class="step"><div class="step-n">1</div><h5>Angle mort</h5><p>on ne sait pas où on apparaît</p></div>
-          <div class="step"><div class="step-n">2</div><h5>Concurrents cités</h5><p>Castalie, Culligan — pas nous</p></div>
-          <div class="step"><div class="step-n">3</div><h5>Contenu rare</h5><p>peu optimisé, pas à jour</p></div>
-        </div>
-        <div class="ba-head" style="margin-top:18px;"><span class="ba-tag after">Après</span></div>
-        <div class="story after story-row r4">
-          <div class="step"><div class="step-n">1</div><h5>L'agent surveille</h5><p>positions &amp; citations IA</p></div>
-          <div class="step"><div class="step-n">2</div><h5>Il rédige</h5><p>ce qui manque, en brouillon</p></div>
-          <div class="step"><div class="step-n">3</div><h5>Vous publiez</h5><p>après relecture</p></div>
-          <div class="step"><div class="step-n">4</div><h5>Liste RP</h5><p>les médias que les IA citent</p></div>
+        <div class="ba2">
+          <div class="ba2-head"><div class="ba2-ch before"><span class="dotb"></span>Aujourd'hui</div><div class="ba2-spacer"></div><div class="ba2-ch after"><span class="dotb"></span>Avec Orchestra</div></div>
+          <div class="ba2-row"><div class="ba2-cell before"><h5>Angle mort</h5><p>on ignore où on apparaît</p></div><div class="ba2-mid"><span>→</span></div><div class="ba2-cell after"><h5>L'agent surveille</h5><p>positions &amp; citations IA, en continu</p></div></div>
+          <div class="ba2-row"><div class="ba2-cell before"><h5>Concurrents cités, pas nous</h5><p>Castalie, Culligan dans les comparatifs</p></div><div class="ba2-mid"><span>→</span></div><div class="ba2-cell after"><h5>On comble &amp; on optimise</h5><p>pages &amp; articles en brouillon</p></div></div>
+          <div class="ba2-row"><div class="ba2-cell before"><h5>Pas de cible RP</h5><p>au feeling</p></div><div class="ba2-mid"><span>→</span></div><div class="ba2-cell after"><h5>Liste RP priorisée</h5><p>les médias que les IA citent vraiment</p></div></div>
         </div>
 
-        <!-- P2 -->
         <div class="pillar-mini">P / 02 · Calendrier de contenu</div>
-        <div class="ba-head"><span class="ba-tag before">Avant</span></div>
-        <div class="story before story-row r3">
-          <div class="step"><div class="step-n">1</div><h5>100 % manuel</h5><p>refait chaque mois</p></div>
-          <div class="step"><div class="step-n">2</div><h5>Local surchargé</h5><p>ni le temps, ni les compétences</p></div>
-          <div class="step"><div class="step-n">3</div><h5>Feed incohérent</h5><p>marché par marché</p></div>
-        </div>
-        <div class="ba-head" style="margin-top:18px;"><span class="ba-tag after">Après</span></div>
-        <div class="story after story-row r4">
-          <div class="step"><div class="step-n">1</div><h5>L'agent anticipe</h5><p>vos temps forts</p></div>
-          <div class="step"><div class="step-n">2</div><h5>Propose le planning</h5><p>+ le mix thématique %</p></div>
-          <div class="step"><div class="step-n">3</div><h5>Vous validez</h5><p>au central</p></div>
-          <div class="step"><div class="step-n">4</div><h5>Les marchés adaptent</h5><p>ils ne produisent plus</p></div>
+        <div class="ba2">
+          <div class="ba2-head"><div class="ba2-ch before"><span class="dotb"></span>Aujourd'hui</div><div class="ba2-spacer"></div><div class="ba2-ch after"><span class="dotb"></span>Avec Orchestra</div></div>
+          <div class="ba2-row"><div class="ba2-cell before"><h5>100 % manuel</h5><p>refait chaque mois</p></div><div class="ba2-mid"><span>→</span></div><div class="ba2-cell after"><h5>L'agent anticipe</h5><p>temps forts &amp; planning prêts</p></div></div>
+          <div class="ba2-row"><div class="ba2-cell before"><h5>Local surchargé</h5><p>ni le temps, ni les compétences</p></div><div class="ba2-mid"><span>→</span></div><div class="ba2-cell after"><h5>Mix recommandé</h5><p>gastronomie · lifestyle · produit</p></div></div>
+          <div class="ba2-row"><div class="ba2-cell before"><h5>Feed incohérent</h5><p>marché par marché</p></div><div class="ba2-mid"><span>→</span></div><div class="ba2-cell after"><h5>Cohérence 50/50</h5><p>les marchés adaptent, ne produisent plus</p></div></div>
         </div>
 
-        <!-- P3 -->
         <div class="pillar-mini">P / 03 · AI Studio</div>
-        <div class="ba-head"><span class="ba-tag before">Avant</span></div>
-        <div class="story before story-row r3">
-          <div class="step"><div class="step-n">1</div><h5>Tout refait main</h5><p>chaque support, à zéro</p></div>
-          <div class="step"><div class="step-n">2</div><h5>Pas de déclinaison</h5><p>formats &amp; langues manuels</p></div>
-          <div class="step"><div class="step-n">3</div><h5>POS hors charte</h5><p>incohérences sur le terrain</p></div>
-        </div>
-        <div class="ba-head" style="margin-top:18px;"><span class="ba-tag after">Après</span></div>
-        <div class="story after story-row r4">
-          <div class="step"><div class="step-n">1</div><h5>Brief ou self-service</h5><p>POS en autonomie</p></div>
-          <div class="step"><div class="step-n">2</div><h5>L'agent décline</h5><p>formats, langues, habillage</p></div>
-          <div class="step"><div class="step-n">3</div><h5>Vous choisissez</h5><p>la meilleure variante</p></div>
-          <div class="step"><div class="step-n">4</div><h5>Prêt à diffuser</h5><p>publication / impression</p></div>
+        <div class="ba2">
+          <div class="ba2-head"><div class="ba2-ch before"><span class="dotb"></span>Aujourd'hui</div><div class="ba2-spacer"></div><div class="ba2-ch after"><span class="dotb"></span>Avec Orchestra</div></div>
+          <div class="ba2-row"><div class="ba2-cell before"><h5>Tout refait à la main</h5><p>chaque support, à zéro</p></div><div class="ba2-mid"><span>→</span></div><div class="ba2-cell after"><h5>POS en self-service</h5><p>les marchés créent en autonomie</p></div></div>
+          <div class="ba2-row"><div class="ba2-cell before"><h5>Pas de déclinaison</h5><p>formats &amp; langues manuels</p></div><div class="ba2-mid"><span>→</span></div><div class="ba2-cell after"><h5>Studio sur brief</h5><p>resizing, langues, habillage, voix</p></div></div>
+          <div class="ba2-row"><div class="ba2-cell before"><h5>POS hors charte</h5><p>incohérences sur le terrain</p></div><div class="ba2-mid"><span>→</span></div><div class="ba2-cell after"><h5>Verrouillé à la charte</h5><p>PDF prêt imprimeur</p></div></div>
         </div>
 
-        <!-- P4 -->
         <div class="pillar-mini">P / 04 · Reporting</div>
-        <div class="ba-head"><span class="ba-tag before">Avant</span></div>
-        <div class="story before story-row r3">
-          <div class="step"><div class="step-n">1</div><h5>Chiffres éparpillés</h5><p>fichiers séparés</p></div>
-          <div class="step"><div class="step-n">2</div><h5>Lecture a posteriori</h5><p>trop tard pour réagir</p></div>
-          <div class="step"><div class="step-n">3</div><h5>Pas de reco</h5><p>des chiffres, pas d'actions</p></div>
-        </div>
-        <div class="ba-head" style="margin-top:18px;"><span class="ba-tag after">Après</span></div>
-        <div class="story after story-row r3">
-          <div class="step"><div class="step-n">1</div><h5>L'agent agrège</h5><p>tout au même endroit</p></div>
-          <div class="step"><div class="step-n">2</div><h5>Écrit la note</h5><p>quoi · pourquoi, chaque mois</p></div>
-          <div class="step"><div class="step-n">3</div><h5>Recommande</h5><p>les actions du mois suivant</p></div>
+        <div class="ba2">
+          <div class="ba2-head"><div class="ba2-ch before"><span class="dotb"></span>Aujourd'hui</div><div class="ba2-spacer"></div><div class="ba2-ch after"><span class="dotb"></span>Avec Orchestra</div></div>
+          <div class="ba2-row"><div class="ba2-cell before"><h5>Chiffres éparpillés</h5><p>fichiers séparés</p></div><div class="ba2-mid"><span>→</span></div><div class="ba2-cell after"><h5>Tout agrégé</h5><p>un seul endroit</p></div></div>
+          <div class="ba2-row"><div class="ba2-cell before"><h5>Lecture a posteriori</h5><p>trop tard pour réagir</p></div><div class="ba2-mid"><span>→</span></div><div class="ba2-cell after"><h5>Note mensuelle</h5><p>quoi · pourquoi, chaque mois</p></div></div>
+          <div class="ba2-row"><div class="ba2-cell before"><h5>Pas de reco</h5><p>des chiffres, pas d'actions</p></div><div class="ba2-mid"><span>→</span></div><div class="ba2-cell after"><h5>Recommandations</h5><p>les actions du mois suivant</p></div></div>
         </div>
 
       </div>
