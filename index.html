@@ -249,6 +249,52 @@
   .fw-link { margin-top: 16px; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); border: 1px dashed var(--line-2); border-radius: 8px; padding: 9px; }
   .fw-feedback { margin-top: 14px; text-align: center; font-size: 12.5px; color: var(--green); font-weight: 600; border: 1px dashed #8FC4A8; border-radius: 8px; padding: 10px; background: rgba(46,125,91,0.05); }
   @media (max-width: 820px) { .fw-cols3 { grid-template-columns: 1fr; } .roof-cols { grid-template-columns: 1fr; } }
+
+  /* === exhibit (consulting-grade ecosystem) === */
+  .exb { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 1px 2px rgba(26,26,26,0.03), 0 18px 44px -30px rgba(26,26,26,0.14); }
+  .exb-head { padding: 24px 30px 22px; border-bottom: 1px solid var(--line); background: var(--bg-2); }
+  .exb-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); font-weight: 700; }
+  .exb-thesis { font-size: clamp(1.15rem, 2.2vw, 1.5rem); font-weight: 700; letter-spacing: -0.015em; margin-top: 9px; color: var(--ink); line-height: 1.28; }
+  .exb-thesis b { color: var(--orange); }
+  .exb-row { display: grid; grid-template-columns: 158px 1fr; }
+  .exb-row + .exb-row { border-top: 1px solid var(--line); }
+  .ex-rail { padding: 26px 20px; border-right: 1px solid var(--line); background: var(--bg-2); border-left: 4px solid var(--slate); }
+  .exb-row.r2 .ex-rail { border-left-color: var(--orange); }
+  .exb-row.r3 .ex-rail { border-left-color: var(--green); }
+  .ex-num { font-size: 2.3rem; font-weight: 300; color: var(--slate-2); letter-spacing: -0.03em; line-height: 1; }
+  .ex-name { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); font-weight: 700; margin-top: 11px; display: block; }
+  .ex-sub { font-size: 11.5px; color: var(--muted); margin-top: 3px; display: block; }
+  .ex-body { padding: 24px 28px; }
+  .ex-note { font-size: 12.5px; color: var(--muted); font-style: italic; margin-top: 13px; }
+  .roof2 { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .roof2-domain { font-weight: 700; font-size: 1.1rem; color: var(--ink); }
+  .roof2-domain span { display: block; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); font-weight: 600; margin-top: 4px; }
+  .roof2-cols { display: flex; gap: 12px; flex: 1; min-width: 260px; }
+  .roof2-box { flex: 1; background: var(--slate-pale); border: 1px solid var(--slate-line); border-radius: 10px; padding: 12px 14px; text-align: center; font-size: 13px; }
+  .roof2-box b { color: var(--ink); }
+  .roof2-box small { display: block; color: var(--muted); font-size: 11px; margin-top: 3px; }
+  .roof2-box.dashed { border-style: dashed; background: #fff; }
+  .ex-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+  .ex-card { border: 1px solid var(--line); border-top: 3px solid var(--orange); border-radius: 11px; padding: 16px; background: #fff; }
+  .ex-card.green { border-top-color: var(--green); }
+  .ex-card-top { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .ex-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+  .ex-dot.g { background: var(--green); }
+  .ex-card h5 { font-size: 1.02rem; font-weight: 700; letter-spacing: -0.01em; }
+  .ex-card p { font-size: 12px; color: var(--ink-soft); line-height: 1.5; }
+  .ex-card p b, .ex-card .surf-chips + p { color: var(--ink-soft); }
+  .ex-link { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; padding: 5px 12px; border-radius: 20px; margin-bottom: 14px; }
+  .ex-link.up, .ex-link.down { background: var(--bg-3); color: var(--muted); }
+  .ex-link.loop { background: var(--green-pale); color: var(--green); margin: 14px 0 0; }
+  .ex-foot-note { display: block; margin-top: 14px; font-size: 11.5px; color: var(--muted); font-style: italic; }
+  .exb-source { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.03em; color: var(--muted); margin-top: 16px; line-height: 1.7; }
+  @media (max-width: 820px) {
+    .exb-row { grid-template-columns: 1fr; }
+    .ex-rail { display: flex; align-items: baseline; gap: 12px; border-right: none; border-bottom: 1px solid var(--line); padding: 13px 18px; }
+    .ex-num { font-size: 1.5rem; } .ex-name { margin-top: 0; }
+    .ex-cards { grid-template-columns: 1fr; }
+    .roof2-cols { min-width: 0; width: 100%; }
+  }
   @media (max-width: 900px) { .understand-grid { grid-template-columns: 1fr; } .relay { flex-direction: column; } .relay-arrow { transform: rotate(90deg); padding: 6px 0; } }
 
   /* === DIAGRAMS (3-color system) === */
@@ -571,60 +617,63 @@
 
       <!-- SYSTÈME GLOBAL -->
       <div class="diagram">
-        <div class="diagram-title"><span class="d-tag">Vue d'ensemble</span><h3>L'écosystème, en un coup d'œil</h3></div>
-        <p class="diagram-sub">Trois niveaux : la fondation (un seul domaine), les systèmes qui produisent — <b>en parallèle, sans dépendance forcée entre eux</b> — et la mesure qui agrège tout et fait remonter les recommandations.</p>
-        <div class="fw">
-
-          <div class="fw-level l0">
-            <span class="fw-tag slate">Fondation · l'écosystème</span>
-            <div class="roof">
-              <div class="roof-title">BE WTR.com — un seul domaine</div>
-              <div class="roof-cols">
-                <div class="roof-box">B2B<small>live aujourd'hui · via HubSpot</small></div>
-                <div class="roof-box dashed">D2C<small>à venir · construction à définir</small></div>
-              </div>
-              <div class="roof-note">Deux univers, deux stratégies SEO/GEO distinctes — sous un même toit.</div>
-            </div>
+        <div class="diagram-title"><span class="d-tag">Exhibit · vue d'ensemble</span><h3>L'écosystème en une vue</h3></div>
+        <div class="exb">
+          <div class="exb-head">
+            <span class="exb-eyebrow">Le principe en une phrase</span>
+            <div class="exb-thesis">Un seul <b>domaine</b>. Trois <b>systèmes autonomes</b>. Un <b>pilotage</b> qui mesure et oriente.</div>
           </div>
 
-          <div class="fw-down"><span class="c">les systèmes s'appuient dessus</span><span>↓</span></div>
-
-          <div class="fw-level l1">
-            <span class="fw-tag orange">Les agents · 3 systèmes en parallèle</span>
-            <div class="fw-cols3">
-              <div class="fw-card">
-                <h5>SEO / GEO</h5>
-                <div class="surf-chips"><span>Site</span><span>RP</span><span>Réseaux sociaux</span></div>
-                <p>Crée le contenu selon ce qu'elle voit en SEO <b>et</b> en GEO. Rédige pages &amp; articles à optimiser, décline par marché — validation humaine.</p>
-                <div class="span-note">Couvre tout l'écosystème — pas seulement le site</div>
-              </div>
-              <div class="fw-card">
-                <h5>Calendrier de contenu</h5>
-                <p>Branché sur <b>Monday.com</b> (on s'y plugge, on ne change rien). Pousse les temps forts &amp; événements, voit le fait / à faire. Global, dédupliqué en local selon les spécificités marché. Reco de mix (gastronomie · lifestyle · produit).</p>
-              </div>
-              <div class="fw-card">
-                <h5>AI Studio <span class="one">une plateforme</span></h5>
-                <div class="studio-2">
-                  <div class="studio-sub">Supports POS<small>self-service · filtre guidé pour les comptes</small></div>
-                  <div class="studio-sub">Briefs avancés<small>production &amp; déclinaison d'assets · traduction · clonage · montage · création IA</small></div>
+          <div class="exb-row r1">
+            <div class="ex-rail"><div class="ex-num">01</div><span class="ex-name">Fondation</span><span class="ex-sub">l'écosystème</span></div>
+            <div class="ex-body">
+              <div class="roof2">
+                <div class="roof2-domain">BE WTR.com<span>un seul domaine</span></div>
+                <div class="roof2-cols">
+                  <div class="roof2-box"><b>B2B</b><small>live aujourd'hui · HubSpot</small></div>
+                  <div class="roof2-box dashed"><b>D2C</b><small>à venir · à définir</small></div>
                 </div>
               </div>
+              <p class="ex-note">Deux univers sous un même toit — deux stratégies SEO/GEO distinctes.</p>
             </div>
-            <div class="fw-link">SEO/GEO &nbsp;⇠ lien possible, jamais automatique ⇢&nbsp; AI Studio</div>
           </div>
 
-          <div class="fw-down"><span class="c">tout remonte à la mesure</span><span>↓</span></div>
-
-          <div class="fw-level l2">
-            <span class="fw-tag green">La mesure · transverse</span>
-            <div class="fw-card">
-              <h5>Reporting — l'agent agrégateur</h5>
-              <p>Agrège tout (SEO/GEO · social · studio · publicité), extrait les notes <b>quoi / pourquoi / quoi faire</b>, et produit les recommandations.</p>
+          <div class="exb-row r2">
+            <div class="ex-rail"><div class="ex-num">02</div><span class="ex-name">Systèmes</span><span class="ex-sub">autonomes</span></div>
+            <div class="ex-body">
+              <span class="ex-link up">↑ s'appuient sur la fondation</span>
+              <div class="ex-cards">
+                <div class="ex-card">
+                  <div class="ex-card-top"><span class="ex-dot"></span><h5>SEO / GEO</h5></div>
+                  <div class="surf-chips"><span>Site</span><span>RP</span><span>Social</span></div>
+                  <p>Crée selon SEO + GEO, rédige &amp; optimise, décline par marché. Validation humaine.</p>
+                </div>
+                <div class="ex-card">
+                  <div class="ex-card-top"><span class="ex-dot"></span><h5>Calendrier</h5></div>
+                  <p>Branché sur Monday.com. Temps forts, fait / à-faire, global → local, reco de mix.</p>
+                </div>
+                <div class="ex-card">
+                  <div class="ex-card-top"><span class="ex-dot"></span><h5>AI Studio</h5></div>
+                  <p>Une plateforme : supports POS en self-service + briefs avancés (déclinaison, traduction, montage, IA).</p>
+                </div>
+              </div>
+              <span class="ex-foot-note">Systèmes indépendants — lien SEO/GEO ↔ AI Studio possible, jamais automatique.</span>
             </div>
-            <div class="fw-feedback">↑ Les recommandations remontent nourrir les systèmes — notamment le mix du calendrier</div>
           </div>
 
+          <div class="exb-row r3">
+            <div class="ex-rail"><div class="ex-num">03</div><span class="ex-name">Pilotage</span><span class="ex-sub">transverse</span></div>
+            <div class="ex-body">
+              <span class="ex-link down">↓ tout est mesuré</span>
+              <div class="ex-card green">
+                <div class="ex-card-top"><span class="ex-dot g"></span><h5>Reporting — l'agent agrégateur</h5></div>
+                <p>Agrège tout (SEO/GEO · social · studio · publicité), extrait les notes <b>quoi / pourquoi / quoi faire</b>, produit les recommandations.</p>
+              </div>
+              <span class="ex-link loop">↺ Les recommandations remontent piloter les systèmes — à commencer par le mix du calendrier</span>
+            </div>
+          </div>
         </div>
+        <p class="exb-source">Lecture — la fondation porte les systèmes · les systèmes produisent en parallèle · le pilotage agrège et oriente. Vos équipes valident à chaque étape.</p>
       </div>
 
       <!-- PILIER 1 -->
