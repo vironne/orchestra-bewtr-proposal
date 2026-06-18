@@ -115,6 +115,28 @@
   .tranche .t-amt { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.02em; margin: 8px 0 4px; }
   .tranche .t-desc { font-size: 12.5px; color: var(--ink-soft); line-height: 1.45; }
 
+  /* === pricing accordion (click to open) === */
+  .acc { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: 0 1px 2px rgba(26,26,26,0.03); }
+  .acc-item + .acc-item { border-top: 1px solid var(--line); }
+  .acc-head { width: 100%; display: flex; align-items: center; gap: 14px; padding: 18px 22px; background: #fff; border: none; cursor: pointer; text-align: left; font-family: inherit; transition: background 0.2s; }
+  .acc-head:hover { background: var(--bg-2); }
+  .acc-item.open .acc-head { background: var(--bg-2); }
+  .acc-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); font-weight: 700; white-space: nowrap; }
+  .acc-name { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; flex: 1; }
+  .acc-price { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--ink-2); font-weight: 600; white-space: nowrap; }
+  .acc-price.tbd { color: var(--muted); font-style: italic; }
+  .acc-chev { width: 24px; height: 24px; border-radius: 50%; background: var(--bg-3); color: var(--orange); display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 400; flex-shrink: 0; transition: transform 0.25s; line-height: 1; }
+  .acc-item.open .acc-chev { transform: rotate(45deg); background: var(--orange); color: #fff; }
+  .acc-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: var(--bg-2); }
+  .acc-item.open .acc-body { max-height: 460px; }
+  .acc-inner { padding: 2px 22px 20px; font-size: 13px; color: var(--ink-soft); line-height: 1.55; }
+  .acc-inner > p { margin-bottom: 4px; }
+  .sub-line { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px dashed var(--line-2); }
+  .sub-line:last-child { border-bottom: none; }
+  .sub-line b { font-weight: 700; color: var(--ink); }
+  .sub-line .sl-price { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--orange-2); font-weight: 600; white-space: nowrap; text-align: right; }
+  @media (max-width: 640px) { .acc-name { font-size: 0.98rem; } .sub-line { flex-direction: column; gap: 3px; } .sub-line .sl-price { text-align: left; } }
+
   .promise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
   .promise-col { padding: 26px 24px; }
   .promise-col.no { background: var(--bg-2); border-right: 1px solid var(--line); }
@@ -772,22 +794,42 @@
   <section class="block" style="padding-top:56px;">
     <div class="wrap">
       <div class="sec-head"><span class="num">03</span><h2>Chiffrage <span class="accent">par pilier.</span></h2></div>
-      <p class="sec-intro">Setup et run isolés, par pilier — pour permettre le séquencement. Vous activez dans l'ordre que vous choisissez.</p>
-      <table class="budget-table">
-        <thead><tr><th>Pilier</th><th>Setup</th><th>Run France / mois</th></tr></thead>
-        <tbody>
-          <tr><td class="pillar-name">1 · SEO/GEO</td><td class="amt">45 000 €</td><td class="amt">4 500 €</td></tr>
-          <tr><td class="pillar-name">2 · Calendrier de contenu</td><td class="amt">14 000 €</td><td class="amt">2 900 → 5 200 €</td></tr>
-          <tr><td class="pillar-name">3 · AI Studio (déclinaison)</td><td class="amt">15 000 €</td><td class="amt">2 100 → 3 400 €</td></tr>
-          <tr><td class="pillar-name">3bis · App POS self-service</td><td class="amt">12 000 €</td><td class="amt">inclus</td></tr>
-          <tr><td class="pillar-name">4 · Reporting</td><td class="amt">8 500 €</td><td class="amt">850 €</td></tr>
-          <tr class="total"><td>Programme complet</td><td class="amt">≈ 94 500 €</td><td class="amt">≈ 9 150 → 13 050 €</td></tr>
-        </tbody>
-      </table>
+      <p class="sec-intro">Chaque pilier est chiffré isolément — activez dans l'ordre que vous choisissez. <b>Cliquez un pilier</b> pour ouvrir le détail.</p>
+      <div class="acc">
+        <div class="acc-item">
+          <button class="acc-head"><span class="acc-num">Pilier 1</span><span class="acc-name">SEO / GEO</span><span class="acc-price tbd">à cadrer</span><span class="acc-chev">+</span></button>
+          <div class="acc-body"><div class="acc-inner">
+            <p>Le périmètre SEO/GEO (marchés, volume, profondeur) se chiffre après la baseline — on le définit ensemble en atelier.</p>
+            <div class="sub-line"><span><b>À voir plus tard</b> — chiffrage calé une fois le périmètre arrêté</span><span class="sl-price">à définir</span></div>
+          </div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head"><span class="acc-num">Pilier 2</span><span class="acc-name">Calendrier de contenu</span><span class="acc-price">14 000 € + run</span><span class="acc-chev">+</span></button>
+          <div class="acc-body"><div class="acc-inner">
+            <div class="sub-line"><span><b>Setup</b> — modèle éditorial 50/50, build agent, pilote 1 marché</span><span class="sl-price">14 000 €</span></div>
+            <div class="sub-line"><span><b>Run</b> — selon la cadence (montée → quotidien 2 canaux)</span><span class="sl-price">2 900 → 5 200 €/mois</span></div>
+          </div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head"><span class="acc-num">Pilier 3</span><span class="acc-name">AI Studio</span><span class="acc-price">12 000 € + à l'usage</span><span class="acc-chev">+</span></button>
+          <div class="acc-body"><div class="acc-inner">
+            <div class="sub-line"><span><b>App POS self-service</b> — setup de la plateforme &amp; des gabarits verrouillés charte</span><span class="sl-price">12 000 €</span></div>
+            <div class="sub-line"><span>· crédits de génération <b>à l'usage</b> + maintenance mensuelle légère</span><span class="sl-price">à l'usage + ~/mois</span></div>
+            <div class="sub-line"><span><b>Déclinaison &amp; production</b> — resizing, langues, montage, voix…</span><span class="sl-price">sur brief (devis)</span></div>
+          </div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head"><span class="acc-num">Pilier 4</span><span class="acc-name">Reporting</span><span class="acc-price">8 500 € · 850 €/mois</span><span class="acc-chev">+</span></button>
+          <div class="acc-body"><div class="acc-inner">
+            <div class="sub-line"><span><b>Setup</b> — agrégation, connecteurs, agent de note &amp; reco</span><span class="sl-price">8 500 €</span></div>
+            <div class="sub-line"><span><b>Run</b> — interprétation &amp; maintenance</span><span class="sl-price">850 €/mois</span></div>
+          </div></div>
+        </div>
+      </div>
       <div class="tranche-row">
-        <div class="tranche ferme"><span class="t-tag">Tranche A · ferme</span><div class="t-amt">9 500 €</div><p class="t-desc">Baseline + décision d'architecture, 3 semaines. Petit ticket, livrables tangibles.</p></div>
-        <div class="tranche"><span class="t-tag">Tranche B+C · sur résultats</span><div class="t-amt">36 000 €</div><p class="t-desc">Fondations + agent. Déclenchée sur validation du bloc A. Go-live septembre.</p></div>
-        <div class="tranche"><span class="t-tag">Run · résiliable</span><div class="t-amt">4 500 €<span style="font-size:1rem;color:var(--muted)">/mois</span></div><p class="t-desc">Démarrage au go-live, résiliable au trimestre. Réversibilité affichée.</p></div>
+        <div class="tranche ferme"><span class="t-tag">Étape 1 · cadrage</span><div class="t-amt">9 500 €</div><p class="t-desc">Baseline + décisions d'architecture, 3 semaines. Ticket d'entrée léger, livrables tangibles.</p></div>
+        <div class="tranche"><span class="t-tag">Étape 2 · activation</span><div class="t-amt">sur devis</div><p class="t-desc">On active les piliers retenus, dans l'ordre choisi — chiffré pilier par pilier après le cadrage.</p></div>
+        <div class="tranche"><span class="t-tag">Run · résiliable</span><div class="t-amt">au trimestre</div><p class="t-desc">Démarrage au go-live, résiliable au trimestre. Réversibilité affichée.</p></div>
       </div>
     </div>
   </section>
@@ -854,6 +896,10 @@
     btns.forEach(x => x.classList.toggle('active', x === b));
     panels.forEach(p => p.classList.toggle('active', p.id === t));
     window.scrollTo({ top: 0, behavior: 'instant' });
+  }));
+
+  document.querySelectorAll('.acc-head').forEach(h => h.addEventListener('click', () => {
+    h.parentElement.classList.toggle('open');
   }));
 </script>
 
