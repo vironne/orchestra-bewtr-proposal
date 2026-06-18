@@ -101,6 +101,34 @@
   .pp h5 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.01em; }
   .pp p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.5; }
 
+  /* === diagnostic "on a fait nos devoirs" === */
+  .diag-lead { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--orange); border-radius: 14px; padding: 22px 26px; margin-bottom: 22px; }
+  .dl-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); font-weight: 700; display: block; margin-bottom: 11px; }
+  .diag-lead p { font-size: 1.1rem; line-height: 1.55; color: var(--ink); margin: 0; letter-spacing: -0.005em; }
+  .diag-lead b { color: var(--orange-2); font-weight: 700; }
+  .diag-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .dm-card { border: 1px solid var(--line); border-radius: 12px; padding: 18px; background: var(--bg-2); text-align: center; }
+  .dm-card.score { background: var(--orange-pale); border-color: var(--orange-soft); }
+  .dm-lab { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .dm-val { font-size: 1.85rem; font-weight: 700; letter-spacing: -0.02em; margin: 9px 0 5px; color: var(--ink); line-height: 1; }
+  .dm-val.gap { color: var(--slate); }
+  .dm-sub { font-size: 11.5px; color: var(--ink-soft); line-height: 1.4; }
+  .dm-bar { height: 5px; border-radius: 3px; background: #fff; border: 1px solid var(--orange-soft); margin-top: 11px; overflow: hidden; }
+  .dm-bar i { display: block; height: 100%; width: 38%; background: var(--orange); }
+  .diag-cap { font-size: 11.5px; color: var(--muted); margin: 12px 2px 0; line-height: 1.5; }
+  .diag-h3 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; margin: 34px 0 16px; }
+  .diag-finds { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .find-card { border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; background: var(--bg-2); display: flex; gap: 14px; }
+  .fc-num { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--orange); color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .fc-title { font-size: 1rem; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.01em; line-height: 1.25; }
+  .fc-text { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
+  .fc-text b { color: var(--ink-2); font-weight: 700; }
+  .diag-insight { margin-top: 24px; background: var(--slate); border-radius: 14px; padding: 22px 26px; }
+  .di-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #fff; font-weight: 700; display: block; margin-bottom: 11px; opacity: 0.65; }
+  .diag-insight p { font-size: 1rem; line-height: 1.55; margin: 0; color: #fff; }
+  .diag-insight b { color: #fff; font-weight: 700; box-shadow: inset 0 -2px 0 var(--orange); }
+  @media (max-width: 760px) { .diag-metrics { grid-template-columns: 1fr 1fr; } .diag-finds { grid-template-columns: 1fr; } }
+
   .budget-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; }
   .budget-table th { text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; padding: 12px 14px; border-bottom: 2px solid var(--ink); }
   .budget-table td { padding: 14px 14px; border-bottom: 1px solid var(--line); }
@@ -629,6 +657,39 @@
         <div class="pp"><h5>B2B = crédibilité, pas volume</h5><p>On verrouille les requêtes de vérification et les territoires incontestés (B Corp, eau locale).</p></div>
         <div class="pp"><h5>Un agent, pas un outil de plus</h5><p>Vous gardez vos outils. Nos agents s'y branchent. Il nous faut juste les accès.</p></div>
         <div class="pp"><h5>L'IA en coulisses</h5><p>On décline et on sublime du réel — jamais de faux généré. Cohérent B Corp.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head"><span class="num">05</span><h2>On a fait nos <span class="accent">devoirs.</span></h2></div>
+      <p class="sec-intro">Avant de chiffrer quoi que ce soit, on a passé votre présence SEO/GEO B2B France au crible — et comparée à votre concurrent direct. Voici ce qu'on a trouvé. Diagnostic de départ, à affiner ensemble.</p>
+
+      <div class="diag-lead">
+        <span class="dl-tag">Le diagnostic en une phrase</span>
+        <p>BE WTR a la <b>même autorité de domaine</b> que Castalie — son concurrent B2B français direct — mais <b>11× moins de mots-clés</b> et <b>4× moins de trafic</b>. Le problème n'est pas la notoriété : la marque est forte (B Corp, Red Dot, Accor / Marriott / Ritz, 736 domaines référents). C'est un problème d'<b>exécution SEO / contenu</b>. La matière première est là, inexploitée.</p>
+      </div>
+
+      <div class="diag-metrics">
+        <div class="dm-card"><span class="dm-lab">Autorité de domaine</span><div class="dm-val">À parité</div><span class="dm-sub">même niveau que Castalie</span></div>
+        <div class="dm-card"><span class="dm-lab">Mots-clés positionnés</span><div class="dm-val gap">11× moins</div><span class="dm-sub">que Castalie</span></div>
+        <div class="dm-card"><span class="dm-lab">Trafic organique</span><div class="dm-val gap">4× moins</div><span class="dm-sub">que Castalie</span></div>
+        <div class="dm-card score"><span class="dm-lab">Score SEO / GEO global</span><div class="dm-val">38<span style="font-size:1rem;color:var(--muted);font-weight:600;"> /100</span></div><div class="dm-bar"><i></i></div></div>
+      </div>
+      <p class="diag-cap">BE WTR vs Castalie — concurrent B2B France direct. Le score global est à prendre avec des pincettes (détail par pilier dans le rapport).</p>
+
+      <h3 class="diag-h3">4 trouvailles qui changent la stratégie</h3>
+      <div class="diag-finds">
+        <div class="find-card"><div class="fc-num">1</div><div><div class="fc-title">La liste de mots-clés du brief est inexploitable telle quelle</div><p class="fc-text"><b>31 des 32 mots-clés</b> ont un volume de recherche nul en France (« solution eau durable pour bureau » = 0). Personne ne cherche comme ça. On a reconstruit la vraie demande — carafe filtrante (12 100), filtre eau robinet (9 900), fontaine à eau (18 100), adoucisseur (40 500)… → <b>453 mots-clés exploitables</b>.</p></div></div>
+        <div class="find-card"><div class="fc-num">2</div><div><div class="fc-title">Zéro données structurées (Schema.org)</div><p class="fc-text">Rien sur l'accueil ni sur les pages systèmes → handicap direct pour le <b>GEO</b> (citations par les IA). <b>Quick win à fort impact.</b></p></div></div>
+        <div class="find-card"><div class="fc-num">3</div><div><div class="fc-title">Le démarrage éditorial est bon</div><p class="fc-text">Quelques articles déjà bien ciblés (fontaine gastronomie, eau filtrée brasserie, hôtel 5 étoiles), des H2 en questions. Il manque les <b>réponses extractives ~40 mots</b> et les <b>données chiffrées sourcées</b>.</p></div></div>
+        <div class="find-card"><div class="fc-num">4</div><div><div class="fc-title">Pas de maillage interne</div><p class="fc-text">Rien ne renforce les <b>pages service</b> aujourd'hui — tout est à construire à ce niveau.</p></div></div>
+      </div>
+
+      <div class="diag-insight">
+        <span class="di-tag">Insight B2B clé</span>
+        <p>La demande transactionnelle « fournisseur eau premium restaurant / hôtel » n'existe quasiment pas en search. La stratégie B2B gagnante : capter <b>« fontaine à eau entreprise / professionnelle »</b> (volume réel) + <b>créer la demande</b> via du contenu de considération (microplastiques, chlore, coût bouteilles vs filtration) où BE WTR est légitime + <b>dominer le GEO</b>.</p>
       </div>
     </div>
   </section>
