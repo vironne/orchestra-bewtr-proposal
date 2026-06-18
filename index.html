@@ -385,6 +385,9 @@
   .team-card .tc-tag { font-size: 12.5px; color: var(--muted); margin-bottom: 14px; }
   .team-card p { font-size: 13px; color: var(--ink-soft); line-height: 1.55; }
   .team-card .tc-edit { display: inline-block; margin-top: 12px; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-2); border: 1px dashed var(--line-2); border-radius: 6px; padding: 3px 8px; }
+  .tc-av { width: 58px; height: 58px; border-radius: 50%; position: relative; overflow: hidden; background: var(--orange); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; flex-shrink: 0; }
+  .tc-ini { color: #fff; font-weight: 700; font-size: 16px; letter-spacing: 0.02em; }
+  .tc-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .ways { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-top: 18px; }
   .way { border: 1px solid var(--line); border-radius: 11px; padding: 16px; background: #fff; }
   .way .w-n { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--orange); font-weight: 700; }
@@ -936,6 +939,7 @@
         <p class="diagram-sub">Quatre profils complémentaires — pas une agence de bras. De la marque (FMCG, média, créa) au search technique (SEO/GEO/SEA) jusqu'aux agents IA : on pense <b>et</b> on opère.</p>
         <div class="team-grid">
           <div class="team-card">
+            <div class="tc-av"><span class="tc-ini">XV</span><img class="tc-photo" src="team-xavier.jpg" alt="Xavier Vironneau" onerror="this.remove()"></div>
             <span class="tc-role">Média · créa · FMCG</span>
             <h4>Xavier Vironneau</h4>
             <p class="tc-tag">Marque &amp; activation média</p>
@@ -943,18 +947,21 @@
             <span class="tc-edit">années à affiner</span>
           </div>
           <div class="team-card">
+            <div class="tc-av"><span class="tc-ini">LG</span><img class="tc-photo" src="team-ludovic.jpg" alt="Ludovic Goutel" onerror="this.remove()"></div>
             <span class="tc-role">9 ans · FMCG / beauté</span>
             <h4>Ludovic Goutel</h4>
             <p class="tc-tag">CMO Orchestra Intelligence</p>
             <p>9 ans chez P&amp;G &amp; Coty sur le business Wella Professional — Suisse, UK, Canada, Mexique. Stratégie, data, développement commercial &amp; transformation.</p>
           </div>
           <div class="team-card">
+            <div class="tc-av"><span class="tc-ini">AG</span><img class="tc-photo" src="team-adrien.jpg" alt="Adrien Garrin" onerror="this.remove()"></div>
             <span class="tc-role">15 ans · SEO / GEO / SEA</span>
             <h4>Adrien Garrin</h4>
             <p class="tc-tag">Search &amp; visibilité</p>
             <p>15 ans en agence sur le search — SEO, GEO et SEA. L'expertise technique qui arme le pilier 1 : visibilité organique, citations IA, acquisition.</p>
           </div>
           <div class="team-card">
+            <div class="tc-av"><span class="tc-ini">A</span><img class="tc-photo" src="team-anne.jpg" alt="Anne" onerror="this.remove()"></div>
             <span class="tc-role">Orchestra Intelligence</span>
             <h4>Anne</h4>
             <p class="tc-tag">Équipe Orchestra</p>
