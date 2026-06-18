@@ -266,6 +266,16 @@
   .demo-vid video { display: block; width: 100%; height: auto; }
   .demo-cap { position: absolute; left: 0; bottom: 0; right: 0; padding: 9px 13px; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: linear-gradient(to top, rgba(0,0,0,0.65), transparent); font-weight: 600; z-index: 2; }
   @media (max-width: 760px) { .demo-grid { grid-template-columns: 1fr; } }
+  /* pillar exhibits : click to open */
+  .pex-head { cursor: pointer; }
+  .pex-head:hover { background: var(--bg-3); }
+  .pex-chev { width: 24px; height: 24px; border-radius: 50%; background: var(--bg-3); color: var(--orange); display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 400; line-height: 1; flex-shrink: 0; transition: transform 0.25s; }
+  .pex.open .pex-chev { transform: rotate(45deg); background: var(--orange); color: #fff; }
+  .pex:not(.open) .pex-body,
+  .pex:not(.open) .pex-platforms,
+  .pex:not(.open) .pex-note,
+  .pex:not(.open) .pex-demo { display: none; }
+  .pex:not(.open) .pex-head { border-bottom: none; }
   @media (max-width: 820px) {
     .exb-row { grid-template-columns: 1fr; }
     .ex-rail { display: flex; align-items: baseline; gap: 12px; border-right: none; border-bottom: 1px solid var(--line); padding: 13px 18px; }
@@ -548,9 +558,9 @@
 
       <!-- PILIER 1 — SEO/GEO (focus) -->
       <div class="diagram">
-        <div class="pex">
+        <div class="pex open">
           <div class="pex-head">
-            <div class="pex-id"><span class="pex-num">Pilier 1 · prioritaire</span><span class="pex-name">SEO / GEO</span><span class="ex-badge agent">Agent</span></div>
+            <div class="pex-id"><span class="pex-num">Pilier 1 · prioritaire</span><span class="pex-name">SEO / GEO</span><span class="ex-badge agent">Agent</span><span class="pex-chev">+</span></div>
             <p class="pex-thesis">Un seul agent rend BE WTR visible — sur Google comme dans les réponses des IA — et arme vos RP. En continu, validé par vos équipes.</p>
           </div>
           <div class="pex-body">
@@ -595,7 +605,7 @@
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
         <div class="pex">
           <div class="pex-head">
-            <div class="pex-id"><span class="pex-num">Pilier 2</span><span class="pex-name">Calendrier de contenu</span><span class="ex-badge agent">Agent</span></div>
+            <div class="pex-id"><span class="pex-num">Pilier 2</span><span class="pex-name">Calendrier de contenu</span><span class="ex-badge agent">Agent</span><span class="pex-chev">+</span></div>
             <p class="pex-thesis">L'agent assemble ce qui existe, anticipe les temps forts et recommande le mix. Il programme — il ne génère pas. Branché sur Monday.com.</p>
           </div>
           <div class="pex-body">
@@ -639,7 +649,7 @@
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
         <div class="pex">
           <div class="pex-head">
-            <div class="pex-id"><span class="pex-num">Pilier 3</span><span class="pex-name">AI Studio</span><span class="ex-badge platform">Plateforme</span></div>
+            <div class="pex-id"><span class="pex-num">Pilier 3</span><span class="pex-name">AI Studio</span><span class="ex-badge platform">Plateforme</span><span class="pex-chev">+</span></div>
             <p class="pex-thesis">Deux besoins très différents, donc deux plateformes dans une seule interface. Toutes deux branchées sur votre banque d'assets, l'humain toujours dans la boucle.</p>
           </div>
           <div class="pex-platforms">
@@ -708,7 +718,7 @@
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
         <div class="pex">
           <div class="pex-head">
-            <div class="pex-id"><span class="pex-num">Pilier 4</span><span class="pex-name">Reporting</span><span class="ex-badge agent">Agent</span></div>
+            <div class="pex-id"><span class="pex-num">Pilier 4</span><span class="pex-name">Reporting</span><span class="ex-badge agent">Agent</span><span class="pex-chev">+</span></div>
             <p class="pex-thesis">Un agent rassemble tout ce que les autres produisent, écrit la lecture du mois et recommande la suite. Le chiffre est calculé, jamais inventé.</p>
           </div>
           <div class="pex-body">
@@ -900,6 +910,10 @@
 
   document.querySelectorAll('.acc-head').forEach(h => h.addEventListener('click', () => {
     h.parentElement.classList.toggle('open');
+  }));
+
+  document.querySelectorAll('.pex-head').forEach(h => h.addEventListener('click', () => {
+    h.closest('.pex').classList.toggle('open');
   }));
 </script>
 
