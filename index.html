@@ -115,6 +115,22 @@
   .tranche .t-amt { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.02em; margin: 8px 0 4px; }
   .tranche .t-desc { font-size: 12.5px; color: var(--ink-soft); line-height: 1.45; }
 
+  /* === costing final (estimatif) === */
+  .cost-final { margin-top: 28px; border: 1px solid var(--orange-soft); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 1px 2px rgba(26,26,26,0.03); }
+  .cf-head { background: var(--orange-pale); padding: 16px 22px; border-bottom: 1px solid var(--orange-soft); display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .cf-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #fff; background: var(--orange); padding: 4px 11px; border-radius: 20px; font-weight: 700; flex-shrink: 0; }
+  .cf-head p { font-size: 12.5px; color: var(--orange-2); line-height: 1.45; margin: 0; flex: 1; min-width: 200px; }
+  .cf-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .cf-cell { padding: 22px; border-right: 1px solid var(--line); }
+  .cf-cell:last-child { border-right: none; }
+  .cf-lab { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .cf-amt { font-size: 1.7rem; font-weight: 700; letter-spacing: -0.02em; margin: 8px 0; color: var(--ink); }
+  .cf-amt.sm { font-size: 1.25rem; color: var(--orange-2); }
+  .cf-amt .cf-per { font-size: 0.9rem; color: var(--muted); font-weight: 600; }
+  .cf-sub { font-size: 12px; color: var(--ink-soft); line-height: 1.45; }
+  .cf-note { margin: 0; padding: 14px 22px; border-top: 1px solid var(--line); background: var(--bg-2); font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+  @media (max-width: 720px) { .cf-grid { grid-template-columns: 1fr; } .cf-cell { border-right: none; border-bottom: 1px solid var(--line); } .cf-cell:last-child { border-bottom: none; } }
+
   /* === pricing accordion (click to open) === */
   .acc { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: 0 1px 2px rgba(26,26,26,0.03); }
   .acc-item + .acc-item { border-top: 1px solid var(--line); }
@@ -1013,10 +1029,26 @@
           </div></div>
         </div>
       </div>
-      <div class="tranche-row">
-        <div class="tranche ferme"><span class="t-tag">Étape 1 · cadrage</span><div class="t-amt">9 500 €</div><p class="t-desc">Baseline + décisions d'architecture, 3 semaines. Ticket d'entrée léger, livrables tangibles.</p></div>
-        <div class="tranche"><span class="t-tag">Étape 2 · activation</span><div class="t-amt">sur devis</div><p class="t-desc">On active les piliers retenus, dans l'ordre choisi — chiffré pilier par pilier après le cadrage.</p></div>
-        <div class="tranche"><span class="t-tag">Run · résiliable</span><div class="t-amt">au trimestre</div><p class="t-desc">Démarrage au go-live, résiliable au trimestre. Réversibilité affichée.</p></div>
+      <div class="cost-final">
+        <div class="cf-head"><span class="cf-tag">Estimatif</span><p>La vue d'ensemble du budget. <b>Estimatif</b> — le périmètre SEO/GEO reste à cadrer et les briefs AI Studio se chiffrent à la demande.</p></div>
+        <div class="cf-grid">
+          <div class="cf-cell">
+            <span class="cf-lab">Setup · one-shot</span>
+            <div class="cf-amt">~ 34 500 €</div>
+            <p class="cf-sub">Calendrier (14 000) + AI Studio POS (12 000) + Reporting (8 500). Hors SEO/GEO, à cadrer.</p>
+          </div>
+          <div class="cf-cell">
+            <span class="cf-lab">Run · mensuel</span>
+            <div class="cf-amt">~ 3 750 → 6 050 €<span class="cf-per"> /mois</span></div>
+            <p class="cf-sub">Calendrier (2 900 → 5 200) + Reporting (850). Hors usage AI Studio &amp; SEO/GEO.</p>
+          </div>
+          <div class="cf-cell">
+            <span class="cf-lab">En sus · à la demande</span>
+            <div class="cf-amt sm">Sur devis</div>
+            <p class="cf-sub">Briefs AI Studio (déclinaison, traduction, montage), crédits de génération, périmètre SEO/GEO.</p>
+          </div>
+        </div>
+        <p class="cf-note">Montants estimatifs, hors taxes, donnés à titre indicatif. Le total final dépend du périmètre SEO/GEO retenu et du volume de briefs AI Studio. Chaque pilier reste activable isolément.</p>
       </div>
     </div>
   </section>
