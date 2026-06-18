@@ -458,6 +458,9 @@
   .tc-av { width: 58px; height: 58px; border-radius: 50%; position: relative; overflow: hidden; background: var(--orange); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; flex-shrink: 0; }
   .tc-ini { color: #fff; font-weight: 700; font-size: 16px; letter-spacing: 0.02em; }
   .tc-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .team-card .tc-tag { font-weight: 600; color: var(--ink-2); }
+  .tc-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .tc-chips span { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 700; color: var(--orange-2); background: var(--orange-pale); border: 1px solid var(--orange-soft); border-radius: 20px; padding: 4px 10px; }
   .ways { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-top: 18px; }
   .way { border: 1px solid var(--line); border-radius: 11px; padding: 16px; background: #fff; }
   .way .w-n { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--orange); font-weight: 700; }
@@ -1060,37 +1063,39 @@
       <!-- CASTING -->
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
         <div class="diagram-title"><span class="d-tag">Casting</span><h3>Qui opère</h3></div>
-        <p class="diagram-sub">Quatre profils complémentaires — pas une agence de bras. De la marque (FMCG, média, créa) au search technique (SEO/GEO/SEA) jusqu'aux agents IA : on pense <b>et</b> on opère.</p>
+        <p class="diagram-sub">Quatre profils complémentaires — pas une agence de bras. De la marque et du commercial (FMCG, D2C) à l'ingénierie à grande échelle et au search technique (SEO/SEA/GEO) : on pense <b>et</b> on opère.</p>
         <div class="team-grid">
           <div class="team-card">
-            <div class="tc-av"><span class="tc-ini">XV</span><img class="tc-photo" src="team-xavier.jpg" alt="Xavier Vironneau" onerror="this.remove()"></div>
-            <span class="tc-role">Média · créa · FMCG</span>
-            <h4>Xavier Vironneau</h4>
-            <p class="tc-tag">Marque &amp; activation média</p>
-            <p>Agences WPP / Dentsu — comptes Unilever &amp; Ford, tous leviers d'activation média + créa. Puis GSK / Haleon — content marketing &amp; performance, catégorie Pain (antalgiques), Europe.</p>
-            <span class="tc-edit">années à affiner</span>
+            <div class="tc-av"><span class="tc-ini">Xa</span><img class="tc-photo" src="team-xavier.jpg" alt="Xavier" onerror="this.remove()"></div>
+            <span class="tc-role">15 ans · Marketing</span>
+            <h4>Xavier</h4>
+            <p class="tc-tag">La marque, des deux côtés</p>
+            <p>Quinze ans à construire des marques — d'abord en agence sur de grandes maisons FMCG, puis comme opérateur de sa propre marque D2C. Il la pense autant qu'il la vend.</p>
+            <div class="tc-chips"><span>Agence</span><span>FMCG</span><span>D2C</span></div>
           </div>
           <div class="team-card">
-            <div class="tc-av"><span class="tc-ini">LG</span><img class="tc-photo" src="team-ludovic.jpg" alt="Ludovic Goutel" onerror="this.remove()"></div>
-            <span class="tc-role">9 ans · FMCG / beauté</span>
-            <h4>Ludovic Goutel</h4>
-            <p class="tc-tag">CMO Orchestra Intelligence</p>
-            <p>9 ans chez P&amp;G &amp; Coty sur le business Wella Professional — Suisse, UK, Canada, Mexique. Stratégie, data, développement commercial &amp; transformation.</p>
-          </div>
-          <div class="team-card">
-            <div class="tc-av"><span class="tc-ini">AG</span><img class="tc-photo" src="team-adrien.jpg" alt="Adrien Garrin" onerror="this.remove()"></div>
-            <span class="tc-role">15 ans · SEO / GEO / SEA</span>
-            <h4>Adrien Garrin</h4>
-            <p class="tc-tag">Search &amp; visibilité</p>
-            <p>15 ans en agence sur le search — SEO, GEO et SEA. L'expertise technique qui arme le pilier 1 : visibilité organique, citations IA, acquisition.</p>
+            <div class="tc-av"><span class="tc-ini">Lu</span><img class="tc-photo" src="team-ludovic.jpg" alt="Ludovic" onerror="this.remove()"></div>
+            <span class="tc-role">15 ans · Marketing &amp; commercial</span>
+            <h4>Ludovic</h4>
+            <p class="tc-tag">De la stratégie au chiffre d'affaires</p>
+            <p>Quinze ans entre marketing et développement commercial dans la FMCG, doublés d'une expérience d'entrepreneur. Il relie la vision de marque aux résultats concrets.</p>
+            <div class="tc-chips"><span>FMCG</span><span>Commercial</span><span>Entrepreneur</span></div>
           </div>
           <div class="team-card">
             <div class="tc-av"><span class="tc-ini">An</span><img class="tc-photo" src="team-anne.jpg" alt="An" onerror="this.remove()"></div>
-            <span class="tc-role">Orchestra Intelligence</span>
+            <span class="tc-role">20 ans · Engineering</span>
             <h4>An</h4>
-            <p class="tc-tag">Équipe Orchestra</p>
-            <p>Membre de l'équipe Orchestra Intelligence, sur le delivery du dispositif.</p>
-            <span class="tc-edit">parcours &amp; années à affiner</span>
+            <p class="tc-tag">Bâtir des systèmes à l'échelle</p>
+            <p>Vingt ans de développement sur des systèmes critiques — chez Amazon et à la Société Générale. C'est lui qui fait tourner les agents pour de vrai, en production.</p>
+            <div class="tc-chips"><span>Amazon</span><span>Société Générale</span><span>Tech</span></div>
+          </div>
+          <div class="team-card">
+            <div class="tc-av"><span class="tc-ini">Ad</span><img class="tc-photo" src="team-adrien.jpg" alt="Adrien" onerror="this.remove()"></div>
+            <span class="tc-role">15 ans · SEO · SEA · GEO</span>
+            <h4>Adrien</h4>
+            <p class="tc-tag">Le search, du luxe au D2C</p>
+            <p>Quinze ans en agence — grands comptes (luxe, automobile) comme petites marques D2C. L'expertise technique qui arme le Pilier 1 : SEO, SEA et GEO.</p>
+            <div class="tc-chips"><span>Luxe &amp; Auto</span><span>D2C</span><span>SEO · SEA · GEO</span></div>
           </div>
         </div>
       </div>
