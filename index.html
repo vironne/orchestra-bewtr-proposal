@@ -276,6 +276,33 @@
   .pex:not(.open) .pex-note,
   .pex:not(.open) .pex-demo { display: none; }
   .pex:not(.open) .pex-head { border-bottom: none; }
+
+  /* === chat mockup (agent ↔ employé) === */
+  .chat { max-width: 640px; margin: 4px auto 0; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 1px 2px rgba(26,26,26,0.04), 0 18px 44px -32px rgba(26,26,26,0.18); }
+  .chat-head { display: flex; align-items: center; gap: 11px; padding: 12px 18px; border-bottom: 1px solid var(--line); background: var(--bg-2); }
+  .chat-av { width: 34px; height: 34px; border-radius: 50%; background: var(--orange); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; flex-shrink: 0; }
+  .chat-id .cn { font-weight: 700; font-size: 13.5px; }
+  .chat-id .cs { font-size: 11px; color: var(--muted); display: flex; align-items: center; gap: 5px; }
+  .chat-id .cs .ld { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); }
+  .chat-body { padding: 18px; display: flex; flex-direction: column; gap: 12px; }
+  .msg { max-width: 82%; padding: 11px 14px; border-radius: 14px; font-size: 13px; line-height: 1.5; }
+  .msg .msg-from { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; margin-bottom: 5px; }
+  .msg.agent { align-self: flex-start; background: var(--orange-pale); border: 1px solid var(--orange-soft); color: var(--ink-2); border-bottom-left-radius: 4px; }
+  .msg.agent .msg-from { color: var(--orange-2); }
+  .msg.you { align-self: flex-end; background: var(--slate-pale); border: 1px solid var(--slate-line); color: var(--ink-2); border-bottom-right-radius: 4px; }
+  .msg.you .msg-from { color: var(--slate); }
+  .msg ul { list-style: none; margin: 7px 0 0; }
+  .msg li { padding: 3px 0 3px 14px; position: relative; }
+  .msg li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--orange); position: absolute; left: 0; top: 8px; }
+  .file-card { display: flex; align-items: center; gap: 10px; margin-top: 9px; padding: 9px 11px; background: #fff; border: 1px solid var(--orange-soft); border-radius: 9px; }
+  .file-ic { width: 30px; height: 30px; border-radius: 6px; background: var(--orange); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 8.5px; font-weight: 700; flex-shrink: 0; }
+  .file-meta .fn { font-weight: 600; font-size: 12px; }
+  .file-meta .fd { font-size: 10.5px; color: var(--muted); }
+  .report-card { margin-top: 9px; background: #fff; border: 1px solid var(--orange-soft); border-radius: 9px; overflow: hidden; }
+  .rc-line { display: flex; justify-content: space-between; gap: 12px; padding: 7px 12px; font-size: 12px; border-bottom: 1px dashed var(--line-2); }
+  .rc-line:last-child { border-bottom: none; }
+  .rc-v { font-weight: 700; color: var(--orange-2); font-family: 'JetBrains Mono', monospace; white-space: nowrap; }
+  .chat-cap { text-align: center; font-size: 11.5px; color: var(--muted); padding: 0 18px 14px; }
   @media (max-width: 820px) {
     .exb-row { grid-template-columns: 1fr; }
     .ex-rail { display: flex; align-items: baseline; gap: 12px; border-right: none; border-bottom: 1px solid var(--line); padding: 13px 18px; }
@@ -594,6 +621,43 @@
                 <div class="node node--result"><span class="node-title">Contenu publié</span></div>
                 <div class="node node--result"><span class="node-title">Liste RP priorisée</span><span class="node-desc">les médias que les IA citent</span></div>
               </div>
+            </div>
+          </div>
+          <div class="pex-demo">
+            <div class="pex-demo-lab"><b>Exemple</b> · l'agent vous parle chaque semaine, dans votre messagerie</div>
+            <div class="chat">
+              <div class="chat-head">
+                <div class="chat-av">AI</div>
+                <div class="chat-id"><div class="cn">Agent SEO / GEO</div><div class="cs"><span class="ld"></span>actif · répond en continu</div></div>
+              </div>
+              <div class="chat-body">
+                <div class="msg agent">
+                  <div class="msg-from">Agent SEO / GEO · lundi 9:02</div>
+                  Bonjour 👋 Voici votre plan SEO/GEO de la semaine :
+                  <ul>
+                    <li>1 article prêt à valider : « Eau microfiltrée en restaurant »</li>
+                    <li>2 pages produit à optimiser (titres + FAQ)</li>
+                    <li>BE WTR désormais cité par Perplexity sur « eau durable hôtel » ✅</li>
+                  </ul>
+                  <div class="file-card"><span class="file-ic">PDF</span><div class="file-meta"><div class="fn">Article_eau-microfiltree.pdf</div><div class="fd">prêt à publier · 4 min de lecture</div></div></div>
+                </div>
+                <div class="msg you">
+                  <div class="msg-from">Vous</div>
+                  Top 👍 Tu peux me sortir le compte-rendu mensuel + les résultats ?
+                </div>
+                <div class="msg agent">
+                  <div class="msg-from">Agent SEO / GEO</div>
+                  Avec plaisir. Récap de mai :
+                  <div class="report-card">
+                    <div class="rc-line"><span>Part de citation IA</span><span class="rc-v">12 % → 23 %</span></div>
+                    <div class="rc-line"><span>Position moy. · 32 mots-clés</span><span class="rc-v">+6 places</span></div>
+                    <div class="rc-line"><span>Articles publiés</span><span class="rc-v">4</span></div>
+                    <div class="rc-line"><span>Médias RP touchés</span><span class="rc-v">2</span></div>
+                  </div>
+                  <div class="file-card"><span class="file-ic">PDF</span><div class="file-meta"><div class="fn">Rapport_mensuel_SEO-GEO.pdf</div><div class="fd">synthèse + recommandations</div></div></div>
+                </div>
+              </div>
+              <div class="chat-cap">Illustration — l'agent livre, vous validez, et vous lui demandez ce que vous voulez.</div>
             </div>
           </div>
           <div class="pex-note slate"><b>Deux stratégies, un domaine.</b> En B2B (HORECA), le SEO/GEO sert la <b>crédibilité</b> — on verrouille les requêtes de vérification (« BE WTR avis », « vs Castalie ») et les territoires incontestés (B Corp, eau locale). En D2C, il devient un vrai levier d'<b>acquisition</b> — préparé en amont du lancement Suisse. Déploiement : France pilote → UAE, CH, UK, SG, HK, TH, MA, CA.</div>
