@@ -731,6 +731,49 @@
               </div>
             </div>
           </div>
+          <div class="pex-demo">
+            <div class="pex-demo-lab"><b>Exemple</b> · l'agent vous propose le calendrier, vous ajustez d'un message</div>
+            <div class="chat" id="calChat">
+              <div class="chat-head">
+                <div class="chat-av">AI</div>
+                <div class="chat-id"><div class="cn">Agent Calendrier</div><div class="cs"><span class="ld"></span>en ligne</div></div>
+              </div>
+              <div class="chat-body">
+                <div class="row agent">
+                  <div class="bubble-av">AI</div>
+                  <div class="bubble ag">
+                    Voici le calendrier de la semaine 📅 — 12 posts programmés sur 2 canaux :
+                    <ul>
+                      <li>Lun · Instagram — recette eau infusée <em>(lifestyle)</em></li>
+                      <li>Mer · LinkedIn — cas client hôtel 5★ <em>(B2B)</em></li>
+                      <li>Ven · Instagram — coulisses chef partenaire <em>(gastronomie)</em></li>
+                    </ul>
+                    <div class="report-card">
+                      <div class="rc-line"><span>Mix · gastronomie</span><span class="rc-v">40 %</span></div>
+                      <div class="rc-line"><span>Mix · lifestyle</span><span class="rc-v">35 %</span></div>
+                      <div class="rc-line"><span>Mix · produit</span><span class="rc-v">25 %</span></div>
+                    </div>
+                    <div class="file-card"><span class="file-ic">CAL</span><div class="file-meta"><div class="fn">Calendrier synchronisé sur Monday.com</div><div class="fd">brouillons prêts à valider</div></div></div>
+                    <span class="b-time">lun. 8:30</span>
+                  </div>
+                </div>
+                <div class="row you">
+                  <div class="bubble yo">Ajoute un post sur l'événement de Genève, jeudi soir 🇨🇭<span class="b-time">8:42</span></div>
+                </div>
+                <div class="row agent">
+                  <div class="bubble-av">AI</div>
+                  <div class="bubble ag">
+                    C'est calé ✅ jeudi 18h ajouté — décliné FR / EN / DE et inséré sans casser le mix.
+                    <div class="file-card"><span class="file-ic">CAL</span><div class="file-meta"><div class="fn">Post_Geneve-event.draft</div><div class="fd">3 langues · en attente de validation</div></div></div>
+                    <span class="b-time">8:43</span>
+                  </div>
+                </div>
+                <div class="typing-row"><div class="bubble-av">AI</div><div class="typing"><span></span><span></span><span></span></div></div>
+              </div>
+              <div class="chat-input"><div class="ci-field">Écrivez à l'agent…</div><div class="ci-send">➤</div></div>
+              <div class="chat-cap">Illustration — l'agent propose, vous ajustez d'un message, il décline pour vos marchés.</div>
+            </div>
+          </div>
           <div class="pex-note"><b>↺ La boucle :</b> les résultats des posts remontent au reporting, qui recalcule le mix % — révision au trimestre.</div>
         </div>
       </div>
@@ -1007,27 +1050,33 @@
   }));
 
   (function () {
-    var chat = document.getElementById('seoChat');
-    if (!chat) return;
+    var chats = document.querySelectorAll('.chat');
+    if (!chats.length) return;
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var rows = chat.querySelectorAll('.chat-body .row');
-    var typing = chat.querySelector('.typing-row');
-    var played = false;
-    function play() {
-      if (played) return; played = true;
+    function play(chat) {
+      if (chat.dataset.played) return; chat.dataset.played = '1';
+      var rows = chat.querySelectorAll('.chat-body > .row');
+      var typing = chat.querySelector('.typing-row');
       if (reduce) { rows.forEach(function (r) { r.classList.add('show'); }); return; }
-      typing.classList.add('show');
-      setTimeout(function () { typing.classList.remove('show'); rows[0].classList.add('show'); }, 1300);
-      setTimeout(function () { rows[1].classList.add('show'); }, 2400);
-      setTimeout(function () { typing.classList.add('show'); }, 3200);
-      setTimeout(function () { typing.classList.remove('show'); rows[2].classList.add('show'); }, 4600);
+      var t = 0;
+      rows.forEach(function (row) {
+        if (row.classList.contains('agent') && typing) {
+          (function (d) { setTimeout(function () { typing.classList.add('show'); }, d); })(t);
+          t += 1300;
+          (function (d, r) { setTimeout(function () { typing.classList.remove('show'); r.classList.add('show'); }, d); })(t, row);
+          t += 1100;
+        } else {
+          (function (d, r) { setTimeout(function () { r.classList.add('show'); }, d); })(t, row);
+          t += 1100;
+        }
+      });
     }
     if ('IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (es) {
-        es.forEach(function (e) { if (e.isIntersecting) { play(); io.unobserve(chat); } });
+        es.forEach(function (e) { if (e.isIntersecting) { play(e.target); io.unobserve(e.target); } });
       }, { threshold: 0.25 });
-      io.observe(chat);
-    } else { play(); }
+      chats.forEach(function (c) { io.observe(c); });
+    } else { chats.forEach(play); }
   })();
 </script>
 
