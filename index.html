@@ -272,14 +272,40 @@
   .pex-pf-tag { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--orange-2); }
   .pex-pf h4 { font-size: 1.1rem; font-weight: 700; margin: 6px 0 3px; letter-spacing: -0.01em; }
   .pex-pf .pf-sub { font-size: 12.5px; color: var(--muted); margin-bottom: 14px; line-height: 1.45; }
+
+  /* === POS : 1 gabarit décliné par lieu === */
+  .pt-lab { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin: 16px 0 12px; }
+  .pt-lab b { color: var(--orange-2); }
+  .pos-tpl { display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: 16px; padding: 16px; border: 1px solid var(--line); border-radius: 13px; background: #fff; }
+  .pt-master { text-align: center; }
+  .pt-badge { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 8.5px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: #fff; background: var(--orange); padding: 3px 9px; border-radius: 20px; margin-bottom: 8px; }
+  .pt-card { width: 92px; height: 122px; border: 1px solid var(--orange-soft); border-radius: 8px; background: var(--orange-pale); padding: 10px; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 8px 20px -12px rgba(26,26,26,0.28); }
+  .ptc-logo { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 700; letter-spacing: 0.14em; color: var(--orange-2); }
+  .ptc-img { height: 40px; border-radius: 4px; background: linear-gradient(135deg, var(--orange), #efa869); }
+  .ptc-line { height: 5px; border-radius: 3px; background: var(--orange-soft); }
+  .ptc-line.lg { width: 92%; } .ptc-line.md { width: 70%; } .ptc-line.sm { width: 48%; }
+  .pt-cap { display: block; font-size: 10px; color: var(--muted); margin-top: 8px; }
+  .pt-arrow { display: flex; flex-direction: column; align-items: center; gap: 3px; color: var(--orange); }
+  .pt-arrow span { font-size: 20px; line-height: 1; }
+  .pt-arrow em { font-family: 'JetBrains Mono', monospace; font-style: normal; font-size: 8.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; text-align: center; max-width: 62px; }
+  .pt-variants { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .pt-var { border: 1px solid var(--line); border-radius: 9px; padding: 10px; background: var(--bg-2); text-align: center; }
+  .ptv-tag { display: block; font-family: 'JetBrains Mono', monospace; font-size: 8.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; color: var(--ink-2); margin-bottom: 7px; }
+  .pt-mini { height: 54px; border-radius: 5px; border: 1px solid var(--line-2); background: #fff; padding: 6px; display: flex; flex-direction: column; gap: 3px; }
+  .ptm-img { height: 16px; border-radius: 3px; background: linear-gradient(135deg, var(--orange), #efa869); opacity: 0.85; }
+  .ptm-img.tall { flex: 1; }
+  .ptm-line { height: 3px; border-radius: 2px; background: var(--line-2); }
+  .ptm-line.sm { width: 55%; }
+  .ptv-cap { display: block; font-size: 9.5px; color: var(--muted); margin-top: 7px; }
+  @media (max-width: 640px) { .pos-tpl { grid-template-columns: 1fr; justify-items: center; } .pt-arrow { flex-direction: row; } .pt-variants { width: 100%; } }
   /* studio video gallery */
   .pex-demo { padding: 6px 26px 24px; }
   .pex-demo-lab { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 12px; }
   .pex-demo-lab b { color: var(--orange-2); }
-  .demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 420px; margin: 0 auto; }
   .demo-vid { position: relative; border-radius: 13px; overflow: hidden; border: 1px solid var(--line); background: #000; box-shadow: 0 1px 2px rgba(26,26,26,0.04), 0 16px 38px -28px rgba(26,26,26,0.18); }
   .demo-vid::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--orange) 25%, var(--orange) 75%, transparent); z-index: 2; }
-  .demo-vid video { display: block; width: 100%; height: auto; }
+  .demo-vid video { display: block; width: 100%; height: auto; max-height: 360px; object-fit: cover; }
   .demo-cap { position: absolute; left: 0; bottom: 0; right: 0; padding: 9px 13px; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: linear-gradient(to top, rgba(0,0,0,0.65), transparent); font-weight: 600; z-index: 2; }
   @media (max-width: 760px) { .demo-grid { grid-template-columns: 1fr; } }
   /* pillar exhibits : click to open */
@@ -818,6 +844,27 @@
                 <div class="flow-col"><div class="col-head">3 · Vous remplissez</div><div class="node node--you"><span class="node-title">Texte · Date · Lieu · Langue</span></div></div>
                 <div class="flow-arrow">→</div>
                 <div class="flow-col"><div class="col-head">4 · Génération auto</div><div class="node node--result"><span class="node-title">PDF prêt imprimeur</span><span class="node-desc">verrouillé à la charte</span></div></div>
+              </div>
+              <div class="pt-lab"><b>Le principe</b> · un gabarit charte, décliné par lieu &amp; par support</div>
+              <div class="pos-tpl">
+                <div class="pt-master">
+                  <span class="pt-badge">Gabarit charte</span>
+                  <div class="pt-card">
+                    <div class="ptc-logo">BE WTR</div>
+                    <div class="ptc-img"></div>
+                    <div class="ptc-line lg"></div>
+                    <div class="ptc-line md"></div>
+                    <div class="ptc-line sm"></div>
+                  </div>
+                  <span class="pt-cap">1 modèle verrouillé</span>
+                </div>
+                <div class="pt-arrow"><span>→</span><em>se décline en</em></div>
+                <div class="pt-variants">
+                  <div class="pt-var"><span class="ptv-tag">Restaurant</span><div class="pt-mini"><div class="ptm-img"></div><div class="ptm-line"></div><div class="ptm-line"></div><div class="ptm-line sm"></div></div><span class="ptv-cap">Menu · carte</span></div>
+                  <div class="pt-var"><span class="ptv-tag">Hôtel</span><div class="pt-mini"><div class="ptm-line"></div><div class="ptm-img"></div><div class="ptm-line sm"></div></div><span class="ptv-cap">Signalétique</span></div>
+                  <div class="pt-var"><span class="ptv-tag">Bar &amp; Spa</span><div class="pt-mini"><div class="ptm-img"></div><div class="ptm-line"></div><div class="ptm-line sm"></div></div><span class="ptv-cap">PLV · présentoir</span></div>
+                  <div class="pt-var"><span class="ptv-tag">Événement</span><div class="pt-mini"><div class="ptm-img tall"></div><div class="ptm-line sm"></div></div><span class="ptv-cap">Kit affichage</span></div>
+                </div>
               </div>
               <div class="scope-note">
                 <span class="sn-tag">À cadrer avec vous</span>
