@@ -159,6 +159,33 @@
   .cf-note { margin: 0; padding: 14px 22px; border-top: 1px solid var(--line); background: var(--bg-2); font-size: 11.5px; color: var(--muted); line-height: 1.5; }
   @media (max-width: 720px) { .cf-grid { grid-template-columns: 1fr; } .cf-cell { border-right: none; border-bottom: 1px solid var(--line); } .cf-cell:last-child { border-bottom: none; } }
 
+  /* === scaling 1 -> 9 marches === */
+  .scale-wrap { margin-top: 40px; padding-top: 34px; border-top: 1px solid var(--line); }
+  .scale-layers { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+  .sl-row { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; border: 1px solid var(--line); border-radius: 12px; padding: 15px 18px; background: var(--bg-2); }
+  .sl-row.socle { background: var(--orange-pale); border-color: var(--orange-soft); }
+  .sl-n { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: #fff; background: var(--slate); padding: 5px 11px; border-radius: 20px; white-space: nowrap; align-self: start; }
+  .sl-row.socle .sl-n { background: var(--orange); }
+  .sl-title { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; }
+  .sl-desc { font-size: 12.5px; color: var(--ink-soft); line-height: 1.45; margin-top: 2px; }
+  .sl-cost { text-align: right; white-space: nowrap; }
+  .sc-one { font-size: 1.15rem; font-weight: 700; color: var(--ink); }
+  .sc-run { font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; margin-top: 2px; }
+  .scale-chart { border: 1px solid var(--line); border-radius: 14px; padding: 22px 24px 16px; background: #fff; }
+  .scale-chart-lab { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 20px; }
+  .scale-chart-lab b { color: var(--orange-2); }
+  .scale-bars { display: flex; align-items: flex-end; gap: 8px; height: 200px; }
+  .sb-col { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
+  .sb-val { font-size: 11px; font-weight: 700; color: var(--ink); margin-bottom: 7px; white-space: nowrap; }
+  .sb-bar { width: 100%; max-width: 56px; border-radius: 6px 6px 0 0; background: var(--slate); }
+  .sb-col.first .sb-bar { background: var(--orange); }
+  .sb-lab { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.04em; color: var(--muted); margin-top: 9px; }
+  .scale-legend { display: flex; gap: 20px; margin-top: 16px; flex-wrap: wrap; }
+  .scale-legend span { font-size: 11px; color: var(--ink-soft); display: flex; align-items: center; gap: 6px; }
+  .scale-legend i { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+  .scale-proj { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
+  @media (max-width: 760px) { .sl-row { grid-template-columns: auto 1fr; } .sl-cost { grid-column: 1 / -1; text-align: left; } .scale-proj { grid-template-columns: 1fr; } .sb-lab { font-size: 7.5px; } .scale-bars { gap: 5px; } }
+
   /* === pricing accordion (click to open) === */
   .acc { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: 0 1px 2px rgba(26,26,26,0.03); }
   .acc-item + .acc-item { border-top: 1px solid var(--line); }
@@ -1181,6 +1208,58 @@
           </div>
         </div>
         <p class="cf-note">Montants estimatifs, hors taxes, donnés à titre indicatif. Base <b>France pilote</b> — le total final dépend du nombre de marchés et du volume de briefs AI Studio. Chaque pilier reste activable isolément.</p>
+      </div>
+
+      <div class="scale-wrap">
+        <h3 class="diag-h3">Passer à l'échelle : 1 → 9 marchés</h3>
+        <p class="sec-intro" style="margin-bottom:24px;">L'essentiel se construit une seule fois. Chaque marché suivant ne paie que son incrémental — le budget ne se multiplie pas par 9.</p>
+
+        <div class="scale-layers">
+          <div class="sl-row socle">
+            <span class="sl-n">Couche 1 · Socle</span>
+            <div><div class="sl-title">Les 4 agents &amp; plateformes</div><div class="sl-desc">Construits une fois, réutilisés sur les 9 marchés. C'est l'investissement de fond.</div></div>
+            <div class="sl-cost"><div class="sc-one">~46 500 €</div><div class="sc-run">+ run France 8 250 → 13 550 €/mois</div></div>
+          </div>
+          <div class="sl-row">
+            <span class="sl-n">Couche 2 · Onboarding pays</span>
+            <div><div class="sl-title">Localisation d'un marché</div><div class="sl-desc">Cocon &amp; mots-clés locaux, données structurées, connecteurs reporting, setup calendrier.</div></div>
+            <div class="sl-cost"><div class="sc-one">~4 500 €</div><div class="sc-run">one-time, par pays</div></div>
+          </div>
+          <div class="sl-row">
+            <span class="sl-n">Couche 3 · Run pays</span>
+            <div><div class="sl-title">Faire vivre un marché</div><div class="sl-desc">Contenu localisé (décliné, pas réécrit) + monitoring + GEO + reporting du marché.</div></div>
+            <div class="sl-cost"><div class="sc-one">~3 500 → 5 000 €</div><div class="sc-run">par pays, par mois</div></div>
+          </div>
+        </div>
+
+        <div class="scale-chart">
+          <div class="scale-chart-lab"><b>La dégressivité</b> · investissement par marché, année 1 (estimatif)</div>
+          <div class="scale-bars">
+            <div class="sb-col first"><div class="sb-val">~177k €</div><div class="sb-bar" style="height:160px;"></div><div class="sb-lab">FR</div></div>
+            <div class="sb-col"><div class="sb-val">~55k €</div><div class="sb-bar" style="height:50px;"></div><div class="sb-lab">+AE</div></div>
+            <div class="sb-col"><div class="sb-bar" style="height:50px;"></div><div class="sb-lab">+CH</div></div>
+            <div class="sb-col"><div class="sb-bar" style="height:50px;"></div><div class="sb-lab">+UK</div></div>
+            <div class="sb-col"><div class="sb-bar" style="height:50px;"></div><div class="sb-lab">+SG</div></div>
+            <div class="sb-col"><div class="sb-bar" style="height:50px;"></div><div class="sb-lab">+HK</div></div>
+            <div class="sb-col"><div class="sb-bar" style="height:50px;"></div><div class="sb-lab">+TH</div></div>
+            <div class="sb-col"><div class="sb-bar" style="height:50px;"></div><div class="sb-lab">+MA</div></div>
+            <div class="sb-col"><div class="sb-bar" style="height:50px;"></div><div class="sb-lab">+CA</div></div>
+          </div>
+          <div class="scale-legend"><span><i style="background:var(--orange);"></i> France — porte le socle</span><span><i style="background:var(--slate);"></i> Marché incrémental ≈ ⅓ du coût</span></div>
+        </div>
+
+        <div class="scale-proj">
+          <div class="dm-card"><span class="dm-lab">Build total · 9 pays</span><div class="dm-val">~82 500 €</div><span class="dm-sub">one-time, étalé sur le déploiement</span></div>
+          <div class="dm-card"><span class="dm-lab">Run régime de croisière</span><div class="dm-val">~36 → 54k<span style="font-size:0.9rem;color:var(--muted);font-weight:600;"> €/mois</span></div><span class="dm-sub">les 9 marchés actifs</span></div>
+          <div class="dm-card score"><span class="dm-lab">Soit, par an</span><div class="dm-val">~435 → 645k €</div><span class="dm-sub">à pleine échelle</span></div>
+        </div>
+
+        <div class="diag-insight" style="margin-top:20px;">
+          <span class="di-tag">Ce qu'il faut retenir</span>
+          <p>Passer de 1 à 9 marchés <b>ne multiplie pas le budget par 9</b> : le socle est payé une fois, et chaque marché suivant coûte environ <b>⅓ du premier</b>. À comparer à <b>9 agences locales</b> — sans la cohérence global → local, ni le GEO.</p>
+        </div>
+
+        <p class="cf-note" style="margin-top:18px;border:1px dashed var(--line-2);border-radius:10px;background:var(--bg-2);">Chiffres estimatifs, hors taxes — base de travail à valider avec l'équipe SEO. Le run par pays est le poste qui pilote le modèle à l'échelle : il dépend du volume de contenu retenu par marché.</p>
       </div>
     </div>
   </section>
