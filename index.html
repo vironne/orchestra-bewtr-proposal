@@ -209,6 +209,25 @@
   .mkt-pool { text-align: center; background: var(--orange); color: #fff; border-radius: 11px; padding: 14px 18px; font-weight: 700; font-size: 0.95rem; }
   .mkt-pool span { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; opacity: 0.9; margin-top: 4px; }
 
+  /* === nav clique-scroll des piliers + hiérarchie === */
+  .pil-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; padding: 12px 14px; background: var(--bg-2); border: 1px solid var(--line); border-radius: 12px; margin-bottom: 34px; }
+  .pn-pillar { display: inline-flex; align-items: center; gap: 7px; font-weight: 700; font-size: 13px; color: var(--ink); text-decoration: none; background: #fff; border: 1px solid var(--line-2); border-radius: 9px; padding: 8px 13px; transition: all 0.15s; }
+  .pn-pillar:hover { border-color: var(--orange); color: var(--orange-2); }
+  .pn-n { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: #fff; background: var(--orange); border-radius: 5px; padding: 2px 6px; }
+  .pn-subs { display: inline-flex; flex-wrap: wrap; gap: 6px; }
+  .pn-subs a { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 700; color: var(--slate); text-decoration: none; background: var(--slate-pale); border: 1px solid var(--slate-line); border-radius: 20px; padding: 5px 11px; transition: all 0.15s; }
+  .pn-subs a:hover { border-color: var(--slate-2); color: var(--ink); }
+  .pillar-head { display: flex; align-items: center; gap: 16px; padding: 18px 22px; border-radius: 14px; background: var(--orange); color: #fff; margin: 10px 0 8px; scroll-margin-top: 84px; }
+  .ph-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; background: rgba(255,255,255,0.22); padding: 6px 12px; border-radius: 20px; white-space: nowrap; }
+  .ph-body { flex: 1; }
+  .ph-title { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.015em; line-height: 1.1; }
+  .ph-sub { font-size: 13px; opacity: 0.92; margin-top: 3px; }
+  .ph-badge { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; padding: 5px 11px; border-radius: 20px; white-space: nowrap; }
+  .ph-badge.agent { background: var(--slate); color: #fff; }
+  .ph-badge.platform { background: #fff; color: var(--orange-2); }
+  .subagent { border-left: 3px solid var(--orange-soft); padding-left: 24px; margin-left: 6px; scroll-margin-top: 84px; }
+  @media (max-width: 640px) { .pillar-head { flex-direction: column; align-items: flex-start; gap: 10px; } .subagent { padding-left: 14px; margin-left: 2px; } }
+
   /* === pricing accordion (click to open) === */
   .acc { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: 0 1px 2px rgba(26,26,26,0.03); }
   .acc-item + .acc-item { border-top: 1px solid var(--line); }
@@ -765,9 +784,21 @@
       </div>
       <p class="sec-intro">Deux piliers. D'un côté <b>l'Agent BE WTR</b> — un agent global marketing &amp; commercial qui orchestre trois sous-agents spécialisés. De l'autre, <b>la Plateforme</b> (AI Studio). Chaque schéma se lit de gauche à droite : entrée → l'agent → vous → résultat.</p>
 
-      <!-- PILIER 1 · AGENT BE WTR (architecture) -->
+      <!-- nav clique-scroll -->
+      <nav class="pil-nav" aria-label="Navigation des piliers">
+        <a class="pn-pillar" href="#pilier-agent"><span class="pn-n">P1</span> L'Agent BE WTR</a>
+        <span class="pn-subs"><a href="#sa-seo">SEO / GEO</a><a href="#sa-cal">Calendrier</a><a href="#sa-rep">Reporting</a></span>
+        <a class="pn-pillar" href="#pilier-plateforme"><span class="pn-n">P2</span> La Plateforme</a>
+      </nav>
+
+      <!-- ===== PILIER 1 · L'AGENT BE WTR ===== -->
+      <div class="pillar-head" id="pilier-agent">
+        <span class="ph-num">Pilier 1</span>
+        <div class="ph-body"><h3 class="ph-title">L'Agent BE WTR</h3><p class="ph-sub">Un agent global marketing &amp; commercial — il orchestre 3 sous-agents.</p></div>
+        <span class="ph-badge agent">Agent</span>
+      </div>
+
       <div class="diagram">
-        <div class="pex-id" style="margin-bottom:16px;"><span class="pex-num">Pilier 1</span><span class="pex-name">L'Agent BE WTR</span><span class="ex-badge agent">Agent</span></div>
         <div class="agent-arch">
           <div class="aa-hub">
             <span class="aa-hub-lab">Agent global</span>
@@ -784,8 +815,8 @@
         <p class="pex-thesis" style="margin-top:14px;">Un seul point d'entrée pour vos équipes. L'agent global oriente la demande vers le bon sous-agent, et fait circuler la mesure vers le contenu. Le détail de chaque sous-agent ci-dessous.</p>
       </div>
 
-      <!-- SOUS-AGENT 1 — SEO/GEO (focus) -->
-      <div class="diagram">
+      <!-- SOUS-AGENT 1 — SEO/GEO -->
+      <div class="diagram subagent" id="sa-seo">
         <div class="pex open">
           <div class="pex-head">
             <div class="pex-id"><span class="pex-num">Sous-agent 1 · prioritaire</span><span class="pex-name">SEO / GEO</span><span class="ex-badge agent">Sous-agent</span><span class="pex-chev">+</span></div>
@@ -882,8 +913,8 @@
         </div>
       </div>
 
-      <!-- PILIER 2 -->
-      <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
+      <!-- SOUS-AGENT 2 · Calendrier -->
+      <div class="diagram subagent" id="sa-cal" style="border-top:1px solid var(--line); padding-top:40px;">
         <div class="pex">
           <div class="pex-head">
             <div class="pex-id"><span class="pex-num">Sous-agent 2</span><span class="pex-name">Calendrier de contenu</span><span class="ex-badge agent">Sous-agent</span><span class="pex-chev">+</span></div>
@@ -969,8 +1000,8 @@
         </div>
       </div>
 
-      <!-- SOUS-AGENT 3 (Reporting) -->
-      <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
+      <!-- SOUS-AGENT 3 · Reporting -->
+      <div class="diagram subagent" id="sa-rep" style="border-top:1px solid var(--line); padding-top:40px;">
         <div class="pex">
           <div class="pex-head">
             <div class="pex-id"><span class="pex-num">Sous-agent 3</span><span class="pex-name">Reporting</span><span class="ex-badge agent">Sous-agent</span><span class="pex-chev">+</span></div>
@@ -1052,11 +1083,16 @@
         </div>
       </div>
 
-      <!-- PILIER 2 · LA PLATEFORME (AI Studio) -->
-      <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
+      <!-- ===== PILIER 2 · LA PLATEFORME ===== -->
+      <div class="pillar-head" id="pilier-plateforme">
+        <span class="ph-num">Pilier 2</span>
+        <div class="ph-body"><h3 class="ph-title">La Plateforme · AI Studio</h3><p class="ph-sub">L'interface que vos équipes utilisent — supports POS &amp; briefs Studio.</p></div>
+        <span class="ph-badge platform">Plateforme</span>
+      </div>
+      <div class="diagram" style="border-top:none; padding-top:8px;">
         <div class="pex">
           <div class="pex-head">
-            <div class="pex-id"><span class="pex-num">Pilier 2</span><span class="pex-name">La Plateforme · AI Studio</span><span class="ex-badge platform">Plateforme</span><span class="pex-chev">+</span></div>
+            <div class="pex-id"><span class="pex-num">Détail</span><span class="pex-name">AI Studio · les 2 modules</span><span class="ex-badge platform">Plateforme</span><span class="pex-chev">+</span></div>
             <p class="pex-thesis">Deux besoins très différents, donc deux plateformes dans une seule interface. Toutes deux branchées sur votre banque d'assets, l'humain toujours dans la boucle.</p>
           </div>
           <div class="pex-platforms">
