@@ -524,6 +524,16 @@
   .node--env .node-tag { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: #fff; background: var(--orange); padding: 2px 8px; border-radius: 10px; display: inline-block; margin-bottom: 6px; }
   .node--env .node-title { color: var(--orange-2); font-weight: 700; }
   .node--env .node-desc { color: var(--orange-2); opacity: 0.9; }
+  /* architecture descendante SEO/GEO (style site) */
+  .arch { display: flex; flex-direction: column; align-items: center; padding: 4px 0; }
+  .arch-tier { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0,1fr); gap: 14px; width: 100%; }
+  .arch-tier .node { text-align: center; }
+  .arch-down { color: var(--orange); font-size: 20px; line-height: 1; padding: 9px 0; font-weight: 700; }
+  .arch-agent { width: 100%; max-width: 560px; text-align: center; }
+  .node--mod { background: #fff; border: 1px solid var(--line-2); color: var(--ink-2); }
+  .node--mod .node-title { color: var(--ink-2); }
+  .node--mod .node-desc { color: var(--muted); }
+  @media (max-width: 640px) { .arch-tier { grid-auto-flow: row; } }
 
   .col-head { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; text-align: center; margin-bottom: 4px; }
   .diagram-note { margin-top: 20px; padding: 14px 18px; background: var(--orange-pale); border-radius: 10px; font-size: 13px; color: var(--orange-2); line-height: 1.5; border: 1px solid var(--orange-soft); }
@@ -848,29 +858,25 @@
             <p class="pex-thesis" data-en="A single agent makes BE WTR visible — on Google and in AI answers — and arms your PR. Continuously, validated by your teams.">Un seul agent rend BE WTR visible — sur Google comme dans les réponses des IA — et arme vos RP. En continu, validé par vos équipes.</p>
           </div>
           <div class="pex-body">
-            <div class="pex-demo-lab" data-en="<b>The machine, in plain words</b> · what feeds it → the agent → what it produces"><b>La machine, en clair</b> · ce qui le nourrit → l'agent → ce qu'il produit</div>
-            <div class="flow">
-              <div class="flow-col">
-                <div class="col-head" data-en="What feeds it">Ce qui le nourrit</div>
+            <div class="pex-demo-lab" data-en="<b>The machine, in plain words</b> · sources → processing → the agent → outputs"><b>La machine, en clair</b> · sources → traitement → l'agent → sorties</div>
+            <div class="arch">
+              <div class="arch-tier">
                 <div class="node node--your"><span class="node-title" data-en="Your presence">Votre présence</span><span class="node-desc" data-en="site · social · press">site · réseaux · presse</span></div>
-                <div class="node node--env"><span class="node-tag" data-en="We plug in">On se plugge</span><span class="node-title" data-en="Your environment">Votre environnement</span><span class="node-desc" data-en="Google meetings, emails — filtered &amp; distilled">réunions Google, emails — filtrés &amp; distillés</span></div>
+                <div class="node node--env"><span class="node-tag" data-en="We plug in">On se plugge</span><span class="node-title" data-en="Your environment">Votre environnement</span><span class="node-desc" data-en="Google meetings · emails">réunions Google · emails</span></div>
               </div>
-              <div class="flow-arrow">→</div>
-              <div class="flow-col">
-                <div class="col-head" data-en="The agent">L'agent</div>
-                <div class="node node--agent-big">
-                  <span class="node-lab">Agent SEO / GEO</span>
-                  <span class="node-title" data-en="Imbued with your know-how">Imbibé de votre savoir-faire</span>
-                  <ul>
-                    <li data-en="Understands your business context">Comprend votre contexte business</li>
-                    <li data-en="Monitors Google &amp; the AI citations">Surveille Google &amp; les citations IA</li>
-                    <li data-en="Writes &amp; adapts (drafts)">Rédige &amp; décline (brouillons)</li>
-                  </ul>
-                </div>
+              <div class="arch-down">↓</div>
+              <div class="arch-tier">
+                <div class="node node--mod"><span class="node-title" data-en="SEO watch">Veille SEO</span><span class="node-desc" data-en="your Google rankings">vos positions Google</span></div>
+                <div class="node node--mod"><span class="node-title" data-en="GEO watch">Veille GEO</span><span class="node-desc" data-en="ChatGPT · Perplexity citations">citations ChatGPT · Perplexity</span></div>
+                <div class="node node--mod"><span class="node-title" data-en="Business context">Contexte business</span><span class="node-desc" data-en="distilled from your exchanges">distillé de vos échanges</span></div>
               </div>
-              <div class="flow-arrow">→</div>
-              <div class="flow-col">
-                <div class="col-head" data-en="What it produces (after your approval)">Ce qu'il produit (après votre validation)</div>
+              <div class="arch-down">↓</div>
+              <div class="node node--agent-big arch-agent">
+                <span class="node-lab">Agent SEO / GEO</span>
+                <span class="node-title" data-en="Imbued with your know-how — it writes, adapts, prioritises">Imbibé de votre savoir-faire — il rédige, décline, priorise</span>
+              </div>
+              <div class="arch-down">↓</div>
+              <div class="arch-tier">
                 <div class="node node--result"><span class="node-title" data-en="Published &amp; linked content">Contenu publié &amp; maillé</span></div>
                 <div class="node node--result"><span class="node-title" data-en="Rankings &amp; AI citations, tracked">Positions &amp; citations IA, suivies</span></div>
                 <div class="node node--result"><span class="node-title" data-en="Prioritised action plan">Plan d'actions priorisé</span></div>
