@@ -520,6 +520,10 @@
   .node--agent-big ul { list-style: none; margin-top: 10px; }
   .node--agent-big li { font-size: 12.5px; padding: 3px 0 3px 16px; position: relative; color: rgba(255,255,255,0.92); }
   .node--agent-big li::before { content: ""; width: 6px; height: 1px; background: rgba(255,255,255,0.6); position: absolute; left: 0; top: 11px; }
+  .node--env { background: var(--orange-pale); border: 1.5px solid var(--orange); color: var(--orange-2); }
+  .node--env .node-tag { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: #fff; background: var(--orange); padding: 2px 8px; border-radius: 10px; display: inline-block; margin-bottom: 6px; }
+  .node--env .node-title { color: var(--orange-2); font-weight: 700; }
+  .node--env .node-desc { color: var(--orange-2); opacity: 0.9; }
 
   .col-head { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; text-align: center; margin-bottom: 4px; }
   .diagram-note { margin-top: 20px; padding: 14px 18px; background: var(--orange-pale); border-radius: 10px; font-size: 13px; color: var(--orange-2); line-height: 1.5; border: 1px solid var(--orange-soft); }
@@ -844,37 +848,35 @@
             <p class="pex-thesis" data-en="A single agent makes BE WTR visible — on Google and in AI answers — and arms your PR. Continuously, validated by your teams.">Un seul agent rend BE WTR visible — sur Google comme dans les réponses des IA — et arme vos RP. En continu, validé par vos équipes.</p>
           </div>
           <div class="pex-body">
+            <div class="pex-demo-lab" data-en="<b>The machine, in plain words</b> · what feeds it → the agent → what it produces"><b>La machine, en clair</b> · ce qui le nourrit → l'agent → ce qu'il produit</div>
             <div class="flow">
               <div class="flow-col">
-                <div class="col-head" data-en="Input">Entrée</div>
-                <div class="node node--your"><span class="node-title" data-en="Your presence">Votre présence</span><span class="node-desc" data-en="site · PR · social">site · RP · réseaux</span></div>
+                <div class="col-head" data-en="What feeds it">Ce qui le nourrit</div>
+                <div class="node node--your"><span class="node-title" data-en="Your presence">Votre présence</span><span class="node-desc" data-en="site · social · press">site · réseaux · presse</span></div>
+                <div class="node node--env"><span class="node-tag" data-en="We plug in">On se plugge</span><span class="node-title" data-en="Your environment">Votre environnement</span><span class="node-desc" data-en="Google meetings, emails — filtered &amp; distilled">réunions Google, emails — filtrés &amp; distillés</span></div>
               </div>
               <div class="flow-arrow">→</div>
               <div class="flow-col">
-                <div class="col-head" data-en="The agent does the work">L'agent fait le travail</div>
+                <div class="col-head" data-en="The agent">L'agent</div>
                 <div class="node node--agent-big">
                   <span class="node-lab">Agent SEO / GEO</span>
-                  <span class="node-title" data-en="Monitors · writes · adapts">Surveille · rédige · décline</span>
+                  <span class="node-title" data-en="Imbued with your know-how">Imbibé de votre savoir-faire</span>
                   <ul>
-                    <li data-en="Tracks your Google rankings &amp; AI citations">Suit vos positions Google &amp; vos citations IA</li>
-                    <li data-en="Writes optimised pages &amp; articles (draft)">Rédige pages &amp; articles optimisés (brouillon)</li>
-                    <li data-en="Adapts to your other markets">Décline vers vos autres marchés</li>
-                    <li data-en="Spots the media to target for PR">Repère les médias à cibler en RP</li>
+                    <li data-en="Understands your business context">Comprend votre contexte business</li>
+                    <li data-en="Monitors Google &amp; the AI citations">Surveille Google &amp; les citations IA</li>
+                    <li data-en="Writes &amp; adapts (drafts)">Rédige &amp; décline (brouillons)</li>
                   </ul>
                 </div>
               </div>
               <div class="flow-arrow">→</div>
               <div class="flow-col">
-                <div class="col-head" data-en="You">Vous</div>
-                <div class="node node--you"><span class="node-lab" data-en="Validation">Validation</span><span class="node-title" data-en="Review &amp; publish">Relire &amp; publier</span></div>
-              </div>
-              <div class="flow-arrow">→</div>
-              <div class="flow-col">
-                <div class="col-head" data-en="Result">Résultat</div>
-                <div class="node node--result"><span class="node-title" data-en="Published content">Contenu publié</span></div>
-                <div class="node node--result"><span class="node-title" data-en="Prioritised PR list">Liste RP priorisée</span><span class="node-desc" data-en="the media the AIs cite">les médias que les IA citent</span></div>
+                <div class="col-head" data-en="What it produces (after your approval)">Ce qu'il produit (après votre validation)</div>
+                <div class="node node--result"><span class="node-title" data-en="Published &amp; linked content">Contenu publié &amp; maillé</span></div>
+                <div class="node node--result"><span class="node-title" data-en="Rankings &amp; AI citations, tracked">Positions &amp; citations IA, suivies</span></div>
+                <div class="node node--result"><span class="node-title" data-en="Prioritised action plan">Plan d'actions priorisé</span></div>
               </div>
             </div>
+            <div class="pex-note" data-en="<b>We plug into your environment.</b> Meetings (Google Meet), emails, exchanges: we filter, we extract the essentials, and we imbue the agent with them — so it speaks your market, your clients, your know-how. Nothing leaves without your validation."><b>On se plugge dans votre environnement.</b> Réunions (Google Meet), emails, échanges : on filtre, on extrait l'essentiel, et on en imbibe l'agent — pour qu'il parle votre marché, vos clients, votre savoir-faire. Rien ne sort sans votre validation.</div>
             <div class="pex-demo-lab" style="margin-top:20px;" data-en="<b>What it delivers</b> · the promises of the SEO/GEO method"><b>Ce que ça donne</b> · les promesses de la méthode SEO/GEO</div>
             <div class="seo-stats">
               <div class="ss-cell"><div class="ss-n">0</div><div class="ss-l" data-en="Time required on your side">Temps requis de votre côté</div></div>
