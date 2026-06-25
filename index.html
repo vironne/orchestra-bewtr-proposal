@@ -154,6 +154,7 @@
   .cf-lab { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
   .cf-amt { font-size: 1.7rem; font-weight: 700; letter-spacing: -0.02em; margin: 8px 0; color: var(--ink); }
   .cf-amt.sm { font-size: 1.25rem; color: var(--orange-2); }
+  .sl-price.free { color: var(--orange-2); }
   .cf-amt .cf-per { font-size: 0.9rem; color: var(--muted); font-weight: 600; }
   .cf-sub { font-size: 12px; color: var(--ink-soft); line-height: 1.45; }
   .cf-note { margin: 0; padding: 14px 22px; border-top: 1px solid var(--line); background: var(--bg-2); font-size: 11.5px; color: var(--muted); line-height: 1.5; }
@@ -185,6 +186,28 @@
   .scale-legend i { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
   .scale-proj { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
   @media (max-width: 760px) { .sl-row { grid-template-columns: auto 1fr; } .sl-cost { grid-column: 1 / -1; text-align: left; } .scale-proj { grid-template-columns: 1fr; } .sb-lab { font-size: 7.5px; } .scale-bars { gap: 5px; } }
+
+  /* === Agent BE WTR : architecture (hub + sous-agents) === */
+  .agent-arch { border: 1px solid var(--orange-soft); border-radius: 16px; background: var(--orange-pale); padding: 24px; }
+  .aa-hub { background: var(--orange); color: #fff; border-radius: 12px; padding: 16px 20px; text-align: center; }
+  .aa-hub-lab { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; opacity: 0.85; display: block; }
+  .aa-hub-name { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; display: block; margin: 3px 0; }
+  .aa-hub-sub { font-size: 12px; opacity: 0.92; display: block; }
+  .aa-stem { width: 2px; height: 18px; background: var(--orange-soft); margin: 0 auto; }
+  .aa-spokes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .aa-spoke { background: #fff; border: 1px solid var(--orange-soft); border-radius: 11px; padding: 14px 16px; text-align: center; }
+  .aa-s-tag { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--orange-2); display: block; }
+  .aa-s-name { font-size: 1.05rem; font-weight: 700; display: block; margin: 4px 0 2px; }
+  .aa-s-desc { font-size: 11.5px; color: var(--ink-soft); display: block; }
+  @media (max-width: 640px) { .aa-spokes { grid-template-columns: 1fr; } }
+
+  /* === scaling : 9 marches mutualises === */
+  .mkt-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .mkt { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: var(--slate); background: var(--slate-pale); border: 1px solid var(--slate-line); border-radius: 8px; padding: 8px 11px; text-align: center; }
+  .mkt span { display: block; font-size: 8px; color: var(--muted); font-weight: 600; margin-top: 2px; }
+  .mkt-arrow { text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--orange-2); font-weight: 700; margin: 14px 0; }
+  .mkt-pool { text-align: center; background: var(--orange); color: #fff; border-radius: 11px; padding: 14px 18px; font-weight: 700; font-size: 0.95rem; }
+  .mkt-pool span { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; opacity: 0.9; margin-top: 4px; }
 
   /* === pricing accordion (click to open) === */
   .acc { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: 0 1px 2px rgba(26,26,26,0.03); }
@@ -744,13 +767,32 @@
         <span class="ab-tag">Le principe</span>
         <p>Vous gardez <b>vos outils</b> (votre site, votre banque d'assets, votre planning). <b>Nos agents s'y branchent</b> et font le travail. Vous ne gérez aucune nouvelle plateforme à apprendre — la seule chose dont nous avons besoin, ce sont <b>les accès</b>.</p>
       </div>
-      <p class="sec-intro">Quatre systèmes. Le pilier SEO/GEO est le socle de visibilité — on le détaille en premier et plus en profondeur. Chacun se lit de gauche à droite : entrée → l'agent → vous → résultat.</p>
+      <p class="sec-intro">Deux piliers. D'un côté <b>l'Agent BE WTR</b> — un agent global marketing &amp; commercial qui orchestre trois sous-agents spécialisés. De l'autre, <b>la Plateforme</b> (AI Studio). Chaque schéma se lit de gauche à droite : entrée → l'agent → vous → résultat.</p>
 
-      <!-- PILIER 1 — SEO/GEO (focus) -->
+      <!-- PILIER 1 · AGENT BE WTR (architecture) -->
+      <div class="diagram">
+        <div class="pex-id" style="margin-bottom:16px;"><span class="pex-num">Pilier 1</span><span class="pex-name">L'Agent BE WTR</span><span class="ex-badge agent">Agent</span></div>
+        <div class="agent-arch">
+          <div class="aa-hub">
+            <span class="aa-hub-lab">Agent global</span>
+            <span class="aa-hub-name">Agent BE WTR</span>
+            <span class="aa-hub-sub">Marketing &amp; commercial — il comprend la demande, mobilise le bon sous-agent et fait reboucler la mesure.</span>
+          </div>
+          <div class="aa-stem"></div>
+          <div class="aa-spokes">
+            <div class="aa-spoke"><span class="aa-s-tag">Sous-agent 1 · prioritaire</span><span class="aa-s-name">SEO / GEO</span><span class="aa-s-desc">visibilité Google &amp; IA</span></div>
+            <div class="aa-spoke"><span class="aa-s-tag">Sous-agent 2</span><span class="aa-s-name">Calendrier</span><span class="aa-s-desc">contenu programmé</span></div>
+            <div class="aa-spoke"><span class="aa-s-tag">Sous-agent 3</span><span class="aa-s-name">Reporting</span><span class="aa-s-desc">mesure &amp; reco</span></div>
+          </div>
+        </div>
+        <p class="pex-thesis" style="margin-top:14px;">Un seul point d'entrée pour vos équipes. L'agent global oriente la demande vers le bon sous-agent, et fait circuler la mesure vers le contenu. Le détail de chaque sous-agent ci-dessous.</p>
+      </div>
+
+      <!-- SOUS-AGENT 1 — SEO/GEO (focus) -->
       <div class="diagram">
         <div class="pex open">
           <div class="pex-head">
-            <div class="pex-id"><span class="pex-num">Pilier 1 · prioritaire</span><span class="pex-name">SEO / GEO</span><span class="ex-badge agent">Agent</span><span class="pex-chev">+</span></div>
+            <div class="pex-id"><span class="pex-num">Sous-agent 1 · prioritaire</span><span class="pex-name">SEO / GEO</span><span class="ex-badge agent">Sous-agent</span><span class="pex-chev">+</span></div>
             <p class="pex-thesis">Un seul agent rend BE WTR visible — sur Google comme dans les réponses des IA — et arme vos RP. En continu, validé par vos équipes.</p>
           </div>
           <div class="pex-body">
@@ -848,7 +890,7 @@
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
         <div class="pex">
           <div class="pex-head">
-            <div class="pex-id"><span class="pex-num">Pilier 2</span><span class="pex-name">Calendrier de contenu</span><span class="ex-badge agent">Agent</span><span class="pex-chev">+</span></div>
+            <div class="pex-id"><span class="pex-num">Sous-agent 2</span><span class="pex-name">Calendrier de contenu</span><span class="ex-badge agent">Sous-agent</span><span class="pex-chev">+</span></div>
             <p class="pex-thesis">L'agent assemble ce qui existe, anticipe les temps forts et recommande le mix. Il programme — il ne génère pas. Branché sur Monday.com.</p>
           </div>
           <div class="pex-body">
@@ -931,11 +973,94 @@
         </div>
       </div>
 
-      <!-- PILIER 3 -->
+      <!-- SOUS-AGENT 3 (Reporting) -->
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
         <div class="pex">
           <div class="pex-head">
-            <div class="pex-id"><span class="pex-num">Pilier 3</span><span class="pex-name">AI Studio</span><span class="ex-badge platform">Plateforme</span><span class="pex-chev">+</span></div>
+            <div class="pex-id"><span class="pex-num">Sous-agent 3</span><span class="pex-name">Reporting</span><span class="ex-badge agent">Sous-agent</span><span class="pex-chev">+</span></div>
+            <p class="pex-thesis">Un agent rassemble tout ce que les autres produisent, écrit la lecture du mois et recommande la suite. Le chiffre est calculé, jamais inventé.</p>
+          </div>
+          <div class="pex-body">
+            <div class="flow">
+              <div class="flow-col">
+                <div class="col-head">Entrée</div>
+                <div class="node node--your"><span class="node-title">Réseaux sociaux</span></div>
+                <div class="node node--your"><span class="node-title">Publicité (SEA)</span></div>
+                <div class="node node--your"><span class="node-title">SEO &amp; GEO</span></div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-col">
+                <div class="col-head">L'agent agrège</div>
+                <div class="node node--agent-big">
+                  <span class="node-lab">Agent reporting</span>
+                  <span class="node-title">Centralise &amp; recommande</span>
+                  <ul>
+                    <li>Rassemble les 4 volets au même endroit</li>
+                    <li>Écrit la note : quoi · pourquoi · quoi faire</li>
+                    <li>Recommande les sujets &amp; actions du mois</li>
+                    <li>Le chiffre est calculé, jamais inventé</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-col">
+                <div class="col-head">Résultat</div>
+                <div class="node node--result"><span class="node-title">Note mensuelle</span><span class="node-desc">claire, par marché, prête à transmettre</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="pex-demo">
+            <div class="pex-demo-lab"><b>Exemple</b> · l'agent vous pousse la note du mois, puis vous creusez</div>
+            <div class="chat" id="repChat">
+              <div class="chat-head">
+                <div class="chat-av">AI</div>
+                <div class="chat-id"><div class="cn">Agent Reporting</div><div class="cs"><span class="ld"></span>en ligne</div></div>
+              </div>
+              <div class="chat-body">
+                <div class="row agent">
+                  <div class="bubble-av">AI</div>
+                  <div class="bubble ag">
+                    📊 Votre note de mai — l'essentiel en 30 secondes :
+                    <div class="report-card">
+                      <div class="rc-line"><span>Part de citation IA</span><span class="rc-v">+11 pts</span></div>
+                      <div class="rc-line"><span>Trafic SEO</span><span class="rc-v">+18 %</span></div>
+                      <div class="rc-line"><span>Coût par lead (SEA)</span><span class="rc-v">−9 %</span></div>
+                      <div class="rc-line"><span>Engagement social</span><span class="rc-v">+6 %</span></div>
+                    </div>
+                    👉 Reco du mois : doubler l'angle « eau locale », votre meilleur moteur de citation.
+                    <div class="file-card"><span class="file-ic">PDF</span><div class="file-meta"><div class="fn">Note_mensuelle_mai.pdf</div><div class="fd">synthèse par marché + recommandations</div></div></div>
+                    <span class="b-time">1er juin · 8:00</span>
+                  </div>
+                </div>
+                <div class="row you">
+                  <div class="bubble yo">Pourquoi la citation IA grimpe autant ?<span class="b-time">9:12</span></div>
+                </div>
+                <div class="row agent">
+                  <div class="bubble-av">AI</div>
+                  <div class="bubble ag">
+                    Vos 4 articles « eau microfiltrée / eau locale » sont désormais cités par Perplexity et ChatGPT. C'est votre meilleur levier ce trimestre — je passe la consigne au calendrier et au SEO/GEO :
+                    <ul>
+                      <li>2 articles de plus sur l'angle « eau locale »</li>
+                      <li>1 média RP B Corp à cibler</li>
+                    </ul>
+                    <span class="b-time">9:13</span>
+                  </div>
+                </div>
+                <div class="typing-row"><div class="bubble-av">AI</div><div class="typing"><span></span><span></span><span></span></div></div>
+              </div>
+              <div class="chat-input"><div class="ci-field">Écrivez à l'agent…</div><div class="ci-send">➤</div></div>
+              <div class="chat-cap">Illustration — l'agent lit le mois, explique, et nourrit l'équipe + les autres agents.</div>
+            </div>
+          </div>
+          <div class="pex-note"><b>Ce qui n'existe nulle part ailleurs :</b> votre part de citation dans ChatGPT &amp; Perplexity face à Castalie et Culligan, mois par mois. Aucune CMO de votre catégorie ne voit ça aujourd'hui.</div>
+        </div>
+      </div>
+
+      <!-- PILIER 2 · LA PLATEFORME (AI Studio) -->
+      <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
+        <div class="pex">
+          <div class="pex-head">
+            <div class="pex-id"><span class="pex-num">Pilier 2</span><span class="pex-name">La Plateforme · AI Studio</span><span class="ex-badge platform">Plateforme</span><span class="pex-chev">+</span></div>
             <p class="pex-thesis">Deux besoins très différents, donc deux plateformes dans une seule interface. Toutes deux branchées sur votre banque d'assets, l'humain toujours dans la boucle.</p>
           </div>
           <div class="pex-platforms">
@@ -1021,89 +1146,6 @@
         </div>
       </div>
 
-      <!-- PILIER 4 -->
-      <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
-        <div class="pex">
-          <div class="pex-head">
-            <div class="pex-id"><span class="pex-num">Pilier 4</span><span class="pex-name">Reporting</span><span class="ex-badge agent">Agent</span><span class="pex-chev">+</span></div>
-            <p class="pex-thesis">Un agent rassemble tout ce que les autres produisent, écrit la lecture du mois et recommande la suite. Le chiffre est calculé, jamais inventé.</p>
-          </div>
-          <div class="pex-body">
-            <div class="flow">
-              <div class="flow-col">
-                <div class="col-head">Entrée</div>
-                <div class="node node--your"><span class="node-title">Réseaux sociaux</span></div>
-                <div class="node node--your"><span class="node-title">Publicité (SEA)</span></div>
-                <div class="node node--your"><span class="node-title">SEO &amp; GEO</span></div>
-              </div>
-              <div class="flow-arrow">→</div>
-              <div class="flow-col">
-                <div class="col-head">L'agent agrège</div>
-                <div class="node node--agent-big">
-                  <span class="node-lab">Agent reporting</span>
-                  <span class="node-title">Centralise &amp; recommande</span>
-                  <ul>
-                    <li>Rassemble les 4 volets au même endroit</li>
-                    <li>Écrit la note : quoi · pourquoi · quoi faire</li>
-                    <li>Recommande les sujets &amp; actions du mois</li>
-                    <li>Le chiffre est calculé, jamais inventé</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="flow-arrow">→</div>
-              <div class="flow-col">
-                <div class="col-head">Résultat</div>
-                <div class="node node--result"><span class="node-title">Note mensuelle</span><span class="node-desc">claire, par marché, prête à transmettre</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="pex-demo">
-            <div class="pex-demo-lab"><b>Exemple</b> · l'agent vous pousse la note du mois, puis vous creusez</div>
-            <div class="chat" id="repChat">
-              <div class="chat-head">
-                <div class="chat-av">AI</div>
-                <div class="chat-id"><div class="cn">Agent Reporting</div><div class="cs"><span class="ld"></span>en ligne</div></div>
-              </div>
-              <div class="chat-body">
-                <div class="row agent">
-                  <div class="bubble-av">AI</div>
-                  <div class="bubble ag">
-                    📊 Votre note de mai — l'essentiel en 30 secondes :
-                    <div class="report-card">
-                      <div class="rc-line"><span>Part de citation IA</span><span class="rc-v">+11 pts</span></div>
-                      <div class="rc-line"><span>Trafic SEO</span><span class="rc-v">+18 %</span></div>
-                      <div class="rc-line"><span>Coût par lead (SEA)</span><span class="rc-v">−9 %</span></div>
-                      <div class="rc-line"><span>Engagement social</span><span class="rc-v">+6 %</span></div>
-                    </div>
-                    👉 Reco du mois : doubler l'angle « eau locale », votre meilleur moteur de citation.
-                    <div class="file-card"><span class="file-ic">PDF</span><div class="file-meta"><div class="fn">Note_mensuelle_mai.pdf</div><div class="fd">synthèse par marché + recommandations</div></div></div>
-                    <span class="b-time">1er juin · 8:00</span>
-                  </div>
-                </div>
-                <div class="row you">
-                  <div class="bubble yo">Pourquoi la citation IA grimpe autant ?<span class="b-time">9:12</span></div>
-                </div>
-                <div class="row agent">
-                  <div class="bubble-av">AI</div>
-                  <div class="bubble ag">
-                    Vos 4 articles « eau microfiltrée / eau locale » sont désormais cités par Perplexity et ChatGPT. C'est votre meilleur levier ce trimestre — je passe la consigne au calendrier et au SEO/GEO :
-                    <ul>
-                      <li>2 articles de plus sur l'angle « eau locale »</li>
-                      <li>1 média RP B Corp à cibler</li>
-                    </ul>
-                    <span class="b-time">9:13</span>
-                  </div>
-                </div>
-                <div class="typing-row"><div class="bubble-av">AI</div><div class="typing"><span></span><span></span><span></span></div></div>
-              </div>
-              <div class="chat-input"><div class="ci-field">Écrivez à l'agent…</div><div class="ci-send">➤</div></div>
-              <div class="chat-cap">Illustration — l'agent lit le mois, explique, et nourrit l'équipe + les autres agents.</div>
-            </div>
-          </div>
-          <div class="pex-note"><b>Ce qui n'existe nulle part ailleurs :</b> votre part de citation dans ChatGPT &amp; Perplexity face à Castalie et Culligan, mois par mois. Aucune CMO de votre catégorie ne voit ça aujourd'hui.</div>
-        </div>
-      </div>
-
       <!-- CASTING -->
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
         <div class="diagram-title"><span class="d-tag">Casting</span><h3>Qui opère</h3></div>
@@ -1153,113 +1195,101 @@
 
   <section class="block" style="padding-top:56px;">
     <div class="wrap">
-      <div class="sec-head"><span class="num">03</span><h2>Chiffrage <span class="accent">par pilier.</span></h2></div>
-      <p class="sec-intro">Chaque pilier est chiffré isolément — activez dans l'ordre que vous choisissez. <b>Cliquez un pilier</b> pour ouvrir le détail.</p>
+      <div class="sec-head"><span class="num">03</span><h2>Chiffrage <span class="accent">: set-up &amp; maintenance offerts.</span></h2></div>
+      <p class="sec-intro">Notre modèle est simple. On ne facture <b>ni le set-up, ni la maintenance</b> — c'est offert. Vous payez uniquement <b>à l'usage</b>, à l'unité, sur un volume <b>mutualisé</b> pour tous vos marchés. <b>Cliquez un pilier</b> pour le détail.</p>
       <div class="acc">
         <div class="acc-item">
-          <button class="acc-head"><span class="acc-num">Pilier 1</span><span class="acc-name">SEO / GEO</span><span class="acc-price">12 000 € + run</span><span class="acc-chev">+</span></button>
+          <button class="acc-head"><span class="acc-num">Pilier 1</span><span class="acc-name">L'Agent BE WTR</span><span class="acc-price">Set-up offert · à l'usage</span><span class="acc-chev">+</span></button>
           <div class="acc-body"><div class="acc-inner">
-            <div class="sub-line"><span><b>Setup</b> — build de l'agent, architecture du cocon sémantique, données structurées (Schema.org), stratégie 453 mots-clés</span><span class="sl-price">12 000 €</span></div>
-            <div class="sub-line"><span><b>Run · France pilote</b> — jusqu'à 30 articles/mois publiés &amp; maillés, suivi positions + citations IA, GEO, ciblage RP</span><span class="sl-price">4 500 → 7 500 €/mois</span></div>
-            <div class="sub-line"><span><b>Par marché supplémentaire</b> — déclinaison &amp; localisation (UAE, CH, UK…)</span><span class="sl-price">sur devis</span></div>
-            <p>Estimatif France pilote — le volume exact, la profondeur et le nombre de marchés se calent en atelier après la baseline.</p>
+            <div class="sub-line"><span><b>Set-up</b> — build des 3 sous-agents (SEO/GEO, calendrier, reporting), architecture du cocon, connexion à vos outils</span><span class="sl-price free">Offert</span></div>
+            <div class="sub-line"><span><b>Maintenance</b> — run des agents, monitoring, suivi des positions &amp; citations IA, reporting mensuel</span><span class="sl-price free">Offerte</span></div>
+            <div class="sub-line"><span><b>À l'usage</b> — par article publié &amp; maillé (SEO/GEO + calendrier)</span><span class="sl-price">à l'unité</span></div>
+            <p>Vous ne payez que le contenu réellement publié. Le tarif unitaire se cale ensemble selon vos volumes — set-up et pilotage à notre charge.</p>
           </div></div>
         </div>
         <div class="acc-item">
-          <button class="acc-head"><span class="acc-num">Pilier 2</span><span class="acc-name">Calendrier de contenu</span><span class="acc-price">14 000 € + run</span><span class="acc-chev">+</span></button>
+          <button class="acc-head"><span class="acc-num">Pilier 2</span><span class="acc-name">La Plateforme · AI Studio</span><span class="acc-price">Set-up offert · à l'usage</span><span class="acc-chev">+</span></button>
           <div class="acc-body"><div class="acc-inner">
-            <div class="sub-line"><span><b>Setup</b> — modèle éditorial 50/50, build agent, pilote 1 marché</span><span class="sl-price">14 000 €</span></div>
-            <div class="sub-line"><span><b>Run</b> — selon la cadence (montée → quotidien 2 canaux)</span><span class="sl-price">2 900 → 5 200 €/mois</span></div>
-          </div></div>
-        </div>
-        <div class="acc-item">
-          <button class="acc-head"><span class="acc-num">Pilier 3</span><span class="acc-name">AI Studio</span><span class="acc-price">12 000 € + à l'usage</span><span class="acc-chev">+</span></button>
-          <div class="acc-body"><div class="acc-inner">
-            <div class="sub-line"><span><b>App POS self-service</b> — setup de la plateforme &amp; des gabarits verrouillés charte</span><span class="sl-price">12 000 €</span></div>
-            <div class="sub-line"><span>· crédits de génération <b>à l'usage</b> + maintenance mensuelle légère</span><span class="sl-price">à l'usage + ~/mois</span></div>
-            <div class="sub-line"><span><b>Déclinaison &amp; production</b> — resizing, langues, montage, voix…</span><span class="sl-price">sur brief (devis)</span></div>
-          </div></div>
-        </div>
-        <div class="acc-item">
-          <button class="acc-head"><span class="acc-num">Pilier 4</span><span class="acc-name">Reporting</span><span class="acc-price">8 500 € · 850 €/mois</span><span class="acc-chev">+</span></button>
-          <div class="acc-body"><div class="acc-inner">
-            <div class="sub-line"><span><b>Setup</b> — agrégation, connecteurs, agent de note &amp; reco</span><span class="sl-price">8 500 €</span></div>
-            <div class="sub-line"><span><b>Run</b> — interprétation &amp; maintenance</span><span class="sl-price">850 €/mois</span></div>
+            <div class="sub-line"><span><b>Set-up</b> — plateforme POS self-service, gabarits verrouillés charte, Studio de brief</span><span class="sl-price free">Offert</span></div>
+            <div class="sub-line"><span><b>Maintenance</b> — upkeep de la plateforme, mises à jour des gabarits</span><span class="sl-price free">Offerte</span></div>
+            <div class="sub-line"><span><b>À l'usage</b> — par génération POS &amp; par brief produit au Studio</span><span class="sl-price">à l'unité</span></div>
+            <p>Vous ne payez que ce que vous générez. Grille unitaire (génération POS, brief Studio) à caler ensemble.</p>
           </div></div>
         </div>
       </div>
       <div class="cost-final">
-        <div class="cf-head"><span class="cf-tag">Estimatif</span><p>La vue d'ensemble du budget. <b>Estimatif</b> — chiffré sur la base <b>France pilote</b> ; les marchés supplémentaires et les briefs AI Studio se chiffrent à la demande.</p></div>
+        <div class="cf-head"><span class="cf-tag">Le modèle</span><p>Le <b>set-up</b> et la <b>maintenance</b> sont <b>offerts</b>. Vous payez uniquement <b>à l'usage</b>, à l'unité — sur un volume mutualisé pour tous vos marchés.</p></div>
         <div class="cf-grid">
           <div class="cf-cell">
-            <span class="cf-lab">Setup · one-shot</span>
-            <div class="cf-amt">~ 46 500 €</div>
-            <p class="cf-sub">SEO/GEO (12 000) + Calendrier (14 000) + AI Studio POS (12 000) + Reporting (8 500).</p>
+            <span class="cf-lab">Set-up</span>
+            <div class="cf-amt" style="color:var(--orange-2);">Offert</div>
+            <p class="cf-sub">Build des agents &amp; de la plateforme, connexion à vos outils — à notre charge.</p>
           </div>
           <div class="cf-cell">
-            <span class="cf-lab">Run · mensuel</span>
-            <div class="cf-amt">~ 8 250 → 13 550 €<span class="cf-per"> /mois</span></div>
-            <p class="cf-sub">SEO/GEO (4 500 → 7 500) + Calendrier (2 900 → 5 200) + Reporting (850). France pilote, hors usage AI Studio.</p>
+            <span class="cf-lab">Maintenance</span>
+            <div class="cf-amt" style="color:var(--orange-2);">Offerte</div>
+            <p class="cf-sub">Run des agents, monitoring, upkeep de la plateforme — inclus.</p>
           </div>
           <div class="cf-cell">
-            <span class="cf-lab">En sus · à la demande</span>
-            <div class="cf-amt sm">Sur devis</div>
-            <p class="cf-sub">Marchés SEO/GEO supplémentaires (UAE, CH, UK…), briefs AI Studio, crédits de génération.</p>
+            <span class="cf-lab">À l'usage</span>
+            <div class="cf-amt sm">À l'unité</div>
+            <p class="cf-sub">Par article publié, par génération Studio. Volume <b>mutualisé</b> sur tous les marchés.</p>
           </div>
         </div>
-        <p class="cf-note">Montants estimatifs, hors taxes, donnés à titre indicatif. Base <b>France pilote</b> — le total final dépend du nombre de marchés et du volume de briefs AI Studio. Chaque pilier reste activable isolément.</p>
+        <p class="cf-note">Vous ne payez que ce que vous consommez. La grille de tarifs unitaires se cale ensemble selon vos volumes — aucun coût de set-up ni de maintenance, sur aucun marché.</p>
       </div>
 
       <div class="scale-wrap">
         <h3 class="diag-h3">Passer à l'échelle : 1 → 9 marchés</h3>
-        <p class="sec-intro" style="margin-bottom:24px;">L'essentiel se construit une seule fois. Chaque marché suivant ne paie que son incrémental — le budget ne se multiplie pas par 9.</p>
+        <p class="sec-intro" style="margin-bottom:24px;">Même logique à l'échelle : le set-up et la maintenance restent <b>offerts sur les 9 marchés</b>, et l'usage est <b>mutualisé</b> — un seul volume, pas multiplié par pays.</p>
 
         <div class="scale-layers">
           <div class="sl-row socle">
             <span class="sl-n">Couche 1 · Socle</span>
-            <div><div class="sl-title">Les 4 agents &amp; plateformes</div><div class="sl-desc">Construits une fois, réutilisés sur les 9 marchés. C'est l'investissement de fond.</div></div>
-            <div class="sl-cost"><div class="sc-one">~46 500 €</div><div class="sc-run">+ run France 8 250 → 13 550 €/mois</div></div>
+            <div><div class="sl-title">Les agents &amp; la plateforme</div><div class="sl-desc">Construits une fois, réutilisés sur les 9 marchés.</div></div>
+            <div class="sl-cost"><div class="sc-one" style="color:var(--orange-2);">Offert</div><div class="sc-run">à notre charge</div></div>
           </div>
           <div class="sl-row">
             <span class="sl-n">Couche 2 · Onboarding pays</span>
-            <div><div class="sl-title">Localisation d'un marché</div><div class="sl-desc">Cocon &amp; mots-clés locaux, données structurées, connecteurs reporting, setup calendrier.</div></div>
-            <div class="sl-cost"><div class="sc-one">~4 500 €</div><div class="sc-run">one-time, par pays</div></div>
+            <div><div class="sl-title">Localisation d'un marché</div><div class="sl-desc">Cocon &amp; mots-clés locaux, données structurées, connecteurs, setup calendrier.</div></div>
+            <div class="sl-cost"><div class="sc-one" style="color:var(--orange-2);">Offert</div><div class="sc-run">par pays</div></div>
           </div>
           <div class="sl-row">
-            <span class="sl-n">Couche 3 · Run pays</span>
-            <div><div class="sl-title">Faire vivre un marché</div><div class="sl-desc">Contenu localisé (décliné, pas réécrit) + monitoring + GEO + reporting du marché.</div></div>
-            <div class="sl-cost"><div class="sc-one">~3 500 → 5 000 €</div><div class="sc-run">par pays, par mois</div></div>
+            <span class="sl-n">Couche 3 · Usage</span>
+            <div><div class="sl-title">La production réelle</div><div class="sl-desc">Contenu publié + générations Studio. Décliné, pas réécrit.</div></div>
+            <div class="sl-cost"><div class="sc-one">À l'unité</div><div class="sc-run">mutualisé · tous marchés</div></div>
           </div>
         </div>
 
         <div class="scale-chart">
-          <div class="scale-chart-lab"><b>La dégressivité</b> · investissement par marché, année 1 (estimatif)</div>
-          <div class="scale-bars">
-            <div class="sb-col first"><div class="sb-val">~177k €</div><div class="sb-bar" style="height:160px;"></div><div class="sb-lab">FR</div></div>
-            <div class="sb-col"><div class="sb-val">~55k €</div><div class="sb-bar" style="height:50px;"></div><div class="sb-lab">+AE</div></div>
-            <div class="sb-col"><div class="sb-bar" style="height:50px;"></div><div class="sb-lab">+CH</div></div>
-            <div class="sb-col"><div class="sb-bar" style="height:50px;"></div><div class="sb-lab">+UK</div></div>
-            <div class="sb-col"><div class="sb-bar" style="height:50px;"></div><div class="sb-lab">+SG</div></div>
-            <div class="sb-col"><div class="sb-bar" style="height:50px;"></div><div class="sb-lab">+HK</div></div>
-            <div class="sb-col"><div class="sb-bar" style="height:50px;"></div><div class="sb-lab">+TH</div></div>
-            <div class="sb-col"><div class="sb-bar" style="height:50px;"></div><div class="sb-lab">+MA</div></div>
-            <div class="sb-col"><div class="sb-bar" style="height:50px;"></div><div class="sb-lab">+CA</div></div>
+          <div class="scale-chart-lab"><b>9 marchés, un seul coût</b> · set-up &amp; maintenance offerts partout, usage mutualisé</div>
+          <div class="mkt-row">
+            <span class="mkt">FR<span>0 € setup</span></span>
+            <span class="mkt">AE<span>0 € setup</span></span>
+            <span class="mkt">CH<span>0 € setup</span></span>
+            <span class="mkt">UK<span>0 € setup</span></span>
+            <span class="mkt">SG<span>0 € setup</span></span>
+            <span class="mkt">HK<span>0 € setup</span></span>
+            <span class="mkt">TH<span>0 € setup</span></span>
+            <span class="mkt">MA<span>0 € setup</span></span>
+            <span class="mkt">CA<span>0 € setup</span></span>
           </div>
-          <div class="scale-legend"><span><i style="background:var(--orange);"></i> France — porte le socle</span><span><i style="background:var(--slate);"></i> Marché incrémental ≈ ⅓ du coût</span></div>
+          <div class="mkt-arrow">↓ un seul volume, partagé</div>
+          <div class="mkt-pool">Usage mutualisé<span>à l'unité · par article publié · par génération Studio</span></div>
         </div>
 
         <div class="scale-proj">
-          <div class="dm-card"><span class="dm-lab">Build total · 9 pays</span><div class="dm-val">~82 500 €</div><span class="dm-sub">one-time, étalé sur le déploiement</span></div>
-          <div class="dm-card"><span class="dm-lab">Run régime de croisière</span><div class="dm-val">~36 → 54k<span style="font-size:0.9rem;color:var(--muted);font-weight:600;"> €/mois</span></div><span class="dm-sub">les 9 marchés actifs</span></div>
-          <div class="dm-card score"><span class="dm-lab">Soit, par an</span><div class="dm-val">~435 → 645k €</div><span class="dm-sub">à pleine échelle</span></div>
+          <div class="dm-card"><span class="dm-lab">Set-up · 9 pays</span><div class="dm-val" style="color:var(--orange-2);">0 €</div><span class="dm-sub">offert sur tous les marchés</span></div>
+          <div class="dm-card"><span class="dm-lab">Maintenance</span><div class="dm-val" style="color:var(--orange-2);">0 €</div><span class="dm-sub">offerte · agents &amp; plateforme</span></div>
+          <div class="dm-card score"><span class="dm-lab">À l'usage</span><div class="dm-val">À l'unité</div><span class="dm-sub">mutualisé, pas multiplié par 9</span></div>
         </div>
 
         <div class="diag-insight" style="margin-top:20px;">
           <span class="di-tag">Ce qu'il faut retenir</span>
-          <p>Passer de 1 à 9 marchés <b>ne multiplie pas le budget par 9</b> : le socle est payé une fois, et chaque marché suivant coûte environ <b>⅓ du premier</b>. À comparer à <b>9 agences locales</b> — sans la cohérence global → local, ni le GEO.</p>
+          <p>Passer à 9 marchés <b>n'ajoute ni set-up, ni maintenance</b>. Et l'usage est <b>mutualisé</b> — un seul volume, pas multiplié par 9. Vous ne payez que la production réelle, où qu'elle serve.</p>
         </div>
 
-        <p class="cf-note" style="margin-top:18px;border:1px dashed var(--line-2);border-radius:10px;background:var(--bg-2);">Chiffres estimatifs, hors taxes — base de travail à valider avec l'équipe SEO. Le run par pays est le poste qui pilote le modèle à l'échelle : il dépend du volume de contenu retenu par marché.</p>
+        <p class="cf-note" style="margin-top:18px;border:1px dashed var(--line-2);border-radius:10px;background:var(--bg-2);">Le tarif unitaire se cale ensemble selon vos volumes. Aucun coût de structure par marché — set-up et maintenance restent à notre charge.</p>
       </div>
     </div>
   </section>
