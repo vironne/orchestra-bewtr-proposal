@@ -55,6 +55,10 @@
   .tab-btn:hover { color: var(--ink); background: var(--bg-3); }
   .tab-btn.active { color: #fff; background: var(--ink); }
   .tab-btn.active .n { color: var(--orange-soft); }
+  .lang-switch { display: inline-flex; gap: 2px; background: var(--bg-3); border-radius: 8px; padding: 3px; }
+  .lang-btn { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--muted); background: none; border: none; cursor: pointer; padding: 6px 11px; border-radius: 6px; transition: all 0.15s; }
+  .lang-btn:hover { color: var(--ink); }
+  .lang-btn.active { background: var(--ink); color: #fff; }
 
   .panel { display: none; animation: fade 0.4s ease; }
   .panel.active { display: block; }
@@ -590,9 +594,13 @@
   <div class="nav-inner">
     <div class="brand"><span>ORCHESTRA</span><span class="x">×</span><span>BE WTR</span></div>
     <div class="tabs">
-      <button class="tab-btn active" data-tab="intro"><span class="n">01</span> Introduction</button>
-      <button class="tab-btn" data-tab="piliers"><span class="n">02</span> Les piliers</button>
-      <button class="tab-btn" data-tab="impl"><span class="n">03</span> Implémentation</button>
+      <button class="tab-btn active" data-tab="intro" data-en="<span class='n'>01</span> Introduction"><span class="n">01</span> Introduction</button>
+      <button class="tab-btn" data-tab="piliers" data-en="<span class='n'>02</span> The pillars"><span class="n">02</span> Les piliers</button>
+      <button class="tab-btn" data-tab="impl" data-en="<span class='n'>03</span> Implementation"><span class="n">03</span> Implémentation</button>
+    </div>
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="fr">FR</button>
+      <button class="lang-btn" data-lang="en">EN</button>
     </div>
   </div>
 </nav>
@@ -602,72 +610,72 @@
 
   <header class="hero">
     <div class="wrap">
-      <span class="eyebrow">PILOTES IA · FY26 · RÉPONSE AU BRIEF</span>
-      <h1>Un dispositif IA pour BE WTR. <span class="accent">Opéré, pas promis.</span></h1>
-      <p class="sub">Des agents qui font le travail, branchés sur vos propres outils. Vous ne gérez aucune plateforme de plus : vous nous donnez les accès, les agents s'occupent du reste. Le set-up et la maintenance sont offerts — vous ne payez qu'à l'usage.</p>
+      <span class="eyebrow" data-en="AI PILOTS · FY26 · RESPONSE TO BRIEF">PILOTES IA · FY26 · RÉPONSE AU BRIEF</span>
+      <h1 data-en="An AI system for BE WTR. <span class='accent'>Operated, not promised.</span>">Un dispositif IA pour BE WTR. <span class="accent">Opéré, pas promis.</span></h1>
+      <p class="sub" data-en="Agents that do the work, plugged into your own tools. You manage no extra platform: you give us access, the agents handle the rest. Set-up and maintenance are on us — you only pay for usage.">Des agents qui font le travail, branchés sur vos propres outils. Vous ne gérez aucune plateforme de plus : vous nous donnez les accès, les agents s'occupent du reste. Le set-up et la maintenance sont offerts — vous ne payez qu'à l'usage.</p>
       <div class="hero-meta">
-        <div class="cell"><span class="lab">Préparé par</span><span class="val">Orchestra Intelligence</span></div>
-        <div class="cell"><span class="lab">Pour</span><span class="val">Direction Marketing BE WTR</span></div>
-        <div class="cell"><span class="lab">Référence</span><span class="val">ORC—BWTR—FY26</span></div>
+        <div class="cell"><span class="lab" data-en="Prepared by">Préparé par</span><span class="val">Orchestra Intelligence</span></div>
+        <div class="cell"><span class="lab" data-en="For">Pour</span><span class="val" data-en="BE WTR Marketing">Direction Marketing BE WTR</span></div>
+        <div class="cell"><span class="lab" data-en="Reference">Référence</span><span class="val">ORC—BWTR—FY26</span></div>
       </div>
     </div>
   </header>
 
   <nav class="pil-nav tab-sticky" aria-label="Sommaire — Introduction">
-    <a class="pn-pillar" href="#s-compris">Ce qu'on a compris</a>
-    <a class="pn-pillar" href="#s-avant-apres">Aujourd'hui → demain</a>
-    <a class="pn-pillar" href="#s-cible">Écosystème cible</a>
-    <a class="pn-pillar" href="#s-partis">Partis pris</a>
-    <a class="pn-pillar" href="#s-devoirs">On a fait nos devoirs</a>
+    <a class="pn-pillar" href="#s-compris" data-en="What we understood">Ce qu'on a compris</a>
+    <a class="pn-pillar" href="#s-avant-apres" data-en="Today → tomorrow">Aujourd'hui → demain</a>
+    <a class="pn-pillar" href="#s-cible" data-en="Target ecosystem">Écosystème cible</a>
+    <a class="pn-pillar" href="#s-partis" data-en="Our stances">Partis pris</a>
+    <a class="pn-pillar" href="#s-devoirs" data-en="We did our homework">On a fait nos devoirs</a>
   </nav>
 
   <section class="block">
     <div class="wrap">
-      <div class="sec-head" id="s-compris"><span class="num">01</span><h2>Ce qu'on a <span class="accent">compris.</span></h2></div>
-      <p class="sec-intro">Avant de proposer quoi que ce soit, voici ce qu'on a retenu de votre brief et de votre situation. Si une lecture est à côté, on la corrige ensemble.</p>
+      <div class="sec-head" id="s-compris"><span class="num">01</span><h2 data-en="What we <span class='accent'>understood.</span>">Ce qu'on a <span class="accent">compris.</span></h2></div>
+      <p class="sec-intro" data-en="Before proposing anything, here's what we took from your brief and your situation. If a reading is off, we fix it together.">Avant de proposer quoi que ce soit, voici ce qu'on a retenu de votre brief et de votre situation. Si une lecture est à côté, on la corrige ensemble.</p>
       <div class="understand-grid">
-        <div class="u-card"><span class="u-lab">Votre priorité</span><h4>Le B2B d'abord, puis le B2C</h4><p>La notoriété via les hôtels &amp; restaurants — puis le grand public (Suisse, UAE).</p></div>
-        <div class="u-card"><span class="u-lab">Votre enjeu</span><h4>Passer à l'échelle sur 9 marchés</h4><p>La demande est là. Le défi : produire partout, sans surcharger les équipes.</p></div>
-        <div class="u-card"><span class="u-lab">Vos 4 demandes</span><h4>Le périmètre du brief</h4><p>Visibilité SEO/GEO · calendrier de contenu · studio de production · reporting.</p></div>
-        <div class="u-card"><span class="u-lab">Votre contrainte</span><h4>Opérationnel en septembre 2026</h4><p>Activable pilier par pilier, pour séquencer à votre rythme.</p></div>
+        <div class="u-card"><span class="u-lab" data-en="Your priority">Votre priorité</span><h4 data-en="B2B first, then B2C">Le B2B d'abord, puis le B2C</h4><p data-en="Awareness through hotels &amp; restaurants — then the wider public (Switzerland, UAE).">La notoriété via les hôtels &amp; restaurants — puis le grand public (Suisse, UAE).</p></div>
+        <div class="u-card"><span class="u-lab" data-en="Your challenge">Votre enjeu</span><h4 data-en="Scaling across 9 markets">Passer à l'échelle sur 9 marchés</h4><p data-en="The demand is there. The challenge: produce everywhere, without overloading your teams.">La demande est là. Le défi : produire partout, sans surcharger les équipes.</p></div>
+        <div class="u-card"><span class="u-lab" data-en="Your 4 requests">Vos 4 demandes</span><h4 data-en="The brief's scope">Le périmètre du brief</h4><p data-en="SEO/GEO visibility · content calendar · production studio · reporting.">Visibilité SEO/GEO · calendrier de contenu · studio de production · reporting.</p></div>
+        <div class="u-card"><span class="u-lab" data-en="Your constraint">Votre contrainte</span><h4 data-en="Live by September 2026">Opérationnel en septembre 2026</h4><p data-en="Activatable pillar by pillar, to sequence at your own pace.">Activable pilier par pilier, pour séquencer à votre rythme.</p></div>
       </div>
     </div>
   </section>
 
   <section class="block">
     <div class="wrap">
-      <div class="sec-head" id="s-avant-apres"><span class="num">02</span><h2>Votre écosystème : <span class="accent">d'aujourd'hui à demain.</span></h2></div>
-      <p class="sec-intro">Là où vous en êtes, et là où on vous emmène. Même travail, deux mondes — à gauche aujourd'hui, à droite avec les agents.</p>
+      <div class="sec-head" id="s-avant-apres"><span class="num">02</span><h2 data-en="Your ecosystem: <span class='accent'>from today to tomorrow.</span>">Votre écosystème : <span class="accent">d'aujourd'hui à demain.</span></h2></div>
+      <p class="sec-intro" data-en="Where you are, and where we take you. Same work, two worlds — today on the left, with the agents on the right.">Là où vous en êtes, et là où on vous emmène. Même travail, deux mondes — à gauche aujourd'hui, à droite avec les agents.</p>
       <div class="ba2">
         <div class="ba2-head">
-          <div class="ba2-ch before"><span class="dotb"></span>Aujourd'hui</div>
+          <div class="ba2-ch before"><span class="dotb"></span><span data-en="Today">Aujourd'hui</span></div>
           <div class="ba2-spacer"></div>
-          <div class="ba2-ch after"><span class="dotb"></span>Avec Orchestra</div>
+          <div class="ba2-ch after"><span class="dotb"></span><span data-en="With Orchestra">Avec Orchestra</span></div>
         </div>
         <div class="ba2-row">
-          <div class="ba2-cell before"><h5>B2B en ligne, D2C à venir</h5><p>site B2B sur HubSpot ; le D2C reste à construire</p></div>
+          <div class="ba2-cell before"><h5 data-en="B2B online, D2C to come">B2B en ligne, D2C à venir</h5><p data-en="B2B site on HubSpot; D2C still to build">site B2B sur HubSpot ; le D2C reste à construire</p></div>
           <div class="ba2-mid"><span>→</span></div>
-          <div class="ba2-cell after"><h5>Un seul domaine</h5><p>B2B + D2C sous bewtr.com, deux stratégies SEO/GEO</p></div>
+          <div class="ba2-cell after"><h5 data-en="One single domain">Un seul domaine</h5><p data-en="B2B + D2C under bewtr.com, two SEO/GEO strategies">B2B + D2C sous bewtr.com, deux stratégies SEO/GEO</p></div>
         </div>
         <div class="ba2-row">
-          <div class="ba2-cell before"><h5>Production à la main</h5><p>montage, captions, déclinaisons — chronophage</p></div>
+          <div class="ba2-cell before"><h5 data-en="Manual production">Production à la main</h5><p data-en="editing, captions, variants — time-consuming">montage, captions, déclinaisons — chronophage</p></div>
           <div class="ba2-mid"><span>→</span></div>
-          <div class="ba2-cell after"><h5>Production assistée</h5><p>brouillons à la charte, prêts à valider</p></div>
+          <div class="ba2-cell after"><h5 data-en="Assisted production">Production assistée</h5><p data-en="on-brand drafts, ready to approve">brouillons à la charte, prêts à valider</p></div>
         </div>
         <div class="ba2-row">
-          <div class="ba2-cell before"><h5>Une personne goulot</h5><p>elle fait tout + forme les locaux</p></div>
+          <div class="ba2-cell before"><h5 data-en="One bottleneck person">Une personne goulot</h5><p data-en="does everything + trains the local teams">elle fait tout + forme les locaux</p></div>
           <div class="ba2-mid"><span>→</span></div>
-          <div class="ba2-cell after"><h5>Les marchés adaptent</h5><p>le global produit, le local ajuste — vous validez</p></div>
+          <div class="ba2-cell after"><h5 data-en="Markets adapt">Les marchés adaptent</h5><p data-en="global produces, local adjusts — you approve">le global produit, le local ajuste — vous validez</p></div>
         </div>
         <div class="ba2-row">
-          <div class="ba2-cell before"><h5>Présence SEO/GEO à renforcer</h5><p>une base à muscler sur Google et les IA</p></div>
+          <div class="ba2-cell before"><h5 data-en="SEO/GEO presence to strengthen">Présence SEO/GEO à renforcer</h5><p data-en="a base to build up on Google and the AIs">une base à muscler sur Google et les IA</p></div>
           <div class="ba2-mid"><span>→</span></div>
-          <div class="ba2-cell after"><h5>SEO/GEO musclé partout</h5><p>site, presse &amp; social — et la citation IA suivie</p></div>
+          <div class="ba2-cell after"><h5 data-en="SEO/GEO strong everywhere">SEO/GEO musclé partout</h5><p data-en="site, press &amp; social — and AI citation tracked">site, presse &amp; social — et la citation IA suivie</p></div>
         </div>
         <div class="ba2-row">
-          <div class="ba2-cell before"><h5>Reporting éclaté</h5><p>chiffres séparés, lus trop tard</p></div>
+          <div class="ba2-cell before"><h5 data-en="Fragmented reporting">Reporting éclaté</h5><p data-en="scattered numbers, read too late">chiffres séparés, lus trop tard</p></div>
           <div class="ba2-mid"><span>→</span></div>
-          <div class="ba2-cell after"><h5>Recommandations</h5><p>une note mensuelle qui dit quoi faire ensuite</p></div>
+          <div class="ba2-cell after"><h5 data-en="Recommendations">Recommandations</h5><p data-en="a monthly note telling you what to do next">une note mensuelle qui dit quoi faire ensuite</p></div>
         </div>
       </div>
     </div>
@@ -1461,6 +1469,25 @@
       }, { rootMargin: '-124px 0px -55% 0px', threshold: 0 });
       targets.forEach(function (t) { io.observe(t); });
     });
+  })();
+
+  // === i18n FR / EN ===
+  (function () {
+    var btns = document.querySelectorAll('.lang-btn');
+    if (!btns.length) return;
+    function setLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(function (el) {
+        if (!el.hasAttribute('data-fr')) el.setAttribute('data-fr', el.innerHTML);
+        el.innerHTML = (lang === 'en') ? el.getAttribute('data-en') : el.getAttribute('data-fr');
+      });
+      btns.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-lang') === lang); });
+      document.documentElement.setAttribute('lang', lang);
+      try { localStorage.setItem('bewtr-lang', lang); } catch (e) {}
+    }
+    btns.forEach(function (b) { b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); }); });
+    var saved = null;
+    try { saved = localStorage.getItem('bewtr-lang'); } catch (e) {}
+    if (saved === 'en') setLang('en');
   })();
 </script>
 
