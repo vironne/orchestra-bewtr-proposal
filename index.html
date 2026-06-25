@@ -506,7 +506,7 @@
   .chips-lab { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin: 18px 0 2px; }
 
   /* === casting (team) === */
-  .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
   .team-card { border: 1px solid var(--line); border-radius: 14px; padding: 24px; background: var(--bg-2); }
   .team-card .tc-role { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); font-weight: 700; }
   .team-card h4 { font-size: 1.25rem; font-weight: 700; margin: 6px 0 2px; letter-spacing: -0.01em; }
@@ -1145,7 +1145,7 @@
       <!-- CASTING -->
       <div class="diagram" style="border-top:1px solid var(--line); padding-top:40px;">
         <div class="diagram-title"><span class="d-tag">Casting</span><h3>Qui opère</h3></div>
-        <p class="diagram-sub">Quatre profils complémentaires — pas une agence de bras. De la marque et du commercial (FMCG, D2C) à l'ingénierie à grande échelle et au search technique (SEO/SEA/GEO) : on pense <b>et</b> on opère.</p>
+        <p class="diagram-sub">Trois profils complémentaires — pas une agence de bras. De la marque et du commercial (FMCG, D2C) à l'ingénierie qui fait tourner les agents à grande échelle : on pense <b>et</b> on opère.</p>
         <div class="team-grid">
           <div class="team-card">
             <div class="tc-av"><span class="tc-ini">Xa</span><img class="tc-photo" src="team-xavier.jpg" alt="Xavier" onerror="this.remove()"></div>
@@ -1170,14 +1170,6 @@
             <p class="tc-tag">Bâtir des systèmes à l'échelle</p>
             <p>Vingt ans de développement sur des systèmes critiques — chez Amazon et à la Société Générale. C'est lui qui fait tourner les agents pour de vrai, en production.</p>
             <div class="tc-chips"><span>Amazon</span><span>Société Générale</span><span>Tech</span></div>
-          </div>
-          <div class="team-card">
-            <div class="tc-av"><span class="tc-ini">Ad</span><img class="tc-photo" src="team-adrien.jpg" alt="Adrien" onerror="this.remove()"></div>
-            <span class="tc-role">15 ans · SEO · SEA · GEO</span>
-            <h4>Adrien</h4>
-            <p class="tc-tag">Le search, du luxe au D2C</p>
-            <p>Quinze ans en agence — grands comptes (luxe, automobile) comme petites marques D2C. L'expertise technique qui arme le Pilier 1 : SEO, SEA et GEO.</p>
-            <div class="tc-chips"><span>Luxe &amp; Auto</span><span>D2C</span><span>SEO · SEA · GEO</span></div>
           </div>
         </div>
       </div>
