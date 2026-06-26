@@ -360,6 +360,25 @@
   .ex-screen-dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(201,94,18,0.35); }
   .ex-screen-dots i:first-child { background: var(--orange); }
   .exb-source { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.03em; color: var(--muted); margin-top: 16px; line-height: 1.7; }
+  /* exhibit compact — visible en une vue */
+  .exb-head { padding: 15px 26px 13px; }
+  .exb-thesis { font-size: clamp(1.05rem, 1.8vw, 1.3rem); margin-top: 6px; line-height: 1.25; }
+  .exb-legend { margin-top: 9px; gap: 20px; }
+  .ex-rail { padding: 13px 18px; }
+  .ex-num { font-size: 1.8rem; }
+  .ex-name { margin-top: 6px; }
+  .ex-body { padding: 13px 22px; }
+  .ex-note { margin-top: 7px; }
+  .roof2 { gap: 16px; }
+  .roof2-box { padding: 8px 12px; }
+  .ex-cards { gap: 12px; }
+  .ex-card { padding: 12px 14px; }
+  .ex-card-top { margin-bottom: 6px; }
+  .ex-card p { font-size: 11.5px; line-height: 1.45; }
+  .ex-link { margin-bottom: 7px; padding: 4px 11px; }
+  .ex-link.loop { margin-top: 7px; }
+  .ex-foot-note { margin-top: 7px; }
+  .exb-source { margin-top: 10px; line-height: 1.5; }
 
   /* === pillar exhibit (.pex) === */
   .pex { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 1px 2px rgba(26,26,26,0.03), 0 18px 44px -32px rgba(26,26,26,0.13); }
@@ -639,7 +658,6 @@
     <a class="pn-pillar" href="#s-compris" data-en="What we understood">Ce qu'on a compris</a>
     <a class="pn-pillar" href="#s-avant-apres" data-en="Today → tomorrow">Aujourd'hui → demain</a>
     <a class="pn-pillar" href="#s-cible" data-en="Target ecosystem">Écosystème cible</a>
-    <a class="pn-pillar" href="#s-partis" data-en="Our stances">Partis pris</a>
     <a class="pn-pillar" href="#s-devoirs" data-en="We did our homework">On a fait nos devoirs</a>
   </nav>
 
@@ -761,20 +779,7 @@
 
   <section class="block">
     <div class="wrap">
-      <div class="sec-head" id="s-partis"><span class="num">04</span><h2 data-en="Our <span class='accent'>stances.</span>">Nos <span class="accent">partis pris.</span></h2></div>
-      <p class="sec-intro" data-en="The few decisions to lock in together before pricing.">Les quelques décisions à acter ensemble avant de chiffrer.</p>
-      <div class="pp-grid">
-        <div class="pp"><h5 data-en="One entity, one domain">Une entité, un domaine</h5><p data-en="Everything on bewtr.com — no separate site starting from zero.">Tout sur bewtr.com — pas de site séparé qui repartirait de zéro.</p></div>
-        <div class="pp"><h5 data-en="B2B = credibility, not volume">B2B = crédibilité, pas volume</h5><p data-en="We lock down the verification queries and the uncontested territories (B Corp, local water).">On verrouille les requêtes de vérification et les territoires incontestés (B Corp, eau locale).</p></div>
-        <div class="pp"><h5 data-en="An agent, not one more tool">Un agent, pas un outil de plus</h5><p data-en="You keep your tools. Our agents plug into them. We just need access.">Vous gardez vos outils. Nos agents s'y branchent. Il nous faut juste les accès.</p></div>
-        <div class="pp"><h5 data-en="AI behind the scenes">L'IA en coulisses</h5><p data-en="We adapt and elevate real material — never fake generated content. Consistent with B Corp.">On décline et on sublime du réel — jamais de faux généré. Cohérent B Corp.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="wrap">
-      <div class="sec-head" id="s-devoirs"><span class="num">05</span><h2 data-en="We did our <span class='accent'>homework.</span>">On a fait nos <span class="accent">devoirs.</span></h2></div>
+      <div class="sec-head" id="s-devoirs"><span class="num">04</span><h2 data-en="We did our <span class='accent'>homework.</span>">On a fait nos <span class="accent">devoirs.</span></h2></div>
       <p class="sec-intro" data-en="Before pricing anything, we put your SEO/GEO B2B France presence under the microscope — and compared it to your direct competitor. Here's what we found. A starting diagnosis, to refine together.">Avant de chiffrer quoi que ce soit, on a passé votre présence SEO/GEO B2B France au crible — et comparée à votre concurrent direct. Voici ce qu'on a trouvé. Diagnostic de départ, à affiner ensemble.</p>
 
       <div class="diag-lead">
@@ -815,7 +820,7 @@
       <div class="sec-head"><span class="num">02</span><h2 data-en="The <span class='accent'>pillars,</span> in detail.">Les <span class="accent">piliers,</span> en détail.</h2></div>
       <div class="align-banner">
         <span class="ab-tag" data-en="The principle">Le principe</span>
-        <p data-en="You keep <b>your tools</b> (your site, your asset library, your planning). <b>Our agents plug into them</b> and do the work. You manage no new platform to learn — the only thing we need is <b>access</b>.">Vous gardez <b>vos outils</b> (votre site, votre banque d'assets, votre planning). <b>Nos agents s'y branchent</b> et font le travail. Vous ne gérez aucune nouvelle plateforme à apprendre — la seule chose dont nous avons besoin, ce sont <b>les accès</b>.</p>
+        <p data-en="You keep <b>your tools</b>: our agents plug into them and work where you already are (your messaging). The only thing your teams take in hand is <b>one light platform</b> — AI Studio, in self-service. One simple space, not ten more tools. On our side, we just need <b>access</b>.">Vous gardez <b>vos outils</b> : nos agents s'y branchent et travaillent là où vous êtes déjà (votre messagerie). La seule chose que vos équipes prennent en main, c'est <b>une plateforme légère</b> — AI Studio, en self-service. Un seul espace simple, pas dix outils de plus. De notre côté, il nous faut juste <b>les accès</b>.</p>
       </div>
       <p class="sec-intro" data-en="Two pillars. On one side <b>the BE WTR Agent</b> — a global marketing &amp; commercial agent orchestrating three specialised sub-agents. On the other, <b>the Platform</b> (AI Studio). Each diagram reads left to right: input → the agent → you → result.">Deux piliers. D'un côté <b>l'Agent BE WTR</b> — un agent global marketing &amp; commercial qui orchestre trois sous-agents spécialisés. De l'autre, <b>la Plateforme</b> (AI Studio). Chaque schéma se lit de gauche à droite : entrée → l'agent → vous → résultat.</p>
 
@@ -1255,7 +1260,7 @@
   <section class="block" style="padding-top:56px;">
     <div class="wrap">
       <div class="sec-head" id="s-chiffrage"><span class="num">03</span><h2 data-en="Pricing <span class='accent'>: set-up &amp; maintenance on us.</span>">Chiffrage <span class="accent">: set-up &amp; maintenance offerts.</span></h2></div>
-      <p class="sec-intro" data-en="Our model is simple. We charge <b>neither set-up nor maintenance</b> — it's on us. You only pay <b>per usage</b>, by the unit, on a <b>shared</b> volume across all your markets. <b>Click a pillar</b> for the detail.">Notre modèle est simple. On ne facture <b>ni le set-up, ni la maintenance</b> — c'est offert. Vous payez uniquement <b>à l'usage</b>, à l'unité, sur un volume <b>mutualisé</b> pour tous vos marchés. <b>Cliquez un pilier</b> pour le détail.</p>
+      <p class="sec-intro" data-en="Our model is simple. We charge <b>neither set-up nor maintenance</b> — it's on us. You only pay <b>per usage</b>, by the unit, on a <b>shared</b> volume across all your markets*. <b>Click a pillar</b> for the detail.">Notre modèle est simple. On ne facture <b>ni le set-up, ni la maintenance</b> — c'est offert. Vous payez uniquement <b>à l'usage</b>, à l'unité, sur un volume <b>mutualisé</b> pour tous vos marchés*. <b>Cliquez un pilier</b> pour le détail.</p>
       <div class="acc">
         <div class="acc-item">
           <button class="acc-head"><span class="acc-num" data-en="Pillar 1">Pilier 1</span><span class="acc-name" data-en="The BE WTR Agent">L'Agent BE WTR</span><span class="acc-price" data-en="Set-up free · per usage">Set-up offert · à l'usage</span><span class="acc-chev">+</span></button>
@@ -1298,58 +1303,7 @@
         <p class="cf-note" data-en="You only pay for what you consume. The unit-rate grid is set together based on your volumes — no set-up or maintenance cost, on any market.">Vous ne payez que ce que vous consommez. La grille de tarifs unitaires se cale ensemble selon vos volumes — aucun coût de set-up ni de maintenance, sur aucun marché.</p>
       </div>
 
-      <div class="scale-wrap">
-        <h3 class="diag-h3" data-en="Scaling up: 1 → 9 markets">Passer à l'échelle : 1 → 9 marchés</h3>
-        <p class="sec-intro" style="margin-bottom:24px;" data-en="Same logic at scale: set-up and maintenance stay <b>free across the 9 markets</b>, and usage is <b>shared</b> — one single volume, not multiplied per country.">Même logique à l'échelle : le set-up et la maintenance restent <b>offerts sur les 9 marchés</b>, et l'usage est <b>mutualisé</b> — un seul volume, pas multiplié par pays.</p>
-
-        <div class="scale-layers">
-          <div class="sl-row socle">
-            <span class="sl-n" data-en="Layer 1 · Foundation">Couche 1 · Socle</span>
-            <div><div class="sl-title" data-en="The agents &amp; the platform">Les agents &amp; la plateforme</div><div class="sl-desc" data-en="Built once, reused across the 9 markets.">Construits une fois, réutilisés sur les 9 marchés.</div></div>
-            <div class="sl-cost"><div class="sc-one" style="color:var(--orange-2);" data-en="Free">Offert</div><div class="sc-run" data-en="on us">à notre charge</div></div>
-          </div>
-          <div class="sl-row">
-            <span class="sl-n" data-en="Layer 2 · Country onboarding">Couche 2 · Onboarding pays</span>
-            <div><div class="sl-title" data-en="Localising a market">Localisation d'un marché</div><div class="sl-desc" data-en="Local cocoon &amp; keywords, structured data, connectors, calendar setup.">Cocon &amp; mots-clés locaux, données structurées, connecteurs, setup calendrier.</div></div>
-            <div class="sl-cost"><div class="sc-one" style="color:var(--orange-2);" data-en="Free">Offert</div><div class="sc-run" data-en="per country">par pays</div></div>
-          </div>
-          <div class="sl-row">
-            <span class="sl-n" data-en="Layer 3 · Usage">Couche 3 · Usage</span>
-            <div><div class="sl-title" data-en="Actual production">La production réelle</div><div class="sl-desc" data-en="Published content + Studio generations. Adapted, not rewritten.">Contenu publié + générations Studio. Décliné, pas réécrit.</div></div>
-            <div class="sl-cost"><div class="sc-one" data-en="Per unit">À l'unité</div><div class="sc-run" data-en="shared · all markets">mutualisé · tous marchés</div></div>
-          </div>
-        </div>
-
-        <div class="scale-chart">
-          <div class="scale-chart-lab" data-en="<b>9 markets, one cost</b> · set-up &amp; maintenance free everywhere, shared usage"><b>9 marchés, un seul coût</b> · set-up &amp; maintenance offerts partout, usage mutualisé</div>
-          <div class="mkt-row">
-            <span class="mkt">FR<span>0 € setup</span></span>
-            <span class="mkt">AE<span>0 € setup</span></span>
-            <span class="mkt">CH<span>0 € setup</span></span>
-            <span class="mkt">UK<span>0 € setup</span></span>
-            <span class="mkt">SG<span>0 € setup</span></span>
-            <span class="mkt">HK<span>0 € setup</span></span>
-            <span class="mkt">TH<span>0 € setup</span></span>
-            <span class="mkt">MA<span>0 € setup</span></span>
-            <span class="mkt">CA<span>0 € setup</span></span>
-          </div>
-          <div class="mkt-arrow" data-en="↓ one single volume, shared">↓ un seul volume, partagé</div>
-          <div class="mkt-pool" data-en="Shared usage<span>per unit · per article published · per Studio generation</span>">Usage mutualisé<span>à l'unité · par article publié · par génération Studio</span></div>
-        </div>
-
-        <div class="scale-proj">
-          <div class="dm-card"><span class="dm-lab" data-en="Set-up · 9 countries">Set-up · 9 pays</span><div class="dm-val" style="color:var(--orange-2);">0 €</div><span class="dm-sub" data-en="free on all markets">offert sur tous les marchés</span></div>
-          <div class="dm-card"><span class="dm-lab">Maintenance</span><div class="dm-val" style="color:var(--orange-2);">0 €</div><span class="dm-sub" data-en="free · agents &amp; platform">offerte · agents &amp; plateforme</span></div>
-          <div class="dm-card score"><span class="dm-lab" data-en="Per usage">À l'usage</span><div class="dm-val" data-en="Per unit">À l'unité</div><span class="dm-sub" data-en="shared, not multiplied by 9">mutualisé, pas multiplié par 9</span></div>
-        </div>
-
-        <div class="diag-insight" style="margin-top:20px;">
-          <span class="di-tag" data-en="What to remember">Ce qu'il faut retenir</span>
-          <p data-en="Scaling to 9 markets <b>adds neither set-up nor maintenance</b>. And usage is <b>shared</b> — one single volume, not multiplied by 9. You only pay for actual production, wherever it serves.">Passer à 9 marchés <b>n'ajoute ni set-up, ni maintenance</b>. Et l'usage est <b>mutualisé</b> — un seul volume, pas multiplié par 9. Vous ne payez que la production réelle, où qu'elle serve.</p>
-        </div>
-
-        <p class="cf-note" style="margin-top:18px;border:1px dashed var(--line-2);border-radius:10px;background:var(--bg-2);" data-en="The unit rate is set together based on your volumes. No structural cost per market — set-up and maintenance stay on us.">Le tarif unitaire se cale ensemble selon vos volumes. Aucun coût de structure par marché — set-up et maintenance restent à notre charge.</p>
-      </div>
+      <p class="cf-note" style="border:none;background:none;padding:12px 2px 0;" data-en="<b>* Built for your 9 markets</b> (France pilot → UAE, CH, UK, SG, HK, TH, MA, CA): set-up &amp; maintenance stay free everywhere, and usage stays shared — one single volume, not multiplied per country. Scaling adds no structural cost."><b>* Pensé pour vos 9 marchés</b> (France pilote → UAE, CH, UK, SG, HK, TH, MA, CA) : set-up &amp; maintenance restent offerts partout, et l'usage reste mutualisé — un seul volume, pas multiplié par pays. Passer à l'échelle n'ajoute aucun coût de structure.</p>
     </div>
   </section>
 
