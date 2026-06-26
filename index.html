@@ -381,6 +381,22 @@
   .ex-foot-note { margin-top: 7px; }
   .exb-source { margin-top: 10px; line-height: 1.5; }
 
+  /* écosystème simple — 2 piliers (Agent + Studio) */
+  .eco { border: 1px solid var(--line); border-radius: 16px; background: var(--bg-2); padding: 22px; box-shadow: 0 1px 2px rgba(26,26,26,0.03); }
+  .eco-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 16px; }
+  .eco-pillar { border: 1px solid var(--line); border-radius: 13px; padding: 22px 24px; background: #fff; }
+  .eco-pillar.agent { border-top: 3px solid var(--slate); }
+  .eco-pillar.pf { border-top: 3px solid var(--orange); background: var(--orange-pale); border-color: var(--orange-soft); }
+  .eco-badge { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; padding: 4px 11px; border-radius: 20px; display: inline-block; }
+  .eco-badge.agent { background: var(--slate); color: #fff; }
+  .eco-badge.platform { background: var(--orange); color: #fff; }
+  .eco-pillar h4 { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; margin: 11px 0 5px; }
+  .eco-pillar p { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
+  .eco-subs { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+  .eco-subs span { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 700; color: var(--slate); background: var(--slate-pale); border: 1px solid var(--slate-line); border-radius: 20px; padding: 5px 11px; }
+  .eco-base { text-align: center; margin-top: 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  @media (max-width: 640px) { .eco-grid { grid-template-columns: 1fr; } }
+
   /* === pillar exhibit (.pex) === */
   .pex { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 1px 2px rgba(26,26,26,0.03), 0 18px 44px -32px rgba(26,26,26,0.13); }
   .pex-head { padding: 22px 26px 20px; border-bottom: 1px solid var(--line); background: var(--bg-2); }
@@ -717,65 +733,23 @@
   <section class="block">
     <div class="wrap">
       <div class="sec-head" id="s-cible"><span class="num">03</span><h2 data-en="Our vision: <span class='accent'>the target ecosystem.</span>">Notre vision : <span class="accent">l'écosystème cible.</span></h2></div>
-      <p class="sec-intro" data-en="A common foundation — your domain. Two pillars that produce on top of it — the BE WTR Agent and the Platform. And a steering layer that measures and loops back. Here's the target, in one view.">Une fondation commune — votre domaine. Deux piliers qui produisent dessus — l'Agent BE WTR et la Plateforme. Et un pilotage qui mesure et reboucle. Voici la cible, en une vue.</p>
-      <div class="exb">
-        <div class="exb-head">
-          <span class="exb-eyebrow" data-en="The principle in one sentence">Le principe en une phrase</span>
-          <div class="exb-thesis" data-en="A <b>foundation</b>. <b>Two pillars</b>. A <b>steering layer</b>.">Une <b>fondation</b>. <b>Deux piliers</b>. Un <b>pilotage</b>.</div>
-          <div class="exb-sub" data-en="Everything on one domain · the BE WTR Agent &amp; the Platform on top · a steering layer that measures and guides.">Tout sur un seul domaine · l'Agent BE WTR &amp; la Plateforme dessus · un pilotage qui mesure et oriente.</div>
-          <div class="exb-legend">
-            <span class="leg-item" data-en="<span class='leg-chip agent'>Agent</span> works behind the scenes, inside your tools"><span class="leg-chip agent">Agent</span> travaille en coulisses, dans vos outils</span>
-            <span class="leg-item" data-en="<span class='leg-chip platform'>Platform</span> an interface your teams use"><span class="leg-chip platform">Plateforme</span> une interface que vos équipes utilisent</span>
+      <p class="sec-intro" data-en="Two pillars, on one domain: the BE WTR Agent (and its sub-agents) and AI Studio. That's the whole target.">Deux piliers, sur un seul domaine : l'Agent BE WTR (et ses sous-agents) et l'AI Studio. Voilà toute la cible.</p>
+      <div class="eco">
+        <div class="eco-grid">
+          <div class="eco-pillar agent">
+            <span class="eco-badge agent">Agent</span>
+            <h4 data-en="The BE WTR Agent">L'Agent BE WTR</h4>
+            <p data-en="One global agent that orchestrates 3 sub-agents.">Un agent global qui orchestre 3 sous-agents.</p>
+            <div class="eco-subs"><span>SEO / GEO</span><span data-en="Calendar">Calendrier</span><span>Reporting</span></div>
+          </div>
+          <div class="eco-pillar pf">
+            <span class="eco-badge platform" data-en="Platform">Plateforme</span>
+            <h4>AI Studio</h4>
+            <p data-en="The self-service interface: POS materials &amp; Studio briefs.">L'interface self-service : supports POS &amp; briefs Studio.</p>
           </div>
         </div>
-
-        <div class="exb-row r1">
-          <div class="ex-rail"><div class="ex-num">01</div><span class="ex-name" data-en="Foundation">Fondation</span><span class="ex-sub" data-en="the ecosystem">l'écosystème</span></div>
-          <div class="ex-body">
-            <div class="roof2">
-              <div class="roof2-domain">BE WTR.com<span data-en="one single domain">un seul domaine</span></div>
-              <div class="roof2-cols">
-                <div class="roof2-box"><b>B2B</b><small data-en="live today · HubSpot">live aujourd'hui · HubSpot</small></div>
-                <div class="roof2-box dashed"><b>D2C</b><small data-en="to come · TBD">à venir · à définir</small></div>
-              </div>
-            </div>
-            <p class="ex-note" data-en="Two worlds under one roof — two distinct SEO/GEO strategies.">Deux univers sous un même toit — deux stratégies SEO/GEO distinctes.</p>
-          </div>
-        </div>
-
-        <div class="exb-row r2">
-          <div class="ex-rail"><div class="ex-num">02</div><span class="ex-name" data-en="The pillars">Les piliers</span><span class="ex-sub" data-en="two">deux</span></div>
-          <div class="ex-body">
-            <span class="ex-link up" data-en="↑ build on the foundation">↑ s'appuient sur la fondation</span>
-            <div class="ex-cards">
-              <div class="ex-card ag">
-                <div class="ex-card-top"><span class="ex-dot"></span><h5 data-en="The BE WTR Agent">L'Agent BE WTR</h5><span class="ex-badge agent">Agent</span></div>
-                <div class="surf-chips"><span>SEO / GEO</span><span data-en="Calendar">Calendrier</span><span>Reporting</span></div>
-                <p data-en="Global marketing &amp; commercial agent. It routes each request to the right sub-agent, creates &amp; adapts content per market. Human validation.">Agent global marketing &amp; commercial. Il oriente la demande vers le bon sous-agent, crée &amp; décline le contenu par marché. Validation humaine.</p>
-              </div>
-              <div class="ex-card platform">
-                <div class="ex-screen-dots"><i></i><i></i><i></i></div>
-                <div class="ex-card-top"><span class="ex-dot"></span><h5 data-en="The Platform · AI Studio">La Plateforme · AI Studio</h5><span class="ex-badge platform" data-en="Platform">Plateforme</span></div>
-                <p data-en="One interface: self-service POS materials + advanced briefs (adaptation, translation, editing, AI).">Une interface : supports POS en self-service + briefs avancés (déclinaison, traduction, montage, IA).</p>
-              </div>
-            </div>
-            <span class="ex-foot-note" data-en="Two independent pillars — Agent ↔ Platform link possible, never automatic.">Deux piliers indépendants — lien Agent ↔ Plateforme possible, jamais automatique.</span>
-          </div>
-        </div>
-
-        <div class="exb-row r3">
-          <div class="ex-rail"><div class="ex-num">03</div><span class="ex-name" data-en="Steering">Pilotage</span><span class="ex-sub" data-en="cross-cutting">transverse</span></div>
-          <div class="ex-body">
-            <span class="ex-link down" data-en="↓ everything is measured">↓ tout est mesuré</span>
-            <div class="ex-card green ag">
-              <div class="ex-card-top"><span class="ex-dot g"></span><h5 data-en="Reporting — the aggregator sub-agent">Reporting — le sous-agent agrégateur</h5><span class="ex-badge agent" data-en="Sub-agent">Sous-agent</span></div>
-              <p data-en="Aggregates everything (SEO/GEO · social · studio · ads), extracts the <b>what / why / what to do</b> notes, produces the recommendations.">Agrège tout (SEO/GEO · social · studio · publicité), extrait les notes <b>quoi / pourquoi / quoi faire</b>, produit les recommandations.</p>
-            </div>
-            <span class="ex-link loop" data-en="↺ The recommendations flow back to steer the sub-agents — starting with the calendar mix">↺ Les recommandations remontent piloter les sous-agents — à commencer par le mix du calendrier</span>
-          </div>
-        </div>
+        <div class="eco-base" data-en="The whole thing on one domain — bewtr.com">Le tout sur un seul domaine — bewtr.com</div>
       </div>
-      <p class="exb-source" data-en="How to read it — the foundation carries the pillars · the BE WTR Agent &amp; the Platform produce · the steering layer (Reporting) aggregates and loops back. Your teams validate at every step.">Lecture — la fondation porte les piliers · l'Agent BE WTR &amp; la Plateforme produisent · le pilotage (Reporting) agrège et reboucle. Vos équipes valident à chaque étape.</p>
     </div>
   </section>
 
