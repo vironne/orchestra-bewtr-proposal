@@ -652,8 +652,9 @@
     <div class="brand"><span>ORCHESTRA</span><span class="x">×</span><span>BE WTR</span></div>
     <div class="tabs">
       <button class="tab-btn active" data-tab="intro" data-en="<span class='n'>01</span> Introduction"><span class="n">01</span> Introduction</button>
-      <button class="tab-btn" data-tab="piliers" data-en="<span class='n'>02</span> The pillars"><span class="n">02</span> Les piliers</button>
-      <button class="tab-btn" data-tab="impl" data-en="<span class='n'>03</span> Implementation"><span class="n">03</span> Implémentation</button>
+      <button class="tab-btn" data-tab="agent" data-en="<span class='n'>02</span> The Agent"><span class="n">02</span> L'Agent</button>
+      <button class="tab-btn" data-tab="studio" data-en="<span class='n'>03</span> AI Studio"><span class="n">03</span> AI Studio</button>
+      <button class="tab-btn" data-tab="impl" data-en="<span class='n'>04</span> Implementation"><span class="n">04</span> Implémentation</button>
     </div>
     <div class="lang-switch">
       <button class="lang-btn active" data-lang="fr">FR</button>
@@ -795,31 +796,22 @@
 
 </div>
 
-<!-- ============ TAB 2 — LES PILIERS ============ -->
-<div class="panel" id="piliers">
+<!-- ============ TAB 2 — PILIER AGENT ============ -->
+<div class="panel" id="agent">
 
   <section class="block" style="padding-top:56px;">
     <div class="wrap">
-      <div class="sec-head"><span class="num">02</span><h2 data-en="The <span class='accent'>pillars,</span> in detail.">Les <span class="accent">piliers,</span> en détail.</h2></div>
+      <div class="sec-head"><span class="num">02</span><h2 data-en="The <span class='accent'>BE WTR Agent.</span>">L'Agent <span class="accent">BE WTR.</span></h2></div>
       <div class="align-banner">
         <span class="ab-tag" data-en="The principle">Le principe</span>
-        <p data-en="You keep <b>your tools</b>: our agents plug into them and work where you already are (your messaging). The only thing your teams take in hand is <b>one light platform</b> — AI Studio, in self-service. One simple space, not ten more tools. On our side, we just need <b>access</b>.">Vous gardez <b>vos outils</b> : nos agents s'y branchent et travaillent là où vous êtes déjà (votre messagerie). La seule chose que vos équipes prennent en main, c'est <b>une plateforme légère</b> — AI Studio, en self-service. Un seul espace simple, pas dix outils de plus. De notre côté, il nous faut juste <b>les accès</b>.</p>
+        <p data-en="You keep <b>your tools</b>: our agents plug into them and work where you already are (your messaging). One global agent orchestrates three specialised sub-agents. On our side, we just need <b>access</b>.">Vous gardez <b>vos outils</b> : nos agents s'y branchent et travaillent là où vous êtes déjà (votre messagerie). Un agent global orchestre trois sous-agents spécialisés. De notre côté, il nous faut juste <b>les accès</b>.</p>
       </div>
-      <p class="sec-intro" data-en="Two pillars. On one side <b>the BE WTR Agent</b> — a global marketing &amp; commercial agent orchestrating three specialised sub-agents. On the other, <b>the Platform</b> (AI Studio). Each diagram reads left to right: input → the agent → you → result.">Deux piliers. D'un côté <b>l'Agent BE WTR</b> — un agent global marketing &amp; commercial qui orchestre trois sous-agents spécialisés. De l'autre, <b>la Plateforme</b> (AI Studio). Chaque schéma se lit de gauche à droite : entrée → l'agent → vous → résultat.</p>
+      <p class="sec-intro" data-en="One global marketing &amp; commercial agent, three specialised sub-agents — SEO/GEO, calendar, reporting. Each diagram reads left to right: input → the agent → you → result.">Un agent global marketing &amp; commercial, trois sous-agents spécialisés — SEO/GEO, calendrier, reporting. Chaque schéma se lit de gauche à droite : entrée → l'agent → vous → résultat.</p>
 
-      <!-- nav clique-scroll -->
-      <nav class="pil-nav" aria-label="Navigation des piliers">
-        <a class="pn-pillar" href="#pilier-agent" data-en="<span class='pn-n'>P1</span> The BE WTR Agent"><span class="pn-n">P1</span> L'Agent BE WTR</a>
+      <!-- nav clique-scroll des sous-agents -->
+      <nav class="pil-nav" aria-label="Navigation des sous-agents">
         <span class="pn-subs"><a href="#sa-seo">SEO / GEO</a><a href="#sa-cal" data-en="Calendar">Calendrier</a><a href="#sa-rep">Reporting</a></span>
-        <a class="pn-pillar" href="#pilier-plateforme" data-en="<span class='pn-n'>P2</span> The Platform"><span class="pn-n">P2</span> La Plateforme</a>
       </nav>
-
-      <!-- ===== PILIER 1 · L'AGENT BE WTR ===== -->
-      <div class="pillar-head" id="pilier-agent">
-        <span class="ph-num" data-en="Pillar 1">Pilier 1</span>
-        <div class="ph-body"><h3 class="ph-title" data-en="The BE WTR Agent">L'Agent BE WTR</h3><p class="ph-sub" data-en="A global marketing &amp; commercial agent — it orchestrates 3 sub-agents.">Un agent global marketing &amp; commercial — il orchestre 3 sous-agents.</p></div>
-        <span class="ph-badge agent">Agent</span>
-      </div>
 
       <div class="diagram">
         <div class="agent-arch">
@@ -1100,14 +1092,22 @@
         </div>
       </div>
 
-      <!-- ===== PILIER 2 · LA PLATEFORME ===== -->
-      <div class="pillar-head" id="pilier-plateforme">
-        <span class="ph-num" data-en="Pillar 2">Pilier 2</span>
-        <div class="ph-body"><h3 class="ph-title" data-en="The Platform · AI Studio">La Plateforme · AI Studio</h3><p class="ph-sub" data-en="The interface your teams use — POS materials &amp; Studio briefs.">L'interface que vos équipes utilisent — supports POS &amp; briefs Studio.</p></div>
-        <span class="ph-badge platform" data-en="Platform">Plateforme</span>
+    </div>
+  </section>
+</div>
+
+<!-- ============ TAB 3 — PILIER STUDIO ============ -->
+<div class="panel" id="studio">
+
+  <section class="block" style="padding-top:56px;">
+    <div class="wrap">
+      <div class="sec-head"><span class="num">03</span><h2 data-en="The Platform · <span class='accent'>AI Studio.</span>">La Plateforme · <span class="accent">AI Studio.</span></h2></div>
+      <div class="align-banner">
+        <span class="ab-tag" data-en="The principle">Le principe</span>
+        <p data-en="The one light platform your teams take in hand: POS materials in self-service, and advanced briefs (resizing, languages, editing, AI) handled by the Studio. Plugged into your asset library, human always in the loop.">La seule plateforme légère que vos équipes prennent en main : les supports POS en self-service, et les briefs avancés (resizing, langues, montage, IA) pris en charge par le Studio. Branchée sur votre banque d'assets, l'humain toujours dans la boucle.</p>
       </div>
       <div class="diagram" style="border-top:none; padding-top:8px;">
-        <div class="pex">
+        <div class="pex open">
           <div class="pex-head">
             <div class="pex-id"><span class="pex-num" data-en="Detail">Détail</span><span class="pex-name" data-en="AI Studio · the 2 modules">AI Studio · les 2 modules</span><span class="ex-badge platform" data-en="Platform">Plateforme</span><span class="pex-chev">+</span></div>
             <p class="pex-thesis" data-en="Two very different needs, so two platforms in one interface. Both plugged into your asset library, human always in the loop.">Deux besoins très différents, donc deux plateformes dans une seule interface. Toutes deux branchées sur votre banque d'assets, l'humain toujours dans la boucle.</p>
@@ -1209,7 +1209,7 @@
   </section>
 </div>
 
-<!-- ============ TAB 3 — IMPLÉMENTATION ============ -->
+<!-- ============ TAB 4 — IMPLÉMENTATION ============ -->
 <div class="panel" id="impl">
 
   <nav class="pil-nav tab-sticky" aria-label="Sommaire — Implémentation">
