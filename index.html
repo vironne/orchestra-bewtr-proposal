@@ -179,6 +179,18 @@
   .ug-price { display: block; font-size: 1.25rem; font-weight: 700; color: var(--orange-2); }
   .ug-note { margin-top: 12px; font-size: 11.5px; color: var(--muted); line-height: 1.5; }
   @media (max-width: 720px) { .vs-head, .vs-row { grid-template-columns: 1.4fr 1fr 1fr; } .vs-lab { font-size: 12px; } .usage-grid { grid-template-columns: 1fr 1fr; } }
+  .grid-lead { font-size: 13px; color: var(--muted); margin: -4px 0 14px; line-height: 1.5; max-width: 760px; }
+  .usage-list { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 1px 2px rgba(26,26,26,0.03); }
+  .ul-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 16px; padding: 16px 20px; border-top: 1px solid var(--line); }
+  .ul-row:first-child { border-top: none; }
+  .ul-name { display: block; font-size: 1rem; font-weight: 700; color: var(--ink); }
+  .ul-desc { display: block; font-size: 12.5px; color: var(--muted); margin-top: 3px; line-height: 1.45; }
+  .ul-price { display: flex; align-items: baseline; gap: 12px; justify-content: flex-end; white-space: nowrap; }
+  .ul-agency { font-size: 12.5px; color: var(--muted); text-decoration: line-through; text-decoration-color: var(--line-2); }
+  .ul-new { font-size: 1.25rem; font-weight: 700; color: var(--orange-2); }
+  .ul-new.incl { font-size: 1rem; }
+  .pillar-ref { display: inline-block; margin-left: 8px; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; color: var(--orange-2); background: var(--orange-pale); border: 1px solid var(--orange-soft); border-radius: 20px; padding: 3px 9px; vertical-align: middle; }
+  @media (max-width: 620px) { .ul-row { grid-template-columns: 1fr; } .ul-price { justify-content: flex-start; } }
   .cf-amt .cf-per { font-size: 0.9rem; color: var(--muted); font-weight: 600; }
   .cf-sub { font-size: 12px; color: var(--ink-soft); line-height: 1.45; }
   .cf-note { margin: 0; padding: 14px 22px; border-top: 1px solid var(--line); background: var(--bg-2); font-size: 11.5px; color: var(--muted); line-height: 1.5; }
@@ -1107,73 +1119,45 @@
   <section class="block" style="padding-top:56px;">
     <div class="wrap">
       <div class="sec-head" id="s-chiffrage"><span class="num">03</span><h2 data-en="Pricing <span class='accent'>: set-up &amp; maintenance on us.</span>">Chiffrage <span class="accent">: set-up &amp; maintenance offerts.</span></h2></div>
-      <p class="sec-intro" data-en="Our model is simple. We charge <b>neither set-up nor maintenance</b> — it's on us. You only pay <b>per usage</b>, by the unit, on a <b>shared</b> volume across all your markets*. <b>Click a pillar</b> for the detail.">Notre modèle est simple. On ne facture <b>ni le set-up, ni la maintenance</b> — c'est offert. Vous payez uniquement <b>à l'usage</b>, à l'unité, sur un volume <b>mutualisé</b> pour tous vos marchés*. <b>Cliquez un pilier</b> pour le détail.</p>
-      <div class="acc">
-        <div class="acc-item">
-          <button class="acc-head"><span class="acc-num" data-en="Pillar 1">Pilier 1</span><span class="acc-name" data-en="The BE WTR Agent">L'Agent BE WTR</span><span class="acc-price" data-en="Set-up free · per usage">Set-up offert · à l'usage</span><span class="acc-chev">+</span></button>
-          <div class="acc-body"><div class="acc-inner">
-            <div class="sub-line"><span data-en="<b>Set-up</b> — build of the 3 sub-agents (SEO/GEO, calendar, reporting), cocoon architecture, connection to your tools"><b>Set-up</b> — build des 3 sous-agents (SEO/GEO, calendrier, reporting), architecture du cocon, connexion à vos outils</span><span class="sl-price free" data-en="Free">Offert</span></div>
-            <div class="sub-line"><span data-en="<b>Maintenance</b> — running the agents, monitoring, tracking rankings &amp; AI citations, monthly reporting"><b>Maintenance</b> — run des agents, monitoring, suivi des positions &amp; citations IA, reporting mensuel</span><span class="sl-price free" data-en="Free">Offerte</span></div>
-            <div class="sub-line"><span data-en="<b>Per usage</b> — per article published &amp; linked (SEO/GEO + calendar)"><b>À l'usage</b> — par article publié &amp; maillé (SEO/GEO + calendrier)</span><span class="sl-price" data-en="per unit">à l'unité</span></div>
-            <p data-en="You only pay for content actually published. The unit rate is set together based on your volumes — set-up and steering on us.">Vous ne payez que le contenu réellement publié. Le tarif unitaire se cale ensemble selon vos volumes — set-up et pilotage à notre charge.</p>
-          </div></div>
-        </div>
-        <div class="acc-item">
-          <button class="acc-head"><span class="acc-num" data-en="Pillar 2">Pilier 2</span><span class="acc-name" data-en="The Platform · AI Studio">La Plateforme · AI Studio</span><span class="acc-price" data-en="Set-up free · per usage">Set-up offert · à l'usage</span><span class="acc-chev">+</span></button>
-          <div class="acc-body"><div class="acc-inner">
-            <div class="sub-line"><span data-en="<b>Set-up</b> — self-service POS platform, brand-locked templates, brief Studio"><b>Set-up</b> — plateforme POS self-service, gabarits verrouillés charte, Studio de brief</span><span class="sl-price free" data-en="Free">Offert</span></div>
-            <div class="sub-line"><span data-en="<b>Maintenance</b> — platform upkeep, template updates"><b>Maintenance</b> — upkeep de la plateforme, mises à jour des gabarits</span><span class="sl-price free" data-en="Free">Offerte</span></div>
-            <div class="sub-line"><span data-en="<b>Per usage</b> — per POS generation &amp; per brief produced in the Studio"><b>À l'usage</b> — par génération POS &amp; par brief produit au Studio</span><span class="sl-price" data-en="per unit">à l'unité</span></div>
-            <p data-en="You only pay for what you generate. Unit grid (POS generation, Studio brief) to set together.">Vous ne payez que ce que vous générez. Grille unitaire (génération POS, brief Studio) à caler ensemble.</p>
-          </div></div>
-        </div>
-      </div>
+      <p class="sec-intro" data-en="Our model is simple. We charge <b>neither set-up nor maintenance</b> — it's on us. You only pay <b>per usage</b>, by the unit, on a <b>shared</b> volume across all your markets*.">Notre modèle est simple. On ne facture <b>ni le set-up, ni la maintenance</b> — c'est offert. Vous payez uniquement <b>à l'usage</b>, à l'unité, sur un volume <b>mutualisé</b> pour tous vos marchés*.</p>
       <div class="cost-final">
-        <div class="cf-head"><span class="cf-tag" data-en="The model">Le modèle</span><p data-en="<b>Set-up</b> and <b>maintenance</b> are <b>on us</b>. You only pay <b>per usage</b>, by the unit — on a shared volume across all your markets.">Le <b>set-up</b> et la <b>maintenance</b> sont <b>offerts</b>. Vous payez uniquement <b>à l'usage</b>, à l'unité — sur un volume mutualisé pour tous vos marchés.</p></div>
         <div class="cf-grid">
           <div class="cf-cell">
             <span class="cf-lab">Set-up</span>
             <div class="cf-amt" style="color:var(--orange-2);" data-en="Free">Offert</div>
-            <p class="cf-sub" data-en="Build of the agents &amp; the platform, connection to your tools — on us.">Build des agents &amp; de la plateforme, connexion à vos outils — à notre charge.</p>
+            <p class="cf-sub" data-en="Build of the agent, connection to your tools, tuning to your brand voice — on us.">Build de l'agent, connexion à vos outils, calibrage au ton de marque — à notre charge.</p>
           </div>
           <div class="cf-cell">
             <span class="cf-lab">Maintenance</span>
             <div class="cf-amt" style="color:var(--orange-2);" data-en="Free">Offerte</div>
-            <p class="cf-sub" data-en="Running the agents, monitoring, platform upkeep — included.">Run des agents, monitoring, upkeep de la plateforme — inclus.</p>
+            <p class="cf-sub" data-en="Running the agent, monitoring, updates — included, on all markets.">Run de l'agent, monitoring, mises à jour — inclus, sur tous les marchés.</p>
           </div>
           <div class="cf-cell">
-            <span class="cf-lab" data-en="Per usage">À l'usage</span>
+            <span class="cf-lab">Usage</span>
             <div class="cf-amt sm" data-en="Per unit">À l'unité</div>
-            <p class="cf-sub" data-en="Per article published. Volume <b>shared</b> across all markets.">Par article publié. Volume <b>mutualisé</b> sur tous les marchés.</p>
+            <p class="cf-sub" data-en="Per deliverable produced. One single shared volume — no per-country meter.">Par livrable produit. Un seul volume mutualisé — pas de compteur par pays.</p>
           </div>
         </div>
-        <p class="cf-note" data-en="You only pay for what you consume. The unit-rate grid is set together based on your volumes — no set-up or maintenance cost, on any market.">Vous ne payez que ce que vous consommez. La grille de tarifs unitaires se cale ensemble selon vos volumes — aucun coût de set-up ni de maintenance, sur aucun marché.</p>
       </div>
 
-      <h3 class="diag-h3" data-en="Agency vs Orchestra — the gap, per unit">Agence vs Orchestra — l'écart, à l'unité</h3>
-      <div class="vs-table">
-        <div class="vs-head"><span></span><span class="agence" data-en="Classic agency">Agence classique</span><span class="us" data-en="Orchestra · per usage">Orchestra · à l'usage</span></div>
-        <div class="vs-row">
-          <span class="vs-lab" data-en="SEO article, published &amp; linked">Article SEO, publié &amp; maillé</span>
-          <span class="vs-old">400 – 800 €</span>
-          <span class="vs-new">~60 €</span>
+      <h3 class="diag-h3" data-en="The usage grid">La grille à l'usage</h3>
+      <p class="grid-lead" data-en="Rough orders of magnitude at this stage: the final grid is set together, based on your real volumes.">Des ordres de grandeur, à ce stade : la grille définitive se cale ensemble, selon vos volumes réels.</p>
+      <div class="usage-list">
+        <div class="ul-row">
+          <div><span class="ul-name" data-en="SEO/GEO article">Article SEO/GEO</span><span class="ul-desc" data-en="Written, optimised for Google &amp; AI, published and linked after approval">Rédigé, optimisé Google &amp; IA, publié et maillé après validation</span></div>
+          <div class="ul-price"><span class="ul-agency" data-en="400 – 800 € at an agency">400 – 800 € en agence</span><span class="ul-new">~60 €</span></div>
         </div>
-        <div class="vs-row">
-          <span class="vs-lab" data-en="POS material (menu, signage…)">Support POS (menu, signalétique…)</span>
-          <span class="vs-old">80 – 200 €</span>
-          <span class="vs-new">~5 €</span>
+        <div class="ul-row">
+          <div><span class="ul-name" data-en="Analysis">Analyse</span><span class="ul-desc" data-en="Monthly visibility note or competitive report, per market">Note mensuelle de visibilité ou repo concurrence, par marché</span></div>
+          <div class="ul-price"><span class="ul-new">~40 €</span></div>
         </div>
-        <div class="vs-foot" data-en="+ set-up &amp; maintenance on us · you only pay for what's produced">+ set-up &amp; maintenance offerts · vous ne payez que ce qui est produit</div>
+        <div class="ul-row">
+          <div><span class="ul-name" data-en="Discussions with the agent">Discussions avec l'agent</span><span class="ul-desc" data-en="Questions, briefs, iterations — unlimited">Questions, briefs, itérations — sans limite</span></div>
+          <div class="ul-price"><span class="ul-new incl" data-en="Included">Incluses</span></div>
+        </div>
       </div>
-
-      <h3 class="diag-h3" data-en="The usage grid (the basics)">La grille à l'usage (les basiques)</h3>
-      <div class="usage-grid">
-        <div class="ug-item"><span class="ug-name" data-en="Article">Article</span><span class="ug-desc" data-en="SEO/GEO, published &amp; linked">SEO/GEO, publié &amp; maillé</span><span class="ug-price">~60 €</span></div>
-        <div class="ug-item"><span class="ug-name" data-en="POS material">Support POS</span><span class="ug-desc" data-en="self-service, brand-locked">self-service, charte verrouillée</span><span class="ug-price">~5 €</span></div>
-        <div class="ug-item"><span class="ug-name" data-en="Analysis">Analyse</span><span class="ug-desc" data-en="competitive report / monthly note">repo concurrence / note mensuelle</span><span class="ug-price">~40 €</span></div>
-        <div class="ug-item"><span class="ug-name" data-en="Resizing">Resizing</span><span class="ug-desc" data-en="variant of an existing visual">déclinaison d'un visuel existant</span><span class="ug-price">~8 €</span></div>
-      </div>
-      <p class="ug-note" data-en="Discussions with the agents: included. · Video creations: on quote (not estimable to date). · Estimative unit rates, set together based on your volumes.">Discussions avec les agents : <b>incluses</b>. · Créations vidéo : <b>sur devis</b> (non estimables à ce jour). · Tarifs unitaires estimatifs, calés ensemble selon vos volumes.</p>
+      <p class="ug-note" data-en="Estimative unit rates — they'll be refined together once the first volumes are observed on the France pilot. No volume commitment, billing on actual usage.">Tarifs unitaires estimatifs — ils seront affinés ensemble une fois les premiers volumes constatés sur le pilote France. Aucun engagement de volume, facturation sur usage réel.</p>
+      <p class="ug-note" data-en="Visual productions — POS materials, variants, video — belong to the AI Studio Platform and are priced separately.<span class='pillar-ref'>Pillar 2 · separate grid</span>">Les productions visuelles — supports point de vente, déclinaisons, vidéo — relèvent de la Plateforme AI Studio et font l'objet d'un chiffrage distinct.<span class="pillar-ref">Pilier 2 · grille à part</span></p>
 
       <p class="cf-note" style="border:none;background:none;padding:12px 2px 0;" data-en="<b>* Built for your 9 markets</b> (France pilot → UAE, CH, UK, SG, HK, TH, MA, CA): set-up &amp; maintenance stay free everywhere, and usage stays shared — one single volume, not multiplied per country. Scaling adds no structural cost."><b>* Pensé pour vos 9 marchés</b> (France pilote → UAE, CH, UK, SG, HK, TH, MA, CA) : set-up &amp; maintenance restent offerts partout, et l'usage reste mutualisé — un seul volume, pas multiplié par pays. Passer à l'échelle n'ajoute aucun coût de structure.</p>
     </div>
